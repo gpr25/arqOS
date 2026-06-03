@@ -1,0 +1,41 @@
+# ─────────────────────────────────────────────────────────
+# Arquivos criados pelo /instalar-self — específicos de cada negócio
+# Ignorados para que git pull funcione limpo em atualizações futuras
+# ─────────────────────────────────────────────────────────
+
+core/
+company/
+products/
+sales/
+marketing/
+memory/
+operations/
+playbooks/
+roadmap/
+logs/
+
+# Identidade visual do usuário (criada no onboarding)
+branding/brand.md
+branding/identidade.md
+
+# Arquivos de ambiente e credenciais — nunca commitar
+.env
+.env.local
+*.env
+.mcp.json
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/settings.json
