@@ -1,59 +1,23 @@
-# CLAUDE.md — ArqOS da Triunfo
+# CLAUDE.md — Grupo Gadens
 
-## O que é este sistema
+## O que é esta pasta
 
-A Triunfo é uma produtora brasileira de erva-mate orgânica com mais de 50 anos de história, exportando B2B para os cinco continentes (setores food, beverage e nutracêuticos). Este ArqOS foi calibrado com o contexto real da operação de marketing e mídia paga da Triunfo, conduzida por Gabriel.
+Workspace central das empresas de Gabriel (Grupo Gadens). Cada empresa tem sua própria pasta com contexto calibrado. **Nunca assuma qual empresa é o assunto — pergunte ou deduza pelo contexto explícito da conversa.**
 
-## Leia no início de cada sessão
-
-1. `memory/estrategia.md` — foco atual e prioridades
-2. `core/core.md` — DNA e princípios da operação
-3. `company/company.md` — estrutura da empresa
-
-## Tom de voz
-
-Arquétipos de marca: **Criador** (inovação, visionária, transforma conceitos) + **Prestativo** (confiável, amigável, centrada no cliente). Valores: confiança, tradição familiar, sustentabilidade. Ver `branding/brand.md` para detalhes — frases proibidas ainda `[PREENCHER]`.
-
-## Frases proibidas
-
-`[PREENCHER]` — ainda não mapeado com o time.
-
-## Estrutura do sistema
+## Estrutura
 
 | Pasta | Conteúdo |
 |---|---|
-| `/core` | DNA e princípios da operação |
-| `/company` | Estrutura e história da empresa |
-| `/branding` | Identidade e comunicação |
-| `/products` | Produtos e serviços |
-| `/sales` | Processo comercial, funil, scripts, ICP |
-| `/marketing` | Estratégia de canais e calendário |
-| `/memory` | Memória operacional — cresce com o uso |
-| `/operations` | Processos e fluxos |
-| `/playbooks` | Processos documentados |
-| `/roadmap` | Metas e próximos passos |
-| `/logs` | Histórico e changelog |
+| `/Geral` | Documentação do ArqOS, onboarding e materiais aplicáveis a todas as empresas |
+| `/Autoshopping Linha Verde` | Contexto da empresa Autoshopping Linha Verde |
+| `/Shopping Cidade` | Contexto da empresa Shopping Cidade |
+| `/Triunfo do Brasil` | Produtora de erva-mate orgânica, exportação B2B — ver `Triunfo do Brasil/CLAUDE.md` |
+| `/Útil` | Contexto da empresa Útil Utilidades |
+| `/ULTJ` | Contexto da empresa ULTJ |
 
-## Agentes disponíveis
+## Regras
 
-**Estratégico:** `agente-estrategico`, `agente-marketing`, `agente-comercial`
-
-**Execução:** `copywriter`, `designer`, `gestor-trafego`, `seo-especialista`, `ux-ui-especialista`, `agente-atendimento`, `agente-conteudo`, `agente-dados`
-
-**Global (todas as empresas de Gabriel, não específico da Triunfo):** `analisador-criativos` — configurado em `~/.claude/agents/`, disponível em qualquer projeto.
-
-**Especializado imobiliário** (não aplicável ao negócio da Triunfo, mantidos por padrão do ArqOS): `agente-lancamento`, `agente-documentos`, `agente-financeiro`
-
-**Prioritários para o foco atual (30 dias — geração de leads via mídia paga):** `gestor-trafego` e `agente-marketing`.
-
-## Comandos disponíveis
-
-Ver lista completa em `README.md` do ArqOS — destaque para `/gerar-copy`, `/anuncio-google`, `/gerar-campanha`, `/relatorio-ads` e `/analisar-dados`, mais relevantes para a operação de mídia paga da Triunfo. `/analisar-criativo` também está disponível (comando global, não específico da Triunfo — ver `~/.claude/commands/`).
-
-## Regras de comportamento
-
-1. Nunca gerar conteúdo genérico. Tudo baseado nos arquivos desta pasta.
-2. Se faltar informação, sinalizar com `[PREENCHER]`.
-3. Não inventar, não presumir. Se o contexto não estiver nos arquivos, perguntar.
-4. Cada sessão deve deixar o sistema mais inteligente.
-5. Registrar decisões em `memory/decisoes.md` e campanhas em `memory/campanhas.md`.
+1. Ao trabalhar em algo de uma empresa específica, leia primeiro o `CLAUDE.md` (se existir) e os arquivos de contexto dentro da pasta dela.
+2. Arquivos novos de uma empresa vão **dentro da pasta dela** — nunca na raiz.
+3. Agentes, skills e comandos em `.claude/` são compartilhados por todas as empresas — mantê-los genéricos, sem calibrar para uma empresa específica.
+4. Conteúdo aplicável a todas as empresas vai em `/Geral`.
