@@ -1,0 +1,12 @@
+Relatório de campanha
+1 de junho de 2026 - 30 de junho de 2026
+Status da campanha,Campanha,Orçamento,Nome do orçamento,Tipo de orçamento,Código da moeda,Status,Motivos do status,Pontuação de otimização,Tipo de campanha,Impr.,Interações,Taxa de interação,Custo médio,Custo,Cliques,CTR,Tipo de estratégia de lances,Taxa de conv.,Conversões,Custo / conv.
+Ativada,[PESQUISA] [INTERNACIONAL],"100,00", --,Diário,BRL,Qualificado,, --,Pesquisa,2,0,"0,00%",0,"0,00",0,"0,00%",Maximizar as conversões,"0,00%","0,00","0,00"
+Pausada,Website traffic-Performance Max- teste,"94,28", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos foi reprovada, --,Performance Max,0,0, --,0,"0,00",0, --,Maximizar as conversões,"0,00%","0,00","0,00"
+Pausada,[PMax] [Exterior],"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos está limitada pela política, --,Performance Max,0,0, --,0,"0,00",0, --,Maximizar as conversões,"0,00%","0,00","0,00"
+Pausada,Pesquisa - Exterior,"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos anúncios foi limitada pela política, --,Pesquisa,0,0, --,0,"0,00",0, --,Maximizar as conversões,"0,00%","0,00","0,00"
+Pausada,Campaign #1,"56,00", --,Diário,BRL,Pausado,campanha pausada, --,Performance Max,0,0, --,0,"0,00",0, --,Maximizar as conversões,"0,00%","0,00","0,00"
+Total: Campanhas, --, --, --, --,BRL, --,, --, --,2,0,"0,00%",0,"0,00",0,"0,00%", --,"0,00%","0,00","0,00"
+Total: Conta,,,,,BRL,,,,,2,0,"0,00%",0,"0,00",0,"0,00%",,"0,00%","0,00","0,00"
+Total: Performance Max,,,,,BRL,,,,Performance Max,0,0, --,0,"0,00",0, --,,"0,00%","0,00","0,00"
+Total: Pesquisa,,,,,BRL,,,,Pesquisa,2,0,"0,00%",0,"0,00",0,"0,00%",,"0,00%","0,00","0,00"

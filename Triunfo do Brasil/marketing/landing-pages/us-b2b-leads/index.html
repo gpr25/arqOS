@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Meta Pixel — MUST stay above GTM. The shared GTM container injects other
+     Meta pixels onto this page, and whichever pixel initializes first "wins"
+     the fbevents send cycle — if ours loads after GTM's, its events get counted
+     but never sent over the network (confirmed by testing). Kept hardcoded here
+     (not inside GTM) so it stays isolated to this LP. The Lead event fires from
+     script.js on confirmed form success, sharing an event_id with the
+     Conversions API (CAPI) for deduplication. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '903988453820396');
+// trackSingle targets OUR pixel explicitly so nothing leaks into the GTM pixels.
+fbq('trackSingle', '903988453820396', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=903988453820396&ev=PageView&noscript=1" alt=""/></noscript>
+<!-- End Meta Pixel -->
+
+<!-- Attribution capture (UTM / gclid / fbclid) — runs before GTM so the data
+     is on the dataLayer for the initial page view. Stored per browser session
+     (first touch wins) so the source survives navigation before the form is
+     sent. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  (function () {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
+      var incoming = {};
+      var hasUtm = false;
+      keys.forEach(function (k) {
+        var v = params.get(k);
+        if (v) { incoming[k] = v; hasUtm = true; }
+      });
+      var existing = null;
+      try { existing = JSON.parse(sessionStorage.getItem('triunfo_attribution')); } catch (e) {}
+      if (!existing) {
+        incoming.landing_page = window.location.pathname;
+        incoming.referrer = document.referrer || '';
+        try { sessionStorage.setItem('triunfo_attribution', JSON.stringify(incoming)); } catch (e) {}
+        existing = incoming;
+      }
+      window.dataLayer.push({ event: 'attribution_ready', attribution: existing });
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGZ488V');</script>
+<!-- End Google Tag Manager -->
+
+<title>Organic Yerba Mate Supplier for Food &amp; Beverage | Triunfo</title>
+<meta name="description" content="Bulk organic yerba mate leaves and extracts for food, beverage and nutraceutical brands. FSSC 22000, Rainforest Alliance, Fair for Life and Kosher certified. Request a quote.">
+<link rel="icon" type="image/png" href="assets/img/leaf-icon.png">
+<meta property="og:title" content="Organic Yerba Mate Supplier for Food & Beverage | Triunfo">
+<meta property="og:description" content="Bulk organic yerba mate leaves and extracts, shade-grown for 50+ years in Brazil's native Araucaria forest. FSSC 22000, Rainforest Alliance, Fair for Life and Kosher certified.">
+<meta property="og:image" content="assets/img/triunfo-logo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Organic Yerba Mate Supplier for Food & Beverage | Triunfo">
+<meta name="twitter:description" content="Bulk organic yerba mate leaves and extracts, shade-grown in Brazil's native Araucaria forest.">
+<meta name="twitter:image" content="assets/img/triunfo-logo.png">
+<link rel="preload" href="assets/fonts/Panton-BlackCaps.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/BioSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Triunfo",
+  "url": "https://triunfodobrasil.com/",
+  "logo": "assets/img/triunfo-logo.png",
+  "sameAs": [
+    "https://triunfodobrasil.com/",
+    "https://www.instagram.com/triunfodobrasil/"
+  ],
+  "description": "Brazilian producer and exporter of certified organic yerba mate leaves and extracts for the food, beverage and nutraceutical industries.",
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "FSSC 22000" },
+    { "@type": "EducationalOccupationalCredential", "name": "Rainforest Alliance" },
+    { "@type": "EducationalOccupationalCredential", "name": "Fair for Life" },
+    { "@type": "EducationalOccupationalCredential", "name": "Kosher" },
+    { "@type": "EducationalOccupationalCredential", "name": "ESG Seal (Sistema Fiep/Sesi)" },
+    { "@type": "EducationalOccupationalCredential", "name": "IG-Mathe Geographic Indication" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What forms of yerba mate do you supply?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Processed leaves and extracts, available in dry and liquid form." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we request a sample before placing an order?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Submit the quote request form with your product interest and our export team will follow up with next steps for samples and documentation." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your minimum order quantity?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Minimum order quantity depends on the product format (leaves, dry extract or liquid extract) and destination. Share your target volume and our export team will confirm an exact number." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which countries do you currently export to?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Triunfo has exported for over 20 years to buyers across five continents, including the United States and Germany." }
+    },
+    {
+      "@type": "Question",
+      "name": "What certifications and documentation can you provide?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FSSC 22000, Rainforest Alliance, Fair for Life, Kosher, Organic certification, ESG Seal and IG-Mathe. Full documentation is available on request during the quote process." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does shipping typically take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lead times depend on destination and order volume. Our export team will confirm exact timelines once we understand your order." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZ488V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<a class="skip-link" href="#rfq-form">Skip to quote request form</a>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="header-logo">
+      <img src="assets/img/triunfo-logo-wordmark.png" alt="Triunfo — Organic Yerba Mate" width="212" height="48">
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="#certifications">Certifications</a>
+      <a href="#products">Products</a>
+      <a href="#origin">Our Origin</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#rfq-form" class="btn btn-primary btn-small header-cta">Request a Quote</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-leaf-decor" aria-hidden="true" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100,12 C135,15 165,45 170,90 C173,125 155,158 128,175 C118,181 108,188 100,197 C92,188 82,181 72,175 C45,158 27,125 30,90 C35,45 65,15 100,12 Z" fill="#B8C037"/>
+    </svg>
+    <div class="wrap hero-inner">
+      <p class="eyebrow reveal">Organic Yerba Mate Supplier · Exporting 20+ Years · 5 Continents</p>
+      <h1 class="reveal">The Organic Yerba Mate Supplier Procurement Teams Trust</h1>
+      <p class="hero-sub reveal">Bulk leaves and extracts for food, beverage and nutraceutical brands — shade-grown for 50+ years under native Araucaria forest in Paraná, Brazil. Fully certified. Traceable from forest to shipment.</p>
+      <div class="hero-actions reveal">
+        <a href="#rfq-form" class="btn btn-primary">Request Samples &amp; Specs</a>
+      </div>
+      <p class="hero-micro reveal">Trusted certification stack: FSSC 22000 · Rainforest Alliance · Fair for Life · Kosher · Organic</p>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar" aria-label="Certifications overview">
+    <div class="wrap trust-bar-inner">
+      <span>FSSC 22000</span>
+      <span>Rainforest Alliance</span>
+      <span>Fair for Life</span>
+      <span>Kosher</span>
+      <span>Certified Organic</span>
+      <span>ESG Seal</span>
+      <span>IG&#8209;Mathe</span>
+    </div>
+  </section>
+
+  <!-- WHY TRIUNFO -->
+  <section class="section why" id="why">
+    <div class="wrap">
+      <h2 class="reveal">Why Sourcing Teams Choose Triunfo</h2>
+      <p class="section-lead reveal">A single family, five decades, one crop grown the way it always has been — under native forest canopy, without shortcuts.</p>
+      <div class="stat-grid">
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count-to="50" data-suffix="+">0+</span>
+          <span class="stat-label">Years producing organic yerba mate as a family-run company</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count-to="20" data-suffix="+">0+</span>
+          <span class="stat-label">Years exporting to industrial and commercial buyers worldwide</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count-to="5" data-suffix="">0</span>
+          <span class="stat-label">Continents currently supplied</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-number" data-count-to="100" data-suffix="%">0%</span>
+          <span class="stat-label">Organic production, shade-grown under native Araucaria forest</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section products" id="products">
+    <div class="wrap">
+      <h2 class="reveal">Two Ways to Source Yerba Mate</h2>
+      <p class="section-lead reveal">Whichever form your formulation needs, it starts from the same certified organic leaf.</p>
+      <div class="product-grid">
+        <article class="product-card reveal">
+          <div class="product-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C16 3 20 7 20 12C20 17 16 20 12 22C8 20 4 17 4 12C4 7 8 3 12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M12 5V19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Processed Leaves</h3>
+          <p>Traditionally processed organic yerba mate leaves, suited for tea blends, beverage bases and food applications that call for the whole-leaf character of mate. Format and cut confirmed per application.</p>
+          <a href="#rfq-form" class="link-cta">Ask about specs <span class="link-cta-arrow">&rarr;</span></a>
+        </article>
+        <article class="product-card reveal">
+          <div class="product-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C12 3 6 10.5 6 15A6 6 0 0 0 18 15C18 10.5 12 3 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9 15a3 3 0 0 0 3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Extracts — Dry &amp; Liquid</h3>
+          <p>Concentrated organic yerba mate extracts, dry or liquid, formulated for beverage, functional food and nutraceutical applications that need consistency at scale. Particle size, solubility and extraction ratio confirmed per application.</p>
+          <a href="#rfq-form" class="link-cta">Ask about specs <span class="link-cta-arrow">&rarr;</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORIGIN / SUSTAINABILITY STORY -->
+  <section class="section origin" id="origin">
+    <div class="wrap origin-inner">
+      <div class="origin-copy">
+        <p class="eyebrow reveal">Our Origin</p>
+        <h2 class="reveal">Cultivated Under 50&#8209;Year&#8209;Old Araucaria Trees in Paraná</h2>
+        <p class="origin-flourish reveal">grown, not rushed.</p>
+        <p class="reveal">Our yerba mate grows in the shade of native Araucaria forest — the same landscape our family has worked for over 50 years. Nothing artificial goes into the soil, and nothing about the process has been rushed to fit a faster harvest cycle.</p>
+        <p class="reveal">That patience is also why Triunfo holds one of the more complete certification stacks in the category: food safety, environmental stewardship, social responsibility and regional origin, all verified by independent bodies — not self-declared.</p>
+        <p class="reveal">For a sourcing team, that also means something practical: one controlled origin, one traceable chain — not a blend of unverified sources.</p>
+      </div>
+      <div class="origin-visual reveal" aria-hidden="true">
+        <svg class="origin-visual-leaf" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Stylized yerba mate leaf: obovate blade tapering to a short stem, pinnate venation -->
+          <path class="leaf-blade" d="M100,12 C135,15 165,45 170,90 C173,125 155,158 128,175 C118,181 108,188 100,197 C92,188 82,181 72,175 C45,158 27,125 30,90 C35,45 65,15 100,12 Z" fill="#B8C037"/>
+          <path class="vein-path vein-mid" d="M100,26 L100,184" stroke="#132E14" stroke-width="3" stroke-linecap="round" pathLength="1"/>
+          <path class="vein-path vein-lat" d="M100,50 L146,33" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:120ms"/>
+          <path class="vein-path vein-lat" d="M100,50 L54,33" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:120ms"/>
+          <path class="vein-path vein-lat" d="M100,80 L152,64" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:220ms"/>
+          <path class="vein-path vein-lat" d="M100,80 L48,64" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:220ms"/>
+          <path class="vein-path vein-lat" d="M100,110 L148,98" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:320ms"/>
+          <path class="vein-path vein-lat" d="M100,110 L52,98" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:320ms"/>
+          <path class="vein-path vein-lat" d="M100,138 L134,130" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:420ms"/>
+          <path class="vein-path vein-lat" d="M100,138 L66,130" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:420ms"/>
+          <path class="vein-path vein-lat" d="M100,162 L119,157" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:520ms"/>
+          <path class="vein-path vein-lat" d="M100,162 L81,157" stroke="#132E14" stroke-width="2" stroke-linecap="round" pathLength="1" style="animation-delay:520ms"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section certifications" id="certifications">
+    <div class="wrap">
+      <h2 class="reveal">A Certification Stack Built for Procurement &amp; QA Teams</h2>
+      <p class="section-lead reveal">Every certification below is third-party verified — documentation available on request.</p>
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <h3>FSSC 22000</h3>
+          <p>Global food safety certification covering our entire extract production process.</p>
+        </div>
+        <div class="cert-card reveal">
+          <h3>Rainforest Alliance</h3>
+          <p>Sustainable agriculture standard — reduced use of fertilizers and pesticides, pollution prevention, proper waste management.</p>
+        </div>
+        <div class="cert-card reveal">
+          <h3>Fair for Life</h3>
+          <p>Social responsibility certification held since 2006, covering fair labor practices across our supply chain.</p>
+        </div>
+        <div class="cert-card reveal">
+          <h3>Kosher</h3>
+          <p>Held since 2009 — ingredients, facilities and production comply with Kashrut dietary law.</p>
+        </div>
+        <div class="cert-card reveal">
+          <h3>Certified Organic</h3>
+          <p>Grown and processed without pesticides, synthetic fertilizers or chemical inputs — equivalency documentation (NOP or destination-market standard) provided during the quote process.</p>
+        </div>
+        <div class="cert-card reveal">
+          <h3>ESG Seal</h3>
+          <p>Environmental, social and governance certification (Sistema Fiep/Sesi) covering our full supply chain.</p>
+        </div>
+        <div class="cert-card reveal">
+          <h3>IG&#8209;Mathe</h3>
+          <p>Geographic Indication for native shade-grown yerba mate from São João do Triunfo — verified origin and tradition.</p>
+        </div>
+        <a href="#rfq-form" class="cert-card cert-card-cta reveal">
+          <h3>Need Full Documentation?</h3>
+          <p>Request our compliance package — certificates and equivalency documents for your quality team.</p>
+          <span class="link-cta-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="wrap wrap-narrow">
+      <h2 class="reveal">Questions From Procurement &amp; R&amp;D Teams</h2>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>What forms of yerba mate do you supply?</summary>
+          <p>Processed leaves and extracts, available in dry and liquid form. Tell us your application in the form below and our export team will confirm what fits best.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Can we request a sample before placing an order?</summary>
+          <p>Yes. Submit the form below with your product interest and our export team will follow up with next steps for samples and documentation.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What is your minimum order quantity?</summary>
+          <p>MOQ depends on product format (leaves, dry extract or liquid extract) and destination — packaging and logistics differ by format. Share your target volume in the form and we'll reply with an exact number within 1–2 business days.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Which countries do you currently export to?</summary>
+          <p>Triunfo has exported for over 20 years to buyers across five continents. Reach out with your destination country and we'll confirm logistics.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What certifications and documentation can you provide?</summary>
+          <p>FSSC 22000, Rainforest Alliance, Fair for Life, Kosher, Organic certification, ESG Seal and IG-Mathe. Full documentation is available on request during the quote process.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>How long does shipping typically take?</summary>
+          <p>Lead time depends on destination, order volume and product format — ocean freight and documentation requirements vary by country. Our export team will confirm exact timelines as soon as we know where your order is headed.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA + FORM -->
+  <section class="section rfq" id="rfq-form">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow reveal light">Request a Quote</p>
+      <h2 class="reveal light">Let's Talk About Your Yerba Mate Sourcing</h2>
+      <p class="section-lead reveal light">Fill in a few details and our export team will follow up within 1–2 business days.</p>
+
+      <form
+        class="rfq-form reveal"
+        name="us-lead-form"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="company-website"
+        id="rfqForm"
+      >
+        <input type="hidden" name="form-name" value="us-lead-form">
+        <p class="hp-field"><label>Don't fill this out if you're human: <input name="company-website" /></label></p>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="Full Name" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" name="Company Name" required autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Business Email *</label>
+            <input type="email" id="email" name="Business Email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="country">Country *</label>
+            <select id="country" name="Country" required autocomplete="country-name">
+              <option value="" disabled selected>Select your country</option>
+              <optgroup label="Primary markets">
+                <option value="United States">United States</option>
+                <option value="Germany">Germany</option>
+              </optgroup>
+              <optgroup label="Other countries">
+                <option value="Canada">Canada</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="France">France</option>
+                <option value="Japan">Japan</option>
+                <option value="Other">Other</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field" id="countryOtherField" hidden>
+          <label for="countryOther">Please specify your country *</label>
+          <input type="text" id="countryOther" name="Country (Other)" autocomplete="off">
+        </div>
+
+        <div class="form-field">
+          <label for="interest">Product Interest *</label>
+          <select id="interest" name="Product Interest" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Processed Leaves">Processed Leaves</option>
+            <option value="Dry Extract">Dry Extract</option>
+            <option value="Liquid Extract">Liquid Extract</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Estimated Volume / Additional Details</label>
+          <textarea id="message" name="Message" rows="4" placeholder="e.g. target volume, application, timeline"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-large" id="rfqSubmit">
+          <span class="btn-spinner" aria-hidden="true"></span>
+          <span class="btn-label">Request Quote &amp; Samples</span>
+        </button>
+        <p class="form-micro" id="formError" hidden>Something went wrong sending your request — please try again, or email us directly.</p>
+        <p class="form-micro">Used only to respond to this request — no mailing lists.</p>
+      </form>
+
+      <div class="form-success" id="formSuccess" hidden>
+        <div class="form-success-icon" aria-hidden="true">✓</div>
+        <h3>Thank you — your request is in.</h3>
+        <p>Our export team will reach out within 1–2 business days.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <img src="assets/img/triunfo-logo-wordmark-white.png" alt="Triunfo — Organic Yerba Mate" width="173" height="40" class="footer-logo">
+    <p class="footer-certs">FSSC 22000 · Rainforest Alliance · Fair for Life · Kosher · Organic · ESG · IG&#8209;Mathe</p>
+    <p class="footer-links">
+      <a href="https://triunfodobrasil.com/" target="_blank" rel="noopener">triunfodobrasil.com</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.instagram.com/triunfodobrasil/" target="_blank" rel="noopener">Instagram</a>
+    </p>
+    <p class="footer-copy">&copy; <span id="year"></span> Triunfo do Brasil. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
