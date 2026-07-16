@@ -40,13 +40,15 @@ Arquétipos de marca: **Criador** (inovação, visionária, transforma conceitos
 
 **Execução:** `copywriter`, `designer`, `gestor-trafego`, `seo-especialista`, `ux-ui-especialista`, `agente-atendimento`, `agente-conteudo`, `agente-dados`
 
+**Global (todas as empresas de Gabriel, não específico da Triunfo):** `analisador-criativos` — configurado em `~/.claude/agents/`, disponível em qualquer projeto.
+
 **Especializado imobiliário** (não aplicável ao negócio da Triunfo, mantidos por padrão do ArqOS): `agente-lancamento`, `agente-documentos`, `agente-financeiro`
 
 **Prioritários para o foco atual (30 dias — geração de leads via mídia paga):** `gestor-trafego` e `agente-marketing`.
 
 ## Comandos disponíveis
 
-Ver lista completa em `README.md` do ArqOS — destaque para `/gerar-copy`, `/anuncio-google`, `/gerar-campanha`, `/relatorio-ads` e `/analisar-dados`, mais relevantes para a operação de mídia paga da Triunfo.
+Ver lista completa em `README.md` do ArqOS — destaque para `/gerar-copy`, `/anuncio-google`, `/gerar-campanha`, `/relatorio-ads` e `/analisar-dados`, mais relevantes para a operação de mídia paga da Triunfo. `/analisar-criativo` também está disponível (comando global, não específico da Triunfo — ver `~/.claude/commands/`).
 
 ## Regras de comportamento
 

@@ -38,7 +38,7 @@ Para montar a LP, preciso confirmar:
    (arquivo do projeto ou você me passando agora).
 5. Campos do formulário: quais dados precisa capturar do lead?
 6. Destino do lead: só e-mail? Google Sheets? CRM específico? Isso muda a
-   arquitetura de roteamento (ver Fase 8).
+   arquitetura de roteamento (ver Fase 9).
 7. Hospedagem: Netlify de novo, ou outra plataforma?
 8. Tem fotografia/vídeo real disponível, ou a LP deve ser 100% tipografia/cor/
    forma (nunca gerar foto falsa de produto/instalação/pessoas)?
@@ -148,7 +148,20 @@ Form no HTML sempre com `data-netlify="true"`, `name` único, honeypot (`netlify
 
 ---
 
-## 9. Fase 8 — Roteamento de leads
+## 9. Fase 8 — Rastreamento (GTM + GA4 + UTM), se o usuário pedir
+
+Só entrar nessa fase se o usuário pedir rastreamento explicitamente (não é padrão de toda LP) — quando pedir, seguir a arquitetura GTM-first (GA4/Ads configurados dentro do GTM, não hardcoded no HTML), com captura de UTM/gclid/fbclid em `sessionStorage` (first-touch por sessão) e um evento custom no `dataLayer` (ex. `generate_lead`) disparado só no sucesso confirmado do envio — não no clique do botão. Referência completa de código em `marketing/landing-pages/us-b2b-leads/index.html`/`script.js`.
+
+**Gotchas descobertos na prática (LP dos EUA, 2026-07-15) — checar antes de sair depurando do zero:**
+
+- **Contêiner GTM compartilhado com outro site contamina os dados.** Se o container também está instalado num site diferente (institucional, outra LP), qualquer tag com gatilho "All Pages" dispara lá também. Sintoma: hits/page views de páginas que não são a LP aparecendo na propriedade GA4 nova. Correção: gatilho de "Visualização de página" com condição de **Nome do host** (ex. contém o domínio específico da LP), nunca "All Pages", quando o container é compartilhado. Se a contaminação incomodar demais pra depurar, considerar criar um contêiner GTM novo dedicado só à LP.
+- **Atraso de relatório do GA4 é normal, não é bug — mas confunde muito quem nunca viu isso.** Numa propriedade nova, os relatórios padrão (Admin → Eventos, Tempo Real "Eventos recentes" nos Relatórios de engajamento) podem levar horas pra refletir um evento que já está confirmadamente chegando. Ordem de diagnóstico do mais rápido pro mais lento: **GTM Preview → GA4 Relatórios → Tempo Real → GA4 DebugView → Admin → Eventos (mais lento)**. Sempre checar Tempo Real antes de escalar como "não está funcionando".
+- **Não existe atalho pra marcar um evento como "evento-chave" (conversão) antes dele aparecer em Admin → Eventos → Eventos recentes.** Não tem botão de "criar evento-chave manualmente" — é preciso esperar o evento ser processado e aparecer na lista pra então marcar. Não prometer esse atalho ao usuário sem confirmar antes.
+- **Consent Mode / banner GDPR:** se o mercado-alvo inclui UE (ex. Alemanha), rastrear sem consentimento é uma exposição legal — sinalizar isso explicitamente e não assumir que o usuário já decidiu ignorar; se ele decidir adiar mesmo assim, documentar como pendência conhecida no README, não deixar implícito.
+
+---
+
+## 10. Fase 9 — Roteamento de leads
 
 Perguntar (já coberto na Fase 1, pergunta 6) qual o destino. Dois padrões prontos:
 
@@ -163,7 +176,7 @@ Perguntar (já coberto na Fase 1, pergunta 6) qual o destino. Dois padrões pron
 
 ---
 
-## 10. Fase 9 — Testar antes de considerar pronto
+## 11. Fase 10 — Testar antes de considerar pronto
 
 Nunca reportar como concluído sem testar de verdade no navegador (Playwright). Rotina mínima:
 
@@ -179,14 +192,14 @@ Nunca reportar como concluído sem testar de verdade no navegador (Playwright). 
 
 ---
 
-## 11. Fase 10 — Revisão multiagente (opcional, mas recomendado antes de considerar "pronto pra tráfego")
+## 12. Fase 11 — Revisão multiagente (opcional, mas recomendado antes de considerar "pronto pra tráfego")
 
 Se o usuário topar, soltar em paralelo (background) agentes especializados só pra trazer achados — não editar nada nessa passada:
 
 - `copywriter` — disponível direto como `subagent_type`.
 - SEO / UX-UI / designer — **não estão disponíveis como `subagent_type` direto neste projeto** (só copywriter, agente-comercial, agente-estrategico, agente-marketing, claude, claude-code-guide, Explore, general-purpose, Plan, statusline-setup — conferir lista atual antes de assumir, pode mudar). Pra esses, usar `general-purpose` e instruir explicitamente o agente a **ler o arquivo de persona correspondente primeiro** (`.claude/agents/seo-especialista.md`, `.claude/agents/ux-ui-especialista.md`, `.claude/agents/designer.md`) e ignorar o que for específico de imobiliário nesses arquivos.
 - Dar contexto completo em cada prompt (o agente não vê esta conversa) — negócio, o que a LP faz, arquivos já criados, e pedir lista priorizada de achados, nunca edição de arquivo.
-- Depois, implementar o que fizer sentido e testar de novo (Fase 9) — mudança em volume assim quase sempre introduz pelo menos um bug pequeno (ex.: grid desbalanceado, contraste, ícone quebrado).
+- Depois, implementar o que fizer sentido e testar de novo (Fase 10) — mudança em volume assim quase sempre introduz pelo menos um bug pequeno (ex.: grid desbalanceado, contraste, ícone quebrado).
 
 ---
 
@@ -200,7 +213,8 @@ Se o usuário topar, soltar em paralelo (background) agentes especializados só 
 - [ ] `prefers-reduced-motion` respeitado em toda animação
 - [ ] Testado em mobile
 - [ ] Testado em produção (não só localhost) depois do deploy
+- [ ] Se houver rastreamento: confirmado via GA4 Tempo Real (não só Preview/DebugView), e checado se o gatilho está restrito por hostname quando o contêiner GTM é compartilhado com outro site
 - [ ] README da LP documentando pendências reais (domínio, selo específico, fotografia, prova social) — nunca esconder o que falta
 - [ ] `memory/decisoes.md` atualizado com o que foi decidido e qualquer gotcha novo encontrado
 
-Perguntar ao final: quer que eu já solte a revisão multiagente (Fase 10), ou prefere revisar você mesmo antes?
+Perguntar ao final: quer que eu já solte a revisão multiagente (Fase 11), ou prefere revisar você mesmo antes?

@@ -1,0 +1,179 @@
+- generic [active] [ref=e1]:
+  - link "Skip to quote request form" [ref=e2] [cursor=pointer]:
+    - /url: "#rfq-form"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+        - img "Triunfo — Organic Yerba Mate" [ref=e6]
+      - navigation "Primary" [ref=e7]:
+        - link "Certifications" [ref=e8] [cursor=pointer]:
+          - /url: "#certifications"
+        - link "Products" [ref=e9] [cursor=pointer]:
+          - /url: "#products"
+        - link "Our Origin" [ref=e10] [cursor=pointer]:
+          - /url: "#origin"
+        - link "FAQ" [ref=e11] [cursor=pointer]:
+          - /url: "#faq"
+      - link "Request a Quote" [ref=e12] [cursor=pointer]:
+        - /url: "#rfq-form"
+  - main [ref=e13]:
+    - generic [ref=e17]:
+      - paragraph [ref=e18]: Organic Yerba Mate Supplier · Exporting 20+ Years · 5 Continents
+      - heading "The Organic Yerba Mate Supplier Procurement Teams Trust" [level=1] [ref=e19]
+      - paragraph [ref=e20]: Bulk leaves and extracts for food, beverage and nutraceutical brands — shade-grown for 50+ years under native Araucaria forest in Paraná, Brazil. Fully certified. Traceable from forest to shipment.
+      - link "Request Samples & Specs" [ref=e22] [cursor=pointer]:
+        - /url: "#rfq-form"
+      - paragraph [ref=e23]: "Trusted certification stack: FSSC 22000 · Rainforest Alliance · Fair for Life · Kosher · Organic"
+    - region "Certifications overview" [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: FSSC 22000
+        - generic [ref=e27]: Rainforest Alliance
+        - generic [ref=e28]: Fair for Life
+        - generic [ref=e29]: Kosher
+        - generic [ref=e30]: Certified Organic
+        - generic [ref=e31]: ESG Seal
+        - generic [ref=e32]: IG‑Mathe
+    - generic [ref=e34]:
+      - heading "Why Sourcing Teams Choose Triunfo" [level=2] [ref=e35]
+      - paragraph [ref=e36]: A single family, five decades, one crop grown the way it always has been — under native forest canopy, without shortcuts.
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]: 0+
+          - text: Years producing organic yerba mate as a family-run company
+        - generic [ref=e40]:
+          - generic [ref=e41]: 0+
+          - text: Years exporting to industrial and commercial buyers worldwide
+        - generic [ref=e42]:
+          - generic [ref=e43]: "0"
+          - text: Continents currently supplied
+        - generic [ref=e44]:
+          - generic [ref=e45]: 0%
+          - text: Organic production, shade-grown under native Araucaria forest
+    - generic [ref=e47]:
+      - heading "Two Ways to Source Yerba Mate" [level=2] [ref=e48]
+      - paragraph [ref=e49]: Whichever form your formulation needs, it starts from the same certified organic leaf.
+      - generic [ref=e50]:
+        - article [ref=e51]:
+          - heading "Processed Leaves" [level=3] [ref=e55]
+          - paragraph [ref=e56]: Traditionally processed organic yerba mate leaves, suited for tea blends, beverage bases and food applications that call for the whole-leaf character of mate. Format and cut confirmed per application.
+          - link "Ask about specs →" [ref=e57] [cursor=pointer]:
+            - /url: "#rfq-form"
+            - text: Ask about specs
+            - generic [ref=e58]: →
+        - article [ref=e59]:
+          - heading "Extracts — Dry & Liquid" [level=3] [ref=e64]
+          - paragraph [ref=e65]: Concentrated organic yerba mate extracts, dry or liquid, formulated for beverage, functional food and nutraceutical applications that need consistency at scale. Particle size, solubility and extraction ratio confirmed per application.
+          - link "Ask about specs →" [ref=e66] [cursor=pointer]:
+            - /url: "#rfq-form"
+            - text: Ask about specs
+            - generic [ref=e67]: →
+    - generic [ref=e70]:
+      - paragraph [ref=e71]: Our Origin
+      - heading "Cultivated Under 50‑Year‑Old Araucaria Trees in Paraná" [level=2] [ref=e72]
+      - paragraph [ref=e73]: grown, not rushed.
+      - paragraph [ref=e74]: Our yerba mate grows in the shade of native Araucaria forest — the same landscape our family has worked for over 50 years. Nothing artificial goes into the soil, and nothing about the process has been rushed to fit a faster harvest cycle.
+      - paragraph [ref=e75]: "That patience is also why Triunfo holds one of the more complete certification stacks in the category: food safety, environmental stewardship, social responsibility and regional origin, all verified by independent bodies — not self-declared."
+      - paragraph [ref=e76]: "For a sourcing team, that also means something practical: one controlled origin, one traceable chain — not a blend of unverified sources."
+    - generic [ref=e92]:
+      - heading "A Certification Stack Built for Procurement & QA Teams" [level=2] [ref=e93]
+      - paragraph [ref=e94]: Every certification below is third-party verified — documentation available on request.
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - heading "FSSC 22000" [level=3] [ref=e97]
+          - paragraph [ref=e98]: Global food safety certification covering our entire extract production process.
+        - generic [ref=e99]:
+          - heading "Rainforest Alliance" [level=3] [ref=e100]
+          - paragraph [ref=e101]: Sustainable agriculture standard — reduced use of fertilizers and pesticides, pollution prevention, proper waste management.
+        - generic [ref=e102]:
+          - heading "Fair for Life" [level=3] [ref=e103]
+          - paragraph [ref=e104]: Social responsibility certification held since 2006, covering fair labor practices across our supply chain.
+        - generic [ref=e105]:
+          - heading "Kosher" [level=3] [ref=e106]
+          - paragraph [ref=e107]: Held since 2009 — ingredients, facilities and production comply with Kashrut dietary law.
+        - generic [ref=e108]:
+          - heading "Certified Organic" [level=3] [ref=e109]
+          - paragraph [ref=e110]: Grown and processed without pesticides, synthetic fertilizers or chemical inputs — equivalency documentation (NOP or destination-market standard) provided during the quote process.
+        - generic [ref=e111]:
+          - heading "ESG Seal" [level=3] [ref=e112]
+          - paragraph [ref=e113]: Environmental, social and governance certification (Sistema Fiep/Sesi) covering our full supply chain.
+        - generic [ref=e114]:
+          - heading "IG‑Mathe" [level=3] [ref=e115]
+          - paragraph [ref=e116]: Geographic Indication for native shade-grown yerba mate from São João do Triunfo — verified origin and tradition.
+        - link "Need Full Documentation? Request our compliance package — certificates and equivalency documents for your quality team. →" [ref=e117] [cursor=pointer]:
+          - /url: "#rfq-form"
+          - heading "Need Full Documentation?" [level=3] [ref=e118]
+          - paragraph [ref=e119]: Request our compliance package — certificates and equivalency documents for your quality team.
+          - generic [ref=e120]: →
+    - generic [ref=e122]:
+      - heading "Questions From Procurement & R&D Teams" [level=2] [ref=e123]
+      - generic [ref=e124]:
+        - group [ref=e125]:
+          - generic "What forms of yerba mate do you supply? +" [ref=e126] [cursor=pointer]
+        - group [ref=e127]:
+          - generic "Can we request a sample before placing an order? +" [ref=e128] [cursor=pointer]
+        - group [ref=e129]:
+          - generic "What is your minimum order quantity? +" [ref=e130] [cursor=pointer]
+        - group [ref=e131]:
+          - generic "Which countries do you currently export to? +" [ref=e132] [cursor=pointer]
+        - group [ref=e133]:
+          - generic "What certifications and documentation can you provide? +" [ref=e134] [cursor=pointer]
+        - group [ref=e135]:
+          - generic "How long does shipping typically take? +" [ref=e136] [cursor=pointer]
+    - generic [ref=e138]:
+      - paragraph [ref=e139]: Request a Quote
+      - heading "Let's Talk About Your Yerba Mate Sourcing" [level=2] [ref=e140]
+      - paragraph [ref=e141]: Fill in a few details and our export team will follow up within 1–2 business days.
+      - generic [ref=e142]:
+        - paragraph [ref=e143]:
+          - generic [ref=e144]:
+            - text: "Don't fill this out if you're human:"
+            - textbox "Don't fill this out if you're human:" [ref=e145]
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - generic [ref=e148]: Full Name *
+            - textbox "Full Name *" [ref=e149]
+          - generic [ref=e150]:
+            - generic [ref=e151]: Company Name *
+            - textbox "Company Name *" [ref=e152]
+        - generic [ref=e153]:
+          - generic [ref=e154]:
+            - generic [ref=e155]: Business Email *
+            - textbox "Business Email *" [ref=e156]
+          - generic [ref=e157]:
+            - generic [ref=e158]: Country *
+            - combobox "Country *" [ref=e159]:
+              - option "Select your country" [disabled] [selected]
+              - option "United States"
+              - option "Germany"
+              - option "Canada"
+              - option "United Kingdom"
+              - option "Netherlands"
+              - option "France"
+              - option "Japan"
+              - option "Other"
+        - generic [ref=e160]:
+          - generic [ref=e161]: Product Interest *
+          - combobox "Product Interest *" [ref=e162]:
+            - option "Select an option" [disabled] [selected]
+            - option "Processed Leaves"
+            - option "Dry Extract"
+            - option "Liquid Extract"
+            - option "Not sure yet"
+        - generic [ref=e163]:
+          - generic [ref=e164]: Estimated Volume / Additional Details
+          - textbox "Estimated Volume / Additional Details" [ref=e165]:
+            - /placeholder: e.g. target volume, application, timeline
+        - button "Request Quote & Samples" [ref=e166] [cursor=pointer]
+        - paragraph [ref=e168]: Used only to respond to this request — no mailing lists.
+  - contentinfo [ref=e169]:
+    - generic [ref=e170]:
+      - img "Triunfo — Organic Yerba Mate" [ref=e171]
+      - paragraph [ref=e172]: FSSC 22000 · Rainforest Alliance · Fair for Life · Kosher · Organic · ESG · IG‑Mathe
+      - paragraph [ref=e173]:
+        - link "triunfodobrasil.com" [ref=e174] [cursor=pointer]:
+          - /url: https://triunfodobrasil.com/
+        - text: ·
+        - link "Instagram" [ref=e175] [cursor=pointer]:
+          - /url: https://www.instagram.com/triunfodobrasil/
+      - paragraph [ref=e176]: © 2026 Triunfo do Brasil. All rights reserved.
