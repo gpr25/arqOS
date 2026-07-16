@@ -1,22 +1,20 @@
 # ─────────────────────────────────────────────────────────
-# Arquivos criados pelo /instalar-self — específicos de cada negócio
-# Ignorados para que git pull funcione limpo em atualizações futuras
+# Grupo Gadens — o que fica FORA do git
+# Política (16/07/2026): versionar estrutura e docs de trabalho;
+# fora: binários pesados de design, financeiro e docs sensíveis.
 # ─────────────────────────────────────────────────────────
 
-core/
-company/
-products/
-sales/
-marketing/
-memory/
-operations/
-playbooks/
-roadmap/
-logs/
+# Binários pesados de design (fontes editáveis — viveem no PC/backup, não no git)
+*.psd
+*.ai
+**/branding/REBRANDING/EDITÁVEIS/
 
-# Identidade visual do usuário (criada no onboarding)
-branding/brand.md
-branding/identidade.md
+# Financeiro — NFs, boletos (qualquer empresa)
+financeiro/
+
+# Docs sensíveis — só no PC, nunca no histórico do git
+Geral/estado-geral-gadens.md
+Geral/Projetos Claude/mapa-politico-gadens.md
 
 # Arquivos de ambiente e credenciais — nunca commitar
 .env
@@ -24,13 +22,16 @@ branding/identidade.md
 *.env
 .mcp.json
 
-# Node
+# Caches de ferramentas
+.playwright-mcp/
 node_modules/
-
-# Python
 __pycache__/
 *.pyc
 *.pyo
+
+# Temporários do Office e Illustrator
+~$*
+~ai-*.tmp
 
 # OS
 .DS_Store

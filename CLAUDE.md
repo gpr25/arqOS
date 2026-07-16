@@ -8,16 +8,18 @@ Workspace central das empresas de Gabriel (Grupo Gadens). Cada empresa tem sua p
 
 | Pasta | Conteúdo |
 |---|---|
-| `/Geral` | Documentação do ArqOS, onboarding e materiais aplicáveis a todas as empresas |
-| `/Autoshopping Linha Verde` | Contexto da empresa Autoshopping Linha Verde |
-| `/Shopping Cidade` | Contexto da empresa Shopping Cidade |
-| `/Triunfo do Brasil` | Produtora de erva-mate orgânica, exportação B2B — ver `Triunfo do Brasil/CLAUDE.md` |
-| `/Útil` | Contexto da empresa Útil Utilidades |
-| `/ULTJ` | Contexto da empresa ULTJ |
+| `/Geral` | Documentação do ArqOS, metodologias, estado geral do grupo e materiais aplicáveis a todas as empresas |
+| `/Autoshopping Linha Verde` | Marketplace de 23 concessionárias de veículos — mídia paga Meta + Google |
+| `/Shopping Cidade` | Shopping de varejo em Curitiba — frentes B2B (lojistas) e B2C |
+| `/Triunfo do Brasil` | Produtora de erva-mate orgânica, exportação B2B — único onboarding ArqOS completo |
+| `/Útil` | Útil Utilidades — varejo de utilidades domésticas, conta sensível |
+| `/ULTJ` | Cliente secundário — status a confirmar |
+
+**Cada empresa tem um `CLAUDE.md` próprio** e segue a estrutura padrão documentada em `Geral/estrutura-padrao.md` (branding, marketing, sales, financeiro, operations, memory).
 
 ## Regras
 
-1. Ao trabalhar em algo de uma empresa específica, leia primeiro o `CLAUDE.md` (se existir) e os arquivos de contexto dentro da pasta dela.
-2. Arquivos novos de uma empresa vão **dentro da pasta dela** — nunca na raiz.
+1. Ao trabalhar em algo de uma empresa específica, leia primeiro o `CLAUDE.md` e a pasta `memory/` dentro da pasta dela.
+2. Arquivos novos de uma empresa vão **dentro da pasta dela**, na subpasta correta do padrão (`Geral/estrutura-padrao.md`) — nunca na raiz.
 3. Agentes, skills e comandos em `.claude/` são compartilhados por todas as empresas — mantê-los genéricos, sem calibrar para uma empresa específica.
-4. Conteúdo aplicável a todas as empresas vai em `/Geral`.
+4. Conteúdo aplicável a todas as empresas vai em `/Geral`. Estado consolidado do grupo: `Geral/estado-geral-gadens.md`.
