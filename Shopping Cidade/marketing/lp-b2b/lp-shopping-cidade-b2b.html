@@ -1,0 +1,903 @@
+<title>Shopping Cidade — Locação para Lojistas</title>
+<style>
+  /* Poppins em produção; no preview cai no fallback do sistema */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --ground:#F4F8FA; --surface:#FFFFFF; --surface-2:#EAF1F5;
+    --ink:#0E2A38; --muted:#576A75; --line:#D8E3E9;
+    --petroleo:#093652; --petroleo-2:#0B2C42; --petroleo-3:#06283A;
+    --magenta:#E01C4C; --magenta-ink:#C0153E; --azul:#157DBF;
+    --on-dark:#EAF2F6; --on-dark-muted:#9FB6C2; --line-dark:#1C4157;
+    --font:'Poppins','Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,'Cascadia Code','Consolas','Courier New',monospace;
+    --maxw:1180px; --radius:12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ground:#061821; --surface:#0A2230; --surface-2:#0E2B3C;
+      --ink:#EAF2F6; --muted:#9FB6C2; --line:#183648; }
+  }
+  :root[data-theme="light"] { --ground:#F4F8FA; --surface:#FFFFFF; --surface-2:#EAF1F5;
+    --ink:#0E2A38; --muted:#576A75; --line:#D8E3E9; }
+  :root[data-theme="dark"] { --ground:#061821; --surface:#0A2230; --surface-2:#0E2B3C;
+    --ink:#EAF2F6; --muted:#9FB6C2; --line:#183648; }
+
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--ground); color:var(--ink); font-family:var(--font);
+    line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  h1,h2,h3 { margin:0; text-wrap:balance; letter-spacing:-0.02em; line-height:1.08; }
+  p { margin:0; }
+  a { color:inherit; text-decoration:none; }
+  img,svg,canvas { max-width:100%; }
+  .wrap { max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+  .eyebrow { font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--azul); display:inline-block; margin-bottom:16px; }
+  .mag { color:var(--magenta); }
+  .h2 { font-size:clamp(28px,3.4vw,42px); font-weight:800; }
+  .lead { font-size:17.5px; color:var(--muted); line-height:1.65; }
+
+  /* progresso de scroll */
+  #progress { position:fixed; top:0; left:0; height:3px; width:100%; background:var(--magenta);
+    transform-origin:left; transform:scaleX(0); z-index:90; }
+
+  /* botões */
+  .btn { display:inline-flex; align-items:center; gap:10px; font-weight:600; font-size:16px;
+    padding:15px 26px; border-radius:9px; border:0; cursor:pointer; font-family:var(--font);
+    transition:transform .15s, box-shadow .25s, background .25s, color .25s; }
+  .btn-primary { background:var(--magenta); color:#fff; box-shadow:0 8px 24px -10px rgba(224,28,76,.7); }
+  .btn-primary:hover { background:var(--magenta-ink); transform:translateY(-2px);
+    box-shadow:0 14px 30px -10px rgba(224,28,76,.8); }
+  .btn-primary:active { transform:translateY(0); }
+  .btn-primary.pulse { animation:pulse 2.6s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{box-shadow:0 8px 24px -10px rgba(224,28,76,.7);}
+    50%{box-shadow:0 10px 38px -4px rgba(224,28,76,1);} }
+  .btn-ghost { background:transparent; color:var(--on-dark); border:1.5px solid rgba(255,255,255,.3); }
+  .btn-ghost:hover { border-color:#fff; background:rgba(255,255,255,.07); }
+  .btn-line { background:transparent; color:var(--azul); border:1.5px solid var(--azul); padding:12px 20px; font-size:14.5px; }
+  .btn-line:hover { background:var(--azul); color:#fff; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline:3px solid var(--azul); outline-offset:2px; }
+
+  /* nav */
+  nav.top { position:sticky; top:0; z-index:50; background:color-mix(in srgb,var(--petroleo) 93%, transparent);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line-dark); }
+  nav.top .wrap { display:flex; align-items:center; justify-content:space-between; height:66px; }
+  .brand { font-weight:800; color:var(--on-dark); font-size:19px; line-height:1.1; }
+  .brand small { display:block; font-family:var(--mono); font-size:9.5px; font-weight:600;
+    letter-spacing:.24em; color:var(--on-dark-muted); }
+  .navlinks { display:flex; gap:26px; align-items:center; }
+  .navlinks .lk { position:relative; color:var(--on-dark-muted); font-size:14.5px; font-weight:500; transition:color .2s; }
+  .navlinks .lk:hover { color:var(--on-dark); }
+  .navlinks .lk::after { content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px;
+    background:var(--magenta); transition:width .25s; }
+  .navlinks .lk:hover::after { width:100%; }
+  .nav-cta { background:var(--magenta); color:#fff !important; padding:10px 18px; border-radius:8px;
+    font-weight:600; font-size:14px; transition:background .2s; }
+  .nav-cta:hover { background:var(--magenta-ink); }
+  @media (max-width:840px){ .navlinks .lk { display:none; } }
+
+  /* ===== HERO — corredor 3D ===== */
+  .hero { position:relative; overflow:hidden; color:var(--on-dark);
+    background:linear-gradient(150deg,#06283A 0%,#093652 55%,#0A2F49 100%); }
+  .hero canvas { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+  .hero .grad { position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(90deg, rgba(6,40,58,.94) 0%, rgba(6,40,58,.72) 38%, rgba(6,40,58,.12) 68%, transparent 100%); }
+  .hero .wrap { position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr;
+    gap:40px; align-items:center; min-height:640px; padding-top:64px; padding-bottom:72px; }
+  .hero h1 { font-size:clamp(38px,5vw,64px); font-weight:800; color:#fff; }
+  .hero h1 .ln { display:inline-block; opacity:0; transform:translateY(22px); animation:lnup .7s ease forwards; }
+  .hero h1 .ln:nth-child(2){ animation-delay:.15s; }
+  @keyframes lnup { to{opacity:1; transform:none;} }
+  .hero .lead { color:var(--on-dark-muted); font-size:clamp(17px,1.6vw,19.5px); margin-top:22px; max-width:36ch; }
+  .hero-cta { display:flex; gap:14px; flex-wrap:wrap; margin-top:32px; }
+  .hero-note { margin-top:22px; font-size:13.5px; color:var(--on-dark-muted);
+    display:flex; align-items:center; gap:9px; }
+  /* chips flutuando sobre o corredor */
+  .hero-chips { position:relative; z-index:2; display:flex; flex-direction:column; gap:16px;
+    align-items:flex-end; justify-content:center; }
+  .chip { background:rgba(6,32,47,.72); border:1px solid var(--line-dark); backdrop-filter:blur(8px);
+    border-radius:14px; padding:18px 24px; text-align:right;
+    box-shadow:0 18px 44px -18px rgba(0,0,0,.6); }
+  .chip .cnum { font-size:clamp(34px,3.6vw,50px); font-weight:800; color:#fff; letter-spacing:-0.03em;
+    line-height:1; font-variant-numeric:tabular-nums; }
+  .chip .cnum b { color:var(--magenta); font-weight:800; }
+  .chip .clbl { font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--on-dark-muted); margin-top:8px; }
+  .chip.alt .cnum b { color:var(--azul); }
+  .floaty { animation:floaty 5.5s ease-in-out infinite; }
+  .floaty2 { animation:floaty 6.5s ease-in-out infinite reverse; }
+  @keyframes floaty { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);} }
+  @media (max-width:880px){
+    .hero .wrap { grid-template-columns:1fr; min-height:0; padding-top:52px; padding-bottom:56px; gap:26px; }
+    .hero-chips { flex-direction:row; align-items:stretch; justify-content:flex-start; flex-wrap:wrap; }
+    .chip { text-align:left; padding:14px 18px; }
+  }
+
+  /* ticker */
+  .ticker { background:var(--magenta); color:#fff; overflow:hidden; white-space:nowrap; }
+  .ticker .track { display:inline-flex; align-items:center; animation:marq 26s linear infinite; will-change:transform; }
+  .ticker b { font-family:var(--mono); font-weight:700; font-size:13px; letter-spacing:.12em;
+    text-transform:uppercase; padding:11px 0; }
+  .ticker .dot { padding:0 18px; opacity:.6; }
+  @keyframes marq { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .ticker:hover .track { animation-play-state:paused; }
+
+  /* ===== STATS ===== */
+  .stats { background:var(--surface); border-bottom:1px solid var(--line); }
+  .stats .wrap { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; padding:56px 24px; }
+  .stat { background:var(--ground); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 24px; transition:transform .25s, box-shadow .25s; }
+  .stat:hover { transform:translateY(-4px); box-shadow:0 16px 30px -20px rgba(9,54,82,.5); }
+  .stat .num { font-size:clamp(36px,4vw,52px); font-weight:800; letter-spacing:-0.03em;
+    line-height:1; color:var(--petroleo); font-variant-numeric:tabular-nums; }
+  :root[data-theme="dark"] .stat .num { color:var(--azul); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .stat .num { color:var(--azul); } }
+  .stat .num small { font-size:.45em; font-weight:700; letter-spacing:0; }
+  .stat .lbl { font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); margin-top:12px; line-height:1.5; }
+  /* destaque fim de semana */
+  .stat.hot { background:linear-gradient(135deg,var(--magenta),#F03B63); border-color:transparent; }
+  .stat.hot .num, .stat.hot .num small { color:#fff !important; }
+  .stat.hot .lbl { color:rgba(255,255,255,.85); }
+  @media (max-width:760px){ .stats .wrap { grid-template-columns:1fr 1fr; padding:40px 24px; } }
+
+  /* ===== seções ===== */
+  section.block { padding:92px 0; }
+  @media (max-width:760px){ section.block { padding:56px 0; } }
+
+  /* fluxo pronto */
+  .split { display:grid; grid-template-columns:1fr 1.05fr; gap:56px; align-items:center; }
+  .split .lead { margin-top:20px; max-width:46ch; }
+  .feature { display:flex; gap:18px; align-items:flex-start; background:var(--surface);
+    border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px;
+    transition:transform .25s, box-shadow .25s, border-color .25s; }
+  .feature + .feature { margin-top:16px; }
+  .feature:hover { transform:translateX(6px); border-color:color-mix(in srgb,var(--azul) 45%, var(--line));
+    box-shadow:0 14px 30px -20px rgba(9,54,82,.5); }
+  .feature .ic { flex:none; width:52px; height:52px; border-radius:12px; display:grid; place-items:center;
+    color:#fff; }
+  .feature:nth-child(1) .ic { background:linear-gradient(135deg,var(--magenta),#F03B63); }
+  .feature:nth-child(2) .ic { background:linear-gradient(135deg,var(--azul),#3D9AD6); }
+  .feature:nth-child(3) .ic { background:linear-gradient(135deg,var(--petroleo),#12507A); }
+  .feature h3 { font-size:17px; font-weight:700; }
+  .feature p { font-size:14.5px; color:var(--muted); margin-top:5px; line-height:1.55; }
+  .feature .tag { display:inline-block; margin-top:10px; font-family:var(--mono); font-size:10.5px;
+    font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--magenta);
+    background:color-mix(in srgb,var(--magenta) 10%, transparent); padding:4px 9px; border-radius:5px; }
+  .feature:nth-child(2) .tag { color:var(--azul); background:color-mix(in srgb,var(--azul) 12%, transparent); }
+  @media (max-width:860px){ .split { grid-template-columns:1fr; gap:32px; } }
+
+  /* para quem é */
+  .fit { background:var(--surface-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .fit-panel { background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:38px; margin-top:34px; box-shadow:0 24px 50px -36px rgba(9,54,82,.55); }
+  .checks { display:grid; grid-template-columns:1fr 1fr; gap:18px 28px; }
+  .check { display:flex; gap:14px; align-items:flex-start; font-weight:600; font-size:16px; line-height:1.45; }
+  .check .ck { flex:none; width:28px; height:28px; border-radius:50%; background:var(--magenta); color:#fff;
+    display:grid; place-items:center; }
+  .check small { display:block; font-weight:400; font-size:13.5px; color:var(--muted); margin-top:3px; }
+  .fit-note { margin-top:26px; padding-top:22px; border-top:1px dashed var(--line);
+    font-size:14px; color:var(--muted); display:flex; gap:10px; align-items:flex-start; }
+  @media (max-width:640px){ .checks { grid-template-columns:1fr; } .fit-panel { padding:26px; } }
+
+  /* segmentos */
+  .seg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:38px; }
+  .seg { position:relative; overflow:hidden; background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); padding:26px 24px 22px;
+    transition:transform .25s, box-shadow .25s, border-color .25s; }
+  .seg::before { content:""; position:absolute; left:0; top:0; height:4px; width:100%;
+    background:linear-gradient(90deg,var(--magenta),var(--azul)); transform:scaleX(0);
+    transform-origin:left; transition:transform .3s; }
+  .seg:hover::before { transform:scaleX(1); }
+  .seg:hover { transform:translateY(-6px); box-shadow:0 20px 38px -22px rgba(9,54,82,.55);
+    border-color:color-mix(in srgb,var(--magenta) 35%, var(--line)); }
+  .seg .ic { width:46px; height:46px; border-radius:11px; display:grid; place-items:center;
+    margin-bottom:16px; color:#fff; }
+  .seg:nth-child(odd) .ic { background:linear-gradient(135deg,var(--magenta),#F03B63); }
+  .seg:nth-child(even) .ic { background:linear-gradient(135deg,var(--azul),#3D9AD6); }
+  .seg h3 { font-size:16.5px; font-weight:700; }
+  .seg .gancho { font-size:14.5px; color:var(--muted); margin-top:7px; line-height:1.5; min-height:44px; }
+  .seg a { display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:13px;
+    font-weight:600; color:var(--magenta); }
+  .seg a svg { transition:transform .2s; }
+  .seg a:hover svg { transform:translateX(4px); }
+  @media (max-width:880px){ .seg-grid { grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .seg-grid { grid-template-columns:1fr; } .seg .gancho { min-height:0; } }
+
+  /* faixa CTA */
+  .ctaband { background:linear-gradient(120deg,var(--magenta),#FF3D6A 52%,var(--magenta));
+    background-size:200% 200%; animation:bandmove 12s ease infinite; color:#fff; text-align:center; }
+  @keyframes bandmove { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
+  .ctaband .wrap { padding:66px 24px; }
+  .ctaband h2 { font-size:clamp(26px,3.4vw,40px); font-weight:800; color:#fff; }
+  .ctaband p { margin:16px auto 26px; max-width:50ch; color:rgba(255,255,255,.92); font-size:17px; }
+  .ctaband .btn { background:#fff; color:var(--magenta); }
+  .ctaband .btn:hover { background:var(--petroleo); color:#fff; transform:translateY(-2px); }
+  @media (max-width:720px){ .ctaband { display:none; } }
+
+  /* prova + localização (banda escura) */
+  .band-dark { background:linear-gradient(160deg,var(--petroleo) 0%,var(--petroleo-3) 100%); color:var(--on-dark); }
+  .band-dark h2 { color:#fff; }
+  .proof .wrap { display:grid; grid-template-columns:1fr 1.05fr; gap:56px; align-items:center; }
+  .proof .big-stat { font-size:clamp(26px,3vw,36px); font-weight:800; color:#fff; margin-top:20px; line-height:1.25; }
+  .proof .big-stat b { color:var(--magenta); }
+  .proof .src { font-family:var(--mono); font-size:11.5px; color:var(--on-dark-muted); margin-top:14px; letter-spacing:.05em; }
+  .proof .lead { color:var(--on-dark-muted); margin-top:16px; }
+  /* card do mapa */
+  .mapcard { background:rgba(255,255,255,.045); border:1px solid var(--line-dark); border-radius:18px;
+    padding:26px; box-shadow:0 30px 60px -34px rgba(0,0,0,.7); }
+  .mapcard h3 { font-size:19px; font-weight:700; color:#fff; }
+  .mapcard .maddr { font-size:14px; color:var(--on-dark-muted); margin-top:6px; }
+  .mapviz { margin:20px 0; border-radius:12px; overflow:hidden; border:1px solid var(--line-dark);
+    display:block; width:100%; height:auto; }
+  .mapviz .avenue-dash { stroke-dasharray:10 14; animation:dashmove 1.6s linear infinite; }
+  @keyframes dashmove { to { stroke-dashoffset:-24; } }
+  .mapviz .pin-pulse { transform-origin:center; transform-box:fill-box; animation:pinpulse 2.2s ease-out infinite; }
+  @keyframes pinpulse { 0%{transform:scale(.6); opacity:.85;} 70%{transform:scale(1.9); opacity:0;} 100%{opacity:0;} }
+  .maprow { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+  .maprow .mfacts { font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--on-dark-muted); }
+  @media (max-width:860px){ .proof .wrap { grid-template-columns:1fr; gap:34px; } }
+
+  /* como funciona */
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:40px; position:relative; }
+  .step { position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 24px; transition:transform .25s, box-shadow .25s; }
+  .step:hover { transform:translateY(-5px); box-shadow:0 16px 32px -22px rgba(9,54,82,.5); }
+  .step .n { width:38px; height:38px; border-radius:10px; display:grid; place-items:center;
+    background:var(--petroleo); color:#fff; font-family:var(--mono); font-size:14px; font-weight:700; }
+  :root[data-theme="dark"] .step .n { background:var(--azul); }
+  .step h3 { font-size:16.5px; font-weight:700; margin-top:16px; }
+  .step p { font-size:14.5px; color:var(--muted); margin-top:7px; line-height:1.55; }
+  .step .chip-t { display:inline-block; margin-top:14px; font-family:var(--mono); font-size:10.5px;
+    font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--azul);
+    background:color-mix(in srgb,var(--azul) 12%, transparent); padding:4px 9px; border-radius:5px; }
+  @media (max-width:760px){ .steps { grid-template-columns:1fr; } }
+
+  /* formulário */
+  .form-sec { background:var(--surface-2); border-top:1px solid var(--line); }
+  .form-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:52px; align-items:start; }
+  .form-points { margin-top:26px; display:flex; flex-direction:column; gap:14px; }
+  .fp { display:flex; gap:12px; align-items:flex-start; font-size:14.5px; color:var(--muted); }
+  .fp svg { flex:none; margin-top:2px; color:var(--azul); }
+  .form-card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:32px;
+    box-shadow:0 28px 56px -34px rgba(9,54,82,.55); }
+  .field { margin-bottom:18px; }
+  .field label { display:block; font-size:13.5px; font-weight:600; margin-bottom:7px; }
+  .field input, .field select { width:100%; padding:13px 14px; border-radius:9px; border:1.5px solid var(--line);
+    background:var(--ground); color:var(--ink); font-size:15px; font-family:var(--font);
+    transition:border-color .2s; }
+  .field input:focus, .field select:focus { border-color:var(--magenta); outline:none; }
+  .field input::placeholder { color:var(--muted); }
+  .radio-row { display:flex; gap:12px; }
+  .radio-row label { flex:1; display:flex; align-items:center; gap:9px; padding:13px 14px;
+    border:1.5px solid var(--line); border-radius:9px; cursor:pointer; font-weight:500; font-size:14.5px;
+    background:var(--ground); transition:border-color .2s, background .2s; }
+  .radio-row input { accent-color:var(--magenta); width:auto; }
+  .radio-row label:has(input:checked) { border-color:var(--magenta);
+    background:color-mix(in srgb,var(--magenta) 8%, var(--surface)); }
+  .form-card .btn-primary { width:100%; justify-content:center; margin-top:6px; }
+  .form-micro { font-size:12.5px; color:var(--muted); margin-top:14px; text-align:center; }
+  .form-success { display:none; text-align:center; padding:34px 10px; }
+  .form-success.on { display:block; }
+  .form-success .ok { width:58px; height:58px; border-radius:50%; background:var(--azul); color:#fff;
+    display:grid; place-items:center; margin:0 auto 16px; }
+  .form-success h3 { font-size:22px; font-weight:700; }
+  .form-success p { color:var(--muted); margin-top:8px; }
+  @media (max-width:860px){ .form-grid { grid-template-columns:1fr; gap:30px; } .form-card { padding:24px; } }
+
+  /* rodapé */
+  footer { border-top:1px solid var(--line-dark); }
+  footer .wrap { display:flex; justify-content:space-between; align-items:flex-start; gap:30px;
+    padding:52px 24px 40px; flex-wrap:wrap; }
+  footer .f-addr { font-size:14px; color:var(--on-dark-muted); margin-top:10px; max-width:34ch; line-height:1.6; }
+  footer .f-links { display:flex; gap:22px; flex-wrap:wrap; }
+  footer .f-links a { color:var(--on-dark-muted); font-size:14px; font-weight:500; transition:color .2s; }
+  footer .f-links a:hover { color:var(--on-dark); }
+  footer .copy { width:100%; border-top:1px solid var(--line-dark); padding-top:22px; margin-top:10px;
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; color:var(--on-dark-muted); }
+
+  /* reveal */
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.vis { opacity:1; transform:none; }
+  .reveal.d1 { transition-delay:.08s; } .reveal.d2 { transition-delay:.16s; } .reveal.d3 { transition-delay:.24s; }
+
+  @media (prefers-reduced-motion:reduce){
+    html { scroll-behavior:auto; }
+    .reveal { opacity:1; transform:none; transition:none; }
+    .ticker .track, .ctaband, .floaty, .floaty2, .btn-primary.pulse,
+    .mapviz .avenue-dash, .mapviz .pin-pulse { animation:none !important; }
+    .hero h1 .ln { opacity:1; transform:none; animation:none; }
+    .stat:hover, .seg:hover, .feature:hover, .step:hover { transform:none; }
+  }
+</style>
+
+<div id="progress" aria-hidden="true"></div>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="brand">SHOPPING CIDADE<small>CURITIBA · HAUER</small></div>
+    <div class="navlinks">
+      <a class="lk" href="#fluxo">Fluxo</a>
+      <a class="lk" href="#quem">Para quem é</a>
+      <a class="lk" href="#segmentos">Segmentos</a>
+      <a class="lk" href="#local">Localização</a>
+      <a class="nav-cta" href="#contato">Quero um ponto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="corridor" aria-hidden="true"></canvas>
+  <div class="grad" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:#7FC0E8;">Locação para lojistas · Curitiba</span>
+      <h1><span class="ln">Seu próximo ponto</span> <span class="ln mag">já vem com movimento.</span></h1>
+      <p class="lead">No Shopping Cidade você não abre a loja e torce para aparecer cliente. Você entra onde o fluxo já existe: 24 anos de operação, mais de 200 lojas e um público que vem para comprar.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary pulse" href="#contato">Quero conhecer os pontos disponíveis
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#contato">Falar no WhatsApp</a>
+      </div>
+      <p class="hero-note">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9FB6C2" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        Para lojistas já estabelecidos que querem expandir ou trocar de ponto.
+      </p>
+    </div>
+    <div class="hero-chips">
+      <div class="chip floaty">
+        <div class="cnum"><b>6 a 10 mil</b></div>
+        <div class="clbl">pessoas por dia no corredor</div>
+      </div>
+      <div class="chip alt floaty2">
+        <div class="cnum"><b>+200</b> lojas</div>
+        <div class="clbl">vendendo todos os dias</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <b>Fluxo pronto</b><span class="dot">✦</span><b>+200 mil visitas por mês</b><span class="dot">✦</span><b>24 anos de operação</b><span class="dot">✦</span><b>+200 lojas ativas</b><span class="dot">✦</span><b>Fins de semana com 10 mil+ pessoas</b><span class="dot">✦</span>
+    <b>Fluxo pronto</b><span class="dot">✦</span><b>+200 mil visitas por mês</b><span class="dot">✦</span><b>24 anos de operação</b><span class="dot">✦</span><b>+200 lojas ativas</b><span class="dot">✦</span><b>Fins de semana com 10 mil+ pessoas</b><span class="dot">✦</span>
+  </div>
+</div>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat hot reveal">
+      <div class="num"><span class="counter" data-target="10">0</span> <small>mil+</small></div>
+      <div class="lbl">Pessoas por dia nos fins de semana</div>
+    </div>
+    <div class="stat reveal d1">
+      <div class="num">+<span class="counter" data-target="200">0</span> <small>mil</small></div>
+      <div class="lbl">Visitantes por mês</div>
+    </div>
+    <div class="stat reveal d2">
+      <div class="num">+<span class="counter" data-target="200">0</span></div>
+      <div class="lbl">Lojas ativas no mix</div>
+    </div>
+    <div class="stat reveal d3">
+      <div class="num"><span class="counter" data-target="24">0</span></div>
+      <div class="lbl">Anos de operação</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="fluxo">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">O que você está comprando</span>
+      <h2 class="h2">Você não está comprando um espaço. <span class="mag">Está comprando fluxo pronto.</span></h2>
+      <p class="lead">Um ponto de rua depende do seu esforço para atrair gente. Aqui o movimento é responsabilidade do shopping, e a sua loja colhe o resultado todos os dias.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="feature">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-7-4 18-5-6-6-1z"/><path d="M12 16l4 4"/></svg></div>
+        <div>
+          <h3>Marketing coletivo</h3>
+          <p>O shopping anuncia o ano inteiro para trazer público. Quando a campanha roda, todas as lojas ganham fluxo.</p>
+          <span class="tag">Custo extra: zero</span>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="7" height="13" rx="1"/><rect x="14" y="4" width="7" height="16" rx="1"/><path d="M6.5 11h.01M17.5 8h.01"/></svg></div>
+        <div>
+          <h3>Mix de +200 lojas</h3>
+          <p>O cliente que vem pela loja vizinha passa pela sua vitrine. Fluxo cruzado acontece o dia inteiro, em todos os corredores.</p>
+          <span class="tag">+200 vitrines vizinhas</span>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-4h4v4"/><circle cx="12" cy="11" r="1.6"/></svg></div>
+        <div>
+          <h3>Eventos e cinema</h3>
+          <p>Ações que lotam o shopping em datas fortes e fora delas. Picos de movimento que um ponto de rua nunca vai ter.</p>
+          <span class="tag">Picos o ano todo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block fit" id="quem">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Para quem é</span>
+      <h2 class="h2">Feito para quem já vende <span class="mag">e quer vender mais.</span></h2>
+    </div>
+    <div class="fit-panel reveal d1">
+      <div class="checks">
+        <div class="check">
+          <span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4 10-10"/></svg></span>
+          <span>Loja em operação, com bom giro<small>Você já sabe vender. Falta um ponto à altura.</small></span>
+        </div>
+        <div class="check">
+          <span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4 10-10"/></svg></span>
+          <span>Quer expandir ou trocar de ponto<small>Segunda unidade ou upgrade de localização.</small></span>
+        </div>
+        <div class="check">
+          <span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4 10-10"/></svg></span>
+          <span>Operação estruturada<small>Estoque, equipe e processo rodando.</small></span>
+        </div>
+        <div class="check">
+          <span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4 10-10"/></svg></span>
+          <span>Busca previsibilidade de fluxo<small>Movimento constante, sem depender só de anúncio próprio.</small></span>
+        </div>
+      </div>
+      <p class="fit-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex:none;margin-top:1px;color:var(--azul);"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span>Não é para quem está começando do zero. E não trabalhamos com praça de alimentação.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="segmentos">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Seu segmento</span>
+      <h2 class="h2">Espaço para o seu segmento.</h2>
+      <p class="lead" style="margin-top:16px; max-width:52ch;">Cada segmento entra aqui com uma vantagem clara. Encontre a sua.</p>
+    </div>
+    <div class="seg-grid">
+      <div class="seg reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></div>
+        <h3>Moda Feminina</h3>
+        <p class="gancho">O shopping faz o marketing. Sua loja colhe o fluxo.</p>
+        <a href="#contato">Ver pontos disponíveis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="seg reveal d1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7v7h16a2 2 0 002-2c0-2-3-2-5-4l-3-2-2 3H6z"/><path d="M3 17h18"/></svg></div>
+        <h3>Calçados</h3>
+        <p class="gancho">Calçado se prova. Aqui já tem quem provar.</p>
+        <a href="#contato">Ver pontos disponíveis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="seg reveal d2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div>
+        <h3>Bijuterias e Acessórios</h3>
+        <p class="gancho">Você já vende. Agora vende todo dia, em ponto fixo.</p>
+        <a href="#contato">Ver pontos disponíveis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="seg reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9v6M18 9v6M4 11v2M20 11v2M6 12h12"/></svg></div>
+        <h3>Suplementos e Fitness</h3>
+        <p class="gancho">Seu cliente compra todo mês. Precisa te achar todo mês.</p>
+        <a href="#contato">Ver pontos disponíveis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="seg reveal d1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0112 0v3"/></svg></div>
+        <h3>Moda Infantil</h3>
+        <p class="gancho">Eventos kids trazem as mães. E mães compram.</p>
+        <a href="#contato">Ver pontos disponíveis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="seg reveal d2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4l4 3 4-3 4 3-2 3v10H6V10L4 7z"/></svg></div>
+        <h3>Moda Masculina</h3>
+        <p class="gancho">Poucos pontos dedicados na região. Seja a referência.</p>
+        <a href="#contato">Ver pontos disponíveis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband">
+  <div class="wrap reveal">
+    <h2>Os melhores pontos não ficam vagos por muito tempo.</h2>
+    <p>Fale com o time de locação e veja o que está disponível para o seu segmento antes que outro lojista veja primeiro.</p>
+    <a class="btn" href="#contato">Quero conhecer os pontos disponíveis</a>
+  </div>
+</section>
+
+<section class="block proof band-dark" id="local">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#7FC0E8;">Por que funciona</span>
+      <h2 class="h2">Um público que vem para comprar.</h2>
+      <p class="big-stat">As classes C, D e E são <b>76% da população</b> e respondem por quase <b>metade do consumo</b> do país.</p>
+      <p class="lead">É esse público que enche os corredores do Shopping Cidade todos os dias. Gente que sai de casa decidida a comprar, não a passear.</p>
+      <p class="src">Fonte: PwC + Instituto Locomotiva, 2023</p>
+    </div>
+    <div class="mapcard reveal d1">
+      <h3>A localização trabalha por você</h3>
+      <p class="maddr">Av. Marechal Floriano Peixoto, 4984 · Hauer, Curitiba/PR</p>
+      <svg class="mapviz" viewBox="0 0 440 250" role="img" aria-label="Mapa estilizado da localização do Shopping Cidade na Av. Marechal Floriano Peixoto">
+        <rect width="440" height="250" fill="#0B2C42"/>
+        <!-- malha de ruas -->
+        <g stroke="#157DBF" stroke-opacity="0.16" stroke-width="3">
+          <path d="M-10 60 H450"/><path d="M-10 195 H450"/>
+          <path d="M70 -10 V260"/><path d="M180 -10 V260"/><path d="M300 -10 V260"/><path d="M390 -10 V260"/>
+        </g>
+        <!-- quadras -->
+        <g fill="#0E3A57">
+          <rect x="80" y="70" width="90" height="115" rx="4"/>
+          <rect x="310" y="70" width="70" height="115" rx="4"/>
+          <rect x="80" y="205" width="210" height="40" rx="4"/>
+          <rect x="190" y="5" width="100" height="45" rx="4"/>
+        </g>
+        <!-- avenida principal -->
+        <path d="M-10 128 H450" stroke="#157DBF" stroke-width="22" stroke-opacity="0.75"/>
+        <path class="avenue-dash" d="M-10 128 H450" stroke="#EAF2F6" stroke-width="2.5" stroke-opacity="0.8" fill="none"/>
+        <text x="16" y="118" fill="#7FC0E8" font-size="10" font-family="monospace" letter-spacing="2">AV. MAL. FLORIANO PEIXOTO</text>
+        <!-- bloco do shopping -->
+        <g>
+          <rect x="192" y="66" width="96" height="52" rx="6" fill="#E01C4C"/>
+          <rect x="192" y="66" width="96" height="52" rx="6" fill="none" stroke="#FF6D8E" stroke-width="1.5"/>
+          <text x="240" y="88" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">SHOPPING</text>
+          <text x="240" y="103" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">CIDADE</text>
+        </g>
+        <!-- pin -->
+        <g>
+          <circle class="pin-pulse" cx="240" cy="128" r="12" fill="#E01C4C" opacity="0.6"/>
+          <circle cx="240" cy="128" r="7" fill="#E01C4C" stroke="#fff" stroke-width="2.5"/>
+        </g>
+      </svg>
+      <div class="maprow">
+        <span class="mfacts">Uma das avenidas mais movimentadas de Curitiba</span>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Shopping+Cidade%2C+Av.+Marechal+Floriano+Peixoto%2C+4984%2C+Curitiba" target="_blank" rel="noopener">
+          Abrir no Google Maps
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="processo">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="h2">Três passos até o seu ponto.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="n">01</div>
+        <h3>Preencha o formulário</h3>
+        <p>Conte seu segmento e o momento da sua operação.</p>
+        <span class="chip-t">Leva 1 minuto</span>
+      </div>
+      <div class="step reveal d1">
+        <div class="n">02</div>
+        <h3>Converse com o time de locação</h3>
+        <p>Apresentamos os pontos disponíveis e as condições para o seu perfil.</p>
+        <span class="chip-t">Resposta em 1 dia útil</span>
+      </div>
+      <div class="step reveal d2">
+        <div class="n">03</div>
+        <h3>Visite e veja o fluxo</h3>
+        <p>Sinta o movimento com os próprios olhos antes de decidir.</p>
+        <span class="chip-t">Sem compromisso</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block form-sec" id="contato">
+  <div class="wrap form-grid">
+    <div class="reveal">
+      <span class="eyebrow">Fale com a gente</span>
+      <h2 class="h2">Vamos encontrar <span class="mag">o seu ponto.</span></h2>
+      <div class="form-points">
+        <p class="fp">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Retorno do time de locação em até 1 dia útil.
+        </p>
+        <p class="fp">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Conversa direta sobre pontos e condições, sem enrolação.
+        </p>
+        <p class="fp">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Seus dados são usados apenas para este contato comercial.
+        </p>
+      </div>
+    </div>
+    <div class="form-card reveal d1">
+      <form id="lead-form" novalidate>
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="zap">WhatsApp</label>
+          <input id="zap" name="whatsapp" type="tel" placeholder="(41) 9 9999-9999" required autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="seg">Segmento da sua loja</label>
+          <select id="seg" name="segmento" required>
+            <option value="" selected disabled>Selecione</option>
+            <option>Moda Feminina</option>
+            <option>Moda Masculina</option>
+            <option>Moda Infantil</option>
+            <option>Calçados</option>
+            <option>Bijuterias e Acessórios</option>
+            <option>Suplementos e Fitness</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Você já tem loja em operação?</label>
+          <div class="radio-row">
+            <label><input type="radio" name="operando" value="sim" required> Sim</label>
+            <label><input type="radio" name="operando" value="nao"> Ainda não</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Quero conhecer os pontos disponíveis</button>
+        <p class="form-micro">Retorno em até 1 dia útil. Nada de lista de e-mail.</p>
+      </form>
+      <div class="form-success" id="ok">
+        <div class="ok"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg></div>
+        <h3>Recebemos seu contato.</h3>
+        <p>O time de locação fala com você em até 1 dia útil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="band-dark">
+  <div class="wrap">
+    <div>
+      <div class="brand">SHOPPING CIDADE<small>CURITIBA · HAUER</small></div>
+      <p class="f-addr">Av. Marechal Floriano Peixoto, 4984<br>Hauer, Curitiba/PR</p>
+    </div>
+    <div class="f-links">
+      <a href="#contato">Quero um ponto</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Shopping+Cidade%2C+Av.+Marechal+Floriano+Peixoto%2C+4984%2C+Curitiba" target="_blank" rel="noopener">Google Maps</a>
+      <a href="#" rel="noopener">WhatsApp</a>
+      <a href="#" rel="noopener">Instagram</a>
+    </div>
+    <div class="copy">© 2026 Shopping Cidade · Locação comercial</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* barra de progresso */
+  var prog = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    prog.style.transform = 'scaleX(' + (max > 0 ? (h.scrollTop / max) : 0) + ')';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* reveal on scroll */
+  var revs = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    revs.forEach(function(el){ el.classList.add('vis'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.13});
+    revs.forEach(function(el){ io.observe(el); });
+  }
+
+  /* contadores */
+  var counted = false;
+  function runCounters(){
+    if (counted) return; counted = true;
+    document.querySelectorAll('.counter').forEach(function(c){
+      var target = +c.getAttribute('data-target');
+      if (reduce){ c.textContent = target; return; }
+      var dur = 1400, start = null;
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        c.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var statsEl = document.querySelector('.stats');
+  if (statsEl && 'IntersectionObserver' in window && !reduce){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ runCounters(); io2.disconnect(); } });
+    }, {threshold:0.3});
+    io2.observe(statsEl);
+  } else { runCounters(); }
+
+  /* ============ HERO: corredor 3D vivo ============ */
+  var cv = document.getElementById('corridor');
+  var hero = document.querySelector('.hero');
+  if (cv && cv.getContext){
+    var ctx = cv.getContext('2d');
+    var W = 0, H = 0, DPR = 1;
+    var mx = 0, my = 0, px = 0, py = 0;   /* parallax alvo e atual */
+    var t0 = null, zoff = 0, last = null;
+
+    function resize(){
+      DPR = Math.min(window.devicePixelRatio || 1, 2);
+      var r = hero.getBoundingClientRect();
+      W = cv.width = Math.floor(r.width * DPR);
+      H = cv.height = Math.floor(r.height * DPR);
+    }
+    resize(); window.addEventListener('resize', resize);
+
+    hero.addEventListener('mousemove', function(e){
+      var r = hero.getBoundingClientRect();
+      mx = ((e.clientX - r.left) / r.width  - 0.5);
+      my = ((e.clientY - r.top)  / r.height - 0.5);
+    });
+
+    /* mundo: corredor de -3..3 em x, teto -1.6, chão 1.6, profundidade 1..42 */
+    var XW = 3, YF = 1.6, YC = -1.6, ZMAX = 42;
+    var small = window.innerWidth < 640;
+    var NP = small ? 48 : 92;
+    var crowd = [];
+    for (var i = 0; i < NP; i++){
+      crowd.push({
+        x: (Math.random() * 2 - 1) * (XW * 0.8),
+        y: YF - 0.28 - Math.random() * 0.22,
+        z: 1.5 + Math.random() * (ZMAX - 2),
+        sp: 2.4 + Math.random() * 3.2,
+        kind: Math.random()
+      });
+    }
+
+    function fog(z){ return Math.max(0, Math.min(1, 1.55 - z / 26)); }
+
+    function frame(ts){
+      if (last == null) last = ts;
+      var dt = Math.min((ts - last) / 1000, 0.05); last = ts;
+      zoff = (zoff + dt * 4.2) % 4;
+
+      /* easing do parallax */
+      px += ((mx * W * 0.05) - px) * 0.06;
+      py += ((my * H * 0.03) - py) * 0.06;
+
+      var f  = H * 0.92;
+      var vx = W * 0.60 + px;
+      var vy = H * 0.46 + py;
+      function pj(x, y, z){ var s = f / z; return [vx + x * s, vy + y * s]; }
+
+      ctx.clearRect(0, 0, W, H);
+
+      /* brilho magenta no ponto de fuga (pulsa) */
+      var pr = H * (0.14 + 0.02 * Math.sin(ts / 900));
+      var g = ctx.createRadialGradient(vx, vy, 0, vx, vy, pr);
+      g.addColorStop(0, 'rgba(224,28,76,0.34)');
+      g.addColorStop(1, 'rgba(224,28,76,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(vx - pr, vy - pr, pr * 2, pr * 2);
+
+      /* trilhos do chão e teto (linhas de fuga) */
+      ctx.lineWidth = 1 * DPR;
+      var rails = [-XW, -XW/2, 0, XW/2, XW];
+      for (var r = 0; r < rails.length; r++){
+        var a = pj(rails[r], YF, 1.2), b = pj(rails[r], YF, ZMAX);
+        ctx.strokeStyle = 'rgba(21,125,191,0.20)';
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      }
+      var railsC = [-XW, XW];
+      for (var r2 = 0; r2 < railsC.length; r2++){
+        var a2 = pj(railsC[r2], YC, 1.2), b2 = pj(railsC[r2], YC, ZMAX);
+        ctx.strokeStyle = 'rgba(21,125,191,0.14)';
+        ctx.beginPath(); ctx.moveTo(a2[0], a2[1]); ctx.lineTo(b2[0], b2[1]); ctx.stroke();
+      }
+
+      /* linhas transversais do chão (movem na direção da câmera) */
+      for (var i2 = 0; i2 < 14; i2++){
+        var z = 1.4 + ((i2 * 3 + (3 - zoff) * 1) % (ZMAX - 2));
+        var fA = fog(z);
+        if (fA <= 0.01) continue;
+        var l = pj(-XW, YF, z), rr = pj(XW, YF, z);
+        ctx.strokeStyle = 'rgba(21,125,191,' + (0.22 * fA).toFixed(3) + ')';
+        ctx.beginPath(); ctx.moveTo(l[0], l[1]); ctx.lineTo(rr[0], rr[1]); ctx.stroke();
+      }
+
+      /* vitrines nas paredes (quadros que deslizam) */
+      for (var side = -1; side <= 1; side += 2){
+        for (var k = 0; k < 10; k++){
+          var zf = 2 + ((k * 4 + (4 - zoff)) % (ZMAX - 3));
+          var fA2 = fog(zf);
+          if (fA2 <= 0.02) continue;
+          var hotStore = (k % 3 === 0);
+          var p1 = pj(side * XW, YC + 0.25, zf);
+          var p2 = pj(side * XW, YC + 0.25, zf + 2.2);
+          var p3 = pj(side * XW, YF - 0.05, zf + 2.2);
+          var p4 = pj(side * XW, YF - 0.05, zf);
+          ctx.strokeStyle = hotStore
+            ? 'rgba(224,28,76,' + (0.75 * fA2).toFixed(3) + ')'
+            : 'rgba(21,125,191,' + (0.45 * fA2).toFixed(3) + ')';
+          ctx.lineWidth = (hotStore ? 1.8 : 1.1) * DPR;
+          ctx.beginPath();
+          ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]);
+          ctx.lineTo(p3[0], p3[1]); ctx.lineTo(p4[0], p4[1]);
+          ctx.closePath(); ctx.stroke();
+          /* letreiro da vitrine */
+          var s1 = pj(side * XW, YC + 0.55, zf + 0.3);
+          var s2 = pj(side * XW, YC + 0.55, zf + 1.9);
+          ctx.strokeStyle = hotStore
+            ? 'rgba(224,28,76,' + (0.9 * fA2).toFixed(3) + ')'
+            : 'rgba(234,242,246,' + (0.3 * fA2).toFixed(3) + ')';
+          ctx.lineWidth = 2.6 * DPR;
+          ctx.beginPath(); ctx.moveTo(s1[0], s1[1]); ctx.lineTo(s2[0], s2[1]); ctx.stroke();
+        }
+      }
+
+      /* luzes do teto */
+      for (var k2 = 0; k2 < 12; k2++){
+        var zl = 1.6 + ((k2 * 3.4 + (3.4 - zoff)) % (ZMAX - 2));
+        var fA3 = fog(zl);
+        if (fA3 <= 0.02) continue;
+        var lp = pj(0, YC, zl);
+        ctx.fillStyle = 'rgba(234,242,246,' + (0.5 * fA3).toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(lp[0], lp[1], Math.max(1, (f / zl) * 0.012), 0, Math.PI * 2); ctx.fill();
+      }
+
+      /* multidão (fluxo vindo em direção à câmera) */
+      crowd.sort(function(a, b){ return b.z - a.z; });
+      for (var c = 0; c < crowd.length; c++){
+        var pn = crowd[c];
+        pn.z -= pn.sp * dt;
+        if (pn.z < 1.15){
+          pn.z = ZMAX * (0.55 + Math.random() * 0.45);
+          pn.x = (Math.random() * 2 - 1) * (XW * 0.8);
+          pn.sp = 2.4 + Math.random() * 3.2;
+        }
+        var fA4 = fog(pn.z);
+        if (fA4 <= 0.02) continue;
+        var pp = pj(pn.x, pn.y, pn.z);
+        var rr2 = Math.min(10 * DPR, Math.max(1, (f / pn.z) * 0.05));
+        var col;
+        if (pn.kind < 0.12)      col = 'rgba(224,28,76,'  + (0.95 * fA4).toFixed(3) + ')';
+        else if (pn.kind < 0.32) col = 'rgba(21,125,191,' + (0.85 * fA4).toFixed(3) + ')';
+        else                     col = 'rgba(234,242,246,' + (0.75 * fA4).toFixed(3) + ')';
+        ctx.fillStyle = col;
+        ctx.beginPath();
+        ctx.ellipse(pp[0], pp[1], rr2 * 0.55, rr2, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (!reduce) requestAnimationFrame(frame);
+    }
+
+    if (reduce){
+      /* um quadro estático para quem prefere menos movimento */
+      last = 0; frame(16);
+    } else {
+      requestAnimationFrame(frame);
+    }
+  }
+
+  /* formulário: estado de sucesso (envio real entra na produção) */
+  var form = document.getElementById('lead-form');
+  if (form){
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if (!form.checkValidity()){ form.reportValidity(); return; }
+      form.style.display = 'none';
+      document.getElementById('ok').classList.add('on');
+    });
+  }
+})();
+</script>

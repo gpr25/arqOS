@@ -102,7 +102,9 @@ Shopping center popular do Grupo Gadens, Curitiba, bairro Hauer. Condomínio de 
 
 **Qualidade de lead (Instant Forms):** aceitável, ~8-9 de 10 dentro do perfil ideal. Preocupação com qualidade espera dado real do comercial. Aquisição é escopo do Gabriel, não performance do comercial.
 
-**Alerta de mensagem de LP:** "primeiro mês grátis, sem fiador" atrai perfil **oposto** ao ICP ideal. Alinhar mensagem da LP ao lojista estabelecido.
+**Preferência de mensagem de LP** `[RESSALVA]` (rebaixado de `[TRAVADO]`/proibido para preferência em 2026-07-17, decisão do Gabriel no onboarding): a hipótese é que "primeiro mês grátis, sem fiador" atrai perfil **oposto** ao ICP ideal, então **por ora evitamos** e alinhamos a mensagem ao lojista estabelecido. **Não é regra travada:** se um teste mostrar que a isca financeira traz lojista **qualificado**, reabrimos e usamos. Reavaliar com dado real do comercial (lead→contrato).
+
+`[URGENTE]` **A LP B2B atual em produção segue como pendência de substituição** — não mais por "violação de regra", e sim pelo conjunto de defeitos do teardown de 2026-07-17 (`../marketing/briefings/teardown-lp-b2b-atual.md`): formulário **não qualifica** (falta "já tem loja em operação?"), captcha amador "1+1=?", e o posicionamento atual ("Primeiro aluguel gratuito, sem fiador" 2x + "Grandes marcas começaram aqui") está **desalinhado da preferência atual** de falar com o lojista estabelecido. LP v2 será gerada no Stitch após o onboarding (briefing em `../marketing/briefings/briefing-lp-b2b-locacao.md`).
 
 ---
 
@@ -211,6 +213,7 @@ Shopping center popular do Grupo Gadens, Curitiba, bairro Hauer. Condomínio de 
 | Confirmar se raio de 40km é ideal para fluxo físico | `[PENDENTE]` | Gabriel |
 | Confirmar quem mantém WordPress e GTM do Grupo Gadens | `[PENDENTE]` | Gabriel |
 | Escalar remoção do spam de apostas no site | `[URGENTE]` | Quem mantém WordPress |
+| Substituir LP B2B atual — está no ar violando a regra travada (recruta lead errado) | `[URGENTE]` | Gabriel (v2 no Stitch pós-onboarding) |
 
 ---
 
@@ -242,7 +245,13 @@ Shopping center popular do Grupo Gadens, Curitiba, bairro Hauer. Condomínio de 
 - **2026-06 (mês)** · Terceiros · Proposta Kinder Park (3 níveis) e impostos Meta 12,15% registrados.
 - **2026-07-16** · Geral · **Criação da v1 deste arquivo de estado.** Consolidado a partir da memória e do briefing do projeto. Conflitos de budget de Google e de valor do Institucional registrados como itens abertos, não resolvidos silenciosamente.
 - **2026-07-16** · Google · **Split de budget confirmado** pelo Gabriel: B2C ~R$5.000/mês (PMax), B2B ~R$15.000/mês (Search). Conflito da ressalva 3 resolvido; fonte antiga com valores invertidos vira `[SUPERADO]`.
+- **2026-07-17** · B2B/LP · **Teardown da LP B2B atual** (`marketing/briefings/teardown-lp-b2b-atual.md`): a página em produção viola a regra travada (lidera com "aluguel grátis, sem fiador"; prova social "começaram aqui"), formulário não qualifica, captcha amador. Marcada como pendência `[URGENTE]`. Briefing da LP v2 criado (`marketing/briefings/briefing-lp-b2b-locacao.md`); v2 será gerada no Stitch após o onboarding. Integração Stitch (design→código) configurada via MCP. Arquivo de fluxo do período cheio (01/05–15/07) arquivado em `marketing/relatorios/`.
 - **2026-07-16** · Meta B2C · Registrado o **Alinhamento 06/07** com valores exatos em execução: Engajamento/entretenimento R$266/dia (2 conjuntos), Ofertas R$180/dia (2 conjuntos), Institucional R$50/dia, turbinar R$2.200/mês, reserva R$2.200/mês. Fixo R$496/dia, total R$19.280/mês. Substitui os valores redondos anteriores (fixo R$534/dia) e o briefing de Institucional R$4.000/20%, ambos `[SUPERADO]`. Nota: os `%` são rótulos nominais, não frações exatas.
+
+---
+
+- **2026-07-17** · Onboarding/B2B · **"Primeiro mês grátis / sem fiador" rebaixado de `[TRAVADO]`/proibido para preferência atual reavaliável** (decisão do Gabriel no onboarding ArqOS). Segue evitado por ora (hipótese: atrai perfil oposto ao ICP), mas destrava se um teste mostrar que traz lojista qualificado. LP atual permanece `[URGENTE]` de substituir, agora pelo conjunto de defeitos (form não qualifica, captcha amador, posicionamento desalinhado), não por "violação de regra".
+- **2026-07-17** · Onboarding · **Instalação do ArqOS (Perfil 4).** Criadas as pastas núcleo (core, company, products, playbooks, roadmap, logs) preservando branding/marketing/sales/operations/memory. Fluxo público travado pela gestão: ~200 mil/mês · ~6 mil/dia · ~10 mil fim de semana (gancho de atenção; comercial contextualiza). Baseline medido da amostra 01/05–15/07 (uso interno): ~170 mil/mês · ~5,6 mil/dia · sábado ~8,7 mil (máx 12,4 mil). Spam de apostas no site confirmado ao vivo em produção.
 
 ---
 
