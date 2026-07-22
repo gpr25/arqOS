@@ -1,4 +1,14 @@
-<title>Shopping Cidade · Locação para Lojistas</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Locacao de lojas no Shopping Cidade, em Curitiba (Hauer). Ponto com fluxo garantido para lojistas que querem expandir ou trocar de ponto. Fale com o time de locacao.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shopping Cidade | Locacao para Lojistas">
+<meta property="og:description" content="Ponto com fluxo garantido para lojistas que querem crescer. Fale com o time de locacao.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%8D%EF%B8%8F%3C/text%3E%3C/svg%3E"><title>Shopping Cidade · Locação para Lojistas</title>
 <style>
   /* Poppins em produção; no preview cai no fallback do sistema */
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
@@ -278,6 +288,9 @@
     .stat:hover, .feature:hover, .step:hover { transform:none; }
   }
 </style>
+</head>
+<body>
+
 
 <div id="progress" aria-hidden="true"></div>
 
@@ -495,7 +508,9 @@
       </div>
     </div>
     <div class="form-card reveal d1">
-      <form id="lead-form" novalidate>
+      <form id="lead-form" name="lead-locacao-b2b" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="lead-locacao-b2b">
+        <p hidden aria-hidden="true"><label>Não preencha isto: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="field">
           <label for="nome">Nome</label>
           <input id="nome" name="nome" type="text" placeholder="Seu nome" required autocomplete="name">
@@ -783,9 +798,16 @@
     form.addEventListener('submit', function(ev){
       ev.preventDefault();
       if (!form.checkValidity()){ form.reportValidity(); return; }
-      form.style.display = 'none';
-      document.getElementById('ok').classList.add('on');
+      var btn = form.querySelector('button[type=submit]');
+      if (btn){ btn.disabled = true; btn.textContent = 'Enviando...'; }
+      var params = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params })
+        .then(function(r){ if(!r.ok) throw new Error('net'); form.style.display='none'; document.getElementById('ok').classList.add('on'); })
+        .catch(function(){ if(btn){ btn.disabled=false; btn.textContent='Quero conhecer os pontos disponíveis'; } alert('Nao foi possivel enviar agora. Tente novamente em instantes.'); });
     });
   }
 })();
 </script>
+
+</body>
+</html>

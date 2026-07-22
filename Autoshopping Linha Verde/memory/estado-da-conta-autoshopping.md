@@ -1,8 +1,8 @@
 # ALV — ARQUIVO MESTRE DE REGISTRO
 **Autoshopping Linha Verde · Grupo Gadens · Mídia Paga (Meta + Google)**
 
-- **Versão:** 1.0
-- **Última atualização:** 16/07/2026
+- **Versão:** 1.1
+- **Última atualização:** 21/07/2026
 - **Responsável:** Gabriel Pauletto
 - **Função:** fonte única de estado da conta, decisões datadas, números históricos e aprendizados. Base de consulta para não arrastar conversas inteiras para o contexto.
 
@@ -52,7 +52,18 @@
 | Médio | Visita a página de veículo com comportamento ativo |
 | Baixo | Clique genérico, alcance, impressão |
 
-**Meta atual:** 100 leads/mês (Meta + Google combinados). Balizador **provisório** para calibrar nos próximos meses. CPL de referência ~R$109, teto implícito a recalcular conforme divisão de verba. **Não há CPL acordado formalmente com a gestão.**
+🛑 **CONVERSA ≠ LEAD (regra travada 2026-07-21).** As "337 conversas iniciadas no WhatsApp" de
+julho **não são 337 leads**. Existe uma taxa de perda antes de o contato chegar ao lojista, e ela
+**não está medida**. O rastreamento de site/GA4/GTM está em construção justamente para **provar
+quais cliques de anúncio viram lead real**. Enquanto isso não fechar:
+- **Nunca reportar conversa como lead.** Usar sempre o termo "conversas iniciadas".
+- **Não comparar conversas com a meta de leads** — são unidades diferentes.
+- Qualquer conclusão sobre "superamos a meta" está **proibida** até existir o dado de conversão.
+
+**Meta atual:** 100 leads/mês (Meta + Google combinados). Balizador **provisório** para calibrar nos próximos meses.
+**Decisão 2026-07-21:** **manter a meta como está por ora.** Gabriel vai apresentar à gestão
+mostrando que os números foram subestimados e ajustar **gradualmente** — abordagem política mais
+eficaz que uma recalibração de choque. CPL de referência ~R$109, teto implícito a recalcular conforme divisão de verba. **Não há CPL acordado formalmente com a gestão.**
 
 **North-star provisório (enquanto tracking em auditoria):** custo por conversa qualificada iniciada no WhatsApp.
 
@@ -88,6 +99,7 @@ Detalhamento por campanha em Seção 4 (Meta) e Seção 5 (Google).
 **Atribuição sem CAPI (interino):**
 - Tráfego de site: UTMs no GA4.
 - Contato direto de lojista: código de texto pré-preenchido no WhatsApp. Formato `[MET][NOMELOJA]` para Meta lojistas; `[GAD]` reservado para Google Ads.
+- **[21/07/2026] Google:** junk conversion rebaixada para Secundária; `lead_gen` da conversa gerada no **site do Autoshopping** (página de estoque/carro exato) cadastrado como evento de conversão. Ver Seção 5.
 
 **Dependência crítica:** Fase 2 do Meta (otimização por conversão, catálogo AIA, retargeting granular) e a auditoria de conversão dependem de cooperação da Revenda Mais em CAPI, GTM e feed. Historicamente pouco cooperativa nesses pontos.
 
@@ -136,6 +148,13 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 
 **Plano B (teste de isolamento, não migração):** criar conta de anúncios nova no mesmo BM, com os mesmos ativos (pixel, página, domínio), e testar em ordem: (1) sobe anúncio sem #2061015? (2) pixel permanece associado ao salvar/reabrir? (3) **a pergunta que importa:** a conta nova gera boleto/Pix? Interpretação: se tudo funciona, defeito isolado na conta velha; se pagamento ainda falha, o bloqueio é do BM ou do método, e trocar de conta não resolve. **Não migrar verba nem campanhas** (perde aprendizado, decisão grande, sem necessidade enquanto houver saldo).
 
+**Atualização 21/07/2026 (backfill):**
+- **Suporte Meta:** crise **NÃO resolvida**. Casos `1002215365623050`/`1556667192628603` seguem em aberto (15+ dias). Backend Meta ainda com #2061015/#3858103 e bloqueio de faturamento.
+- **Contorno aplicado:** pagamento de julho **feito via PIX em 17/07/2026**, custoso e difícil de destravar com **financeiro/diretoria**. Resolvido "por hora"; saldo segurou, **operação não parou**.
+- **Plano B (conta nova):** **NÃO executado.** A pergunta-chave (conta nova gera boleto/Pix?) segue sem teste.
+- **Reclame Aqui:** **NÃO registrado** (despriorizado por sobrecarga).
+- **Risco aberto:** pagamento de **agosto/2026** (a ser gerado poucos dias após 20/07) deve **reabrir o mesmo bloqueio** e nova negociação com diretoria. Problema recorrente mês a mês enquanto backend não for corrigido.
+
 ---
 
 ## 5. GOOGLE ADS — ESTRUTURA
@@ -146,6 +165,11 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 - PMax herdada rodando sem direção.
 - ~194.000 "conversões" acumuladas na conta a ~R$6 cada. Confirmadas como junk: micro-eventos de página importados do GA4 como conversão primária. Toda estratégia de lance automático estava otimizando para sinal sem valor.
 - **Passo pré-lançamento obrigatório:** rebaixar essa junk conversion para Secundária antes de subir qualquer campanha nova. A queda no número de conversões pós-limpeza é confirmação de que a medição passou a funcionar, e está pré-explicada no deck de gestão.
+
+**✅ ATUALIZAÇÃO 21/07/2026 (backfill):**
+- **Junk conversion (194k) REBAIXADA para Secundária — CONCLUÍDO** (data exata `[PREENCHER]`). O passo pré-lançamento obrigatório está feito.
+- **Novo evento de conversão cadastrado:** `lead_gen` da conversa gerada a partir do **site do Autoshopping** (não é LP — correção 20/07). Destino primário do tráfego = página de **estoque** ou do **carro exato**; o `lead_gen` marca a conversa originada aí.
+- **Search continua NÃO lançado** — motivo: agenda. Houve alinhamento com a gestão pra **lançar tudo ainda em julho** (meta ~31/07/2026). Enquanto não lança, budget Google roda subutilizado (~R$9k de R$22k, ver junho).
 
 **Estrutura aprovada (não lançada ainda em jul/2026):**
 
@@ -209,6 +233,80 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 - CPL maior que junho é esperado: campanha consolidada em fase de aprendizado do algoritmo. Pré-explicado no deck.
 - Melhor lojista: **Schafas, 44 contatos a R$11,02**. Pior: **Massa Motors, 11 contatos a R$42,49**.
 
+**01 a 21/07/2026 — Meta, números REAIS (export `Autoshopping-Linha-Verde-*-1-de-jul-a-21-de-jul-2026`):**
+
+- **Gasto total no período: R$ 13.027,10** em 21 dias (média R$620/dia).
+- **Lojistas (CTWA): 337 conversas, CPL médio R$17,82, gasto R$6.005,70.** Ritmo ~16 conversas/dia, mantido em relação aos primeiros 13 dias (200 conversas).
+- Site MOF+BOF: **13.808 LPV**, R$3.799,22 (R$0,275/LPV). MOF R$2.401,23 (8.445 LPV) · BOF R$1.388,00 (5.346 LPV).
+- Reconhecimento: **576.941 de alcance**, R$1.143,65 (R$1,98/mil).
+- Tráfego IG: 7.326 visitas ao perfil, R$1.174,38 (R$0,16/visita).
+- Turbinar (7 posts): ~R$664 no período.
+
+**Ranking de lojistas por CPL (21 dias) — base para o teste do próximo ciclo:**
+
+| 1ª quinzena (01-13/07) | Conversas | CPL | | 2ª quinzena (13-21/07) | Conversas | CPL |
+|---|---|---|---|---|---|---|
+| SCHAFAS | 46 | **R$10,55** | | TOYOTO | 32 | **R$9,93** |
+| GS MOTORS | 37 | R$12,84 | | VIA MAIS | 20 | R$19,35 |
+| SOUTH MOTORS | 35 | R$14,14 | | GRANTORINO | 18 | R$20,92 |
+| OZ | 32 | R$14,84 | | SITIMA | 18 | R$21,19 |
+| CWB CAR | 28 | R$17,66 | | DGONGORA | 17 | R$22,81 |
+| SPEED | 13 | R$37,02 | | WAY | 15 | R$25,68 |
+| MASSA MOTORS | 11 | **R$42,53** | | ATUAL | 14 | **R$28,31** |
+
+- **Alvos do teste de público+criativo:** MASSA MOTORS (R$42,53), SPEED (R$37,02), ATUAL (R$28,31), WAY (R$25,68).
+- **Massa Motors é um caso estrutural, não circunstancial:** estava em R$42,49 em 01-13/07 e ficou em R$42,53 em 01-21/07. Repetiu o pior resultado com precisão — não é ruído, é o público/criativo.
+- **Toyoto entrou em 13/07 e já é o melhor CPL da conta.** Vale investigar o que está diferente nele antes de replicar.
+- `[RESSALVA]` 2ª quinzena ainda em voo (8 dias contra 13 da 1ª); CPL tende a melhorar. Não concluir superioridade da 1ª quinzena.
+
+**Split regional do Reconhecimento (01-21/07) — munição para a reunião de 22/07:**
+
+| Região | Gasto 21d | Alcance | Custo/mil | Projeção mês |
+|---|---|---|---|---|
+| **Curitiba** | R$ 315,22 | 153.309 | R$ 2,06 | ~R$465 |
+| Interior PR | R$ 214,35 | 78.248 | R$ 2,74 | — |
+| Oeste PR | R$ 214,26 | 109.669 | R$ 1,95 | — |
+| SC/MS | R$ 195,86 | 99.401 | R$ 1,97 | — |
+| SP | R$ 203,96 | 147.321 | R$ 1,38 | — |
+| **Total fora de Curitiba** | **R$ 828,43** | 434.639 | — | **~R$1.223/mês** |
+
+✅ **Confirma o número que Gabriel levaria à gestão:** ~R$1.200/mês fora de Curitiba. Proporção real: **72% fora × 28% dentro**.
+⚠️ **Contra-argumento a antecipar:** SP tem o alcance **mais barato** (R$1,38/mil vs R$2,06 de Curitiba). A resposta não é negar — é que **alcance fora da praça não converte**: a venda é 100% presencial em Curitiba/RMC, então alcance barato em SP é barato porque **não vale aqui**.
+📌 **Mudança já feita em 20/07:** Interior PR, Oeste PR e SC/MS foram **pausados**. Curitiba e **SP seguem ativos** — `[PREENCHER]` SP foi mantido de propósito?
+
+⚠️ **Projeção de gasto Meta de julho:** ~R$18.500 contra verba de R$16.000 (~15% acima).
+✅ **Esclarecido 2026-07-21:** o estouro é **conhecido e absorvido**. Por causa dos meses de
+bloqueio/subgasto, existe **"gordura" acumulada para queimar**, e Gabriel **não identifica mais
+nenhum lugar para cortar**. Registrar como decisão consciente, não como descontrole.
+
+✅ **Motivo real das pausas regionais (20/07):** Interior PR, Oeste PR e SC/MS foram pausados
+**porque a verba ia estourar**, com critério de **custo e resultado**. Não foi realocação
+estratégica. Gabriel reconhece que está longe do ideal e que não havia alternativa. `[RESSALVA]`
+isso muda o enquadramento na reunião: o argumento não é "otimizei a geografia", é "tive que cortar
+e escolhi pelo dado" — que é mais honesto e igualmente defensável.
+
+### GOOGLE ADS — números reais 01/07 a 21/07 (export)
+
+| Campanha | Custo | Impressões | Cliques | CPC | Conversões |
+|---|---|---|---|---|---|
+| **PMax_Institucional** (única com gasto) | **R$ 1.505,39** | 44.576 | 9.827 | R$ 0,15 | 470,39 |
+
+🔴 **Confirma que o Search aprovado NÃO foi lançado** — só a PMax herdada roda.
+✅ **Subgasto EXPLICADO (esclarecido 2026-07-21) — e é boa notícia.** R$1.505,39 em 21 dias
+(~R$2.222/mês contra R$22.000) **não é descontrole nem teto fictício**: Gabriel **pausou os gastos
+incorretos** (a estrutura herdada que queimava verba em sinal errado) e **ainda não conseguiu subir
+as campanhas corretas**. A queda contra junho (NF R$8.988,81) é **consequência direta e desejada**
+dessa limpeza.
+
+💰 **A verba do Google é real e está disponível.** Ao contrário do Meta — onde Gabriel opera
+apertado contra o teto — **no Google há folga de orçamento e espaço para testes**. Essa é a
+assimetria central da conta hoje: **restrição no Meta, liberdade no Google.**
+
+**Consequência prática:** o dia dedicado de **2026-07-23** é o que converte essa folga em operação.
+Enquanto o Search não sobe, a verba não é perdida — mas também não trabalha.
+`[RESSALVA]` as 470,39 conversões precisam ser verificadas — com a junk conversion rebaixada e o
+`lead_gen` recém-criado, ainda não dá para afirmar que esse número é sinal limpo.
+
 **Início jul/2026 — Crise técnica Meta aberta:** erros #2061015 e #3858103, pixel desmarcando, faturamento bloqueado (boleto+Pix). Ver Seção 4.1.
 
 **14/07/2026 — Alinhamento semanal + deck de gestão:**
@@ -218,6 +316,29 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 - **Deck de gestão produzido:** 11 slides, PPTX, identidade visual do Shopping Cidade como referência, assinatura de logo invertida "LINHA VERDE / AUTOSHOPPING", verde primário `#21AA61`, verde escuro `#094825`. Cobre: comparação jun (219) × jul 1-13 (200); breakdown por lojista; narrativa de evolução estrutural como crescimento natural; bloqueio de pagamento + sugestão de cartão de crédito; panorama de criativos; slide explicando por que as campanhas da gestão anterior "todas rodavam" (otimizadas para clique em link a ~R$0,15, não conversa no WhatsApp a ~R$17, diferença de 100×); alocação com R$1.200/mês de reconhecimento fora de Curitiba destacado em vermelho; forms enquadrado como problema de registro, não de resultado; prioridades dos próximos 30 dias.
 - **Forms de qualidade de lead dos lojistas:** adoção baixíssima, 5 de 23 lojistas, 7 respostas, zero vendas registradas (um lojista confirmou verbalmente uma venda fechada que nunca foi registrada).
 - **Copa do Mundo:** 23 vídeos institucionais por lojista mantidos na campanha de tráfego IG existente até **19/07/2026**. Transição/sunset a planejar.
+
+**21/07/2026 — Backfill de logs (mídia paga) + cruzamento com Drive:**
+- Criado `logs/changelog.md` (não existia; padrão exigia). Registro datado detalhado segue aqui na Seção 7; changelog é o resumo cronológico.
+- **Crise Meta (atualização):** suporte NÃO resolveu; pagamento de julho feito via **PIX** (contorno custoso via financeiro/diretoria); Plano B (conta nova) NÃO executado; Reclame Aqui NÃO registrado; **risco de recorrência no pagamento de agosto**. Detalhe na Seção 4.1.
+- **NFs de mídia confirmadas (Drive → `NFs/Autoshopping`):**
+  - Meta Junho/2026: NF **140581744**, base serviço **R$ 16.738,92**, total c/ tributos R$ 19.053,98, venc. ISS 10/07. Bate com gasto do relatório.
+  - Google Junho/2026: NF **37887706**, **R$ 8.988,81** (pagamento já recebido, cliente Google 2154267136).
+- **Insight de budget Google:** gasto real de junho (~R$9k) está **muito abaixo do budget de R$22k** — consequência direta da estrutura Search aprovada ainda NÃO ter sido lançada. ~R$13k/mês de verba Google subutilizada. `[PREENCHER: confirmar se houve gasto/lançamento entre 14/07 e 20/07]`.
+- **CONTRADIÇÃO detectada (Drive × log):** o PDF `Relatórios/.../Relatório Mensal Autoshopping Linha Verde Junho-26.pdf` reporta **267 conversas** no Meta (fonte Mlabs), enquanto o número validado é **219**. O relatório publicado no Drive usa a fonte descartada. **Ação:** corrigir o número antes de reaproveitar esse relatório em apresentação. Números Google do mesmo PDF (1.097,85 "conversões" a R$8,20) são a junk conversion — não usar como resultado.
+
+**21/07/2026 (cont.) — Estrutura, budget e tracking (Lote 2 do backfill):**
+- **[Google]** Search **não lançado** (agenda). Alinhamento com gestão pra lançar tudo **ainda em julho** (~31/07). Junk conversion **rebaixada p/ Secundária (feito)** + evento `lead_gen` da LP cadastrado. Ver Seções 3 e 5.
+- **[Meta][budget]** Precisou ajustar **praticamente todas as campanhas** pra caber nos R$16k. Distribuição vigente da Seção 4 pode ter sofrido micro-ajustes `[PREENCHER: detalhar valores por campanha]`.
+- **[Meta][rotação]** Ciclo na **2ª quinzena** (de 4); **nenhum ad set de lojista entrou/saiu**; "otimizações constantes" `[PREENCHER: quais — criativo, verba fina, público]` (atenção à restrição #6, não mexer no aprendizado).
+- **[Meta][Copa] Correção de data:** os 23 vídeos **NÃO saíram em 19/07** (como o deck de 14/07 dizia); seguem **até fim de julho** `[PREENCHER: confirmar por email]`. Quando saírem, a campanha de tráfego IG desses vídeos **encerra em definitivo**.
+- **[Decisão/prazo] 22/07/2026 (quarta):** reunião com a gestão do Autoshopping pra expor os dados — foco em **realocar os R$1.200/mês de Reconhecimento que estão indo pra fora de Curitiba** enquanto falta verba dentro.
+
+**21/07/2026 (cont.) — Otimizações reais e interface comercial (Lote 3):**
+- **[Meta] "Otimizações constantes" = manutenção, não reestruturação.** No período: **sem troca de criativo** (exceto **1 vídeo que estava errado**, corrigido) e **sem mudança de verba** (verba por lojista é fixa/estabelecida). Ação concreta: revisar anúncios e **desativar estáticos/vídeos** só em casos de **muita disparidade de resultado**. Restrição #6 respeitada — mudanças maiores só com **10+ dias**.
+- **[Meta][aprendizado — nota importante]** Nenhum ad set de lojista parece estar em aprendizado, **porém nenhum atinge 50 conversões/semana** (limiar formal da Meta). Na prática, ficam em "semi-aprendizado" permanente → régua operacional de segurança = **não fazer mudança grande antes de 10 dias**.
+- **[Meta][plano próximos ciclos]** Coletando dados por grupo de lojistas pra ajustar nos **próximos ciclos**. **1º teste planejado:** trocar **público + criativos** dos lojistas de **pouco resultado / custo muito elevado**.
+- **[Comercial/forms] Sem novidade — segue travado.** Nenhuma venda nova atribuível à mídia, nenhum feedback novo de qualidade de lead. Forms de qualidade continua com adesão baixíssima; Gabriel + gestora pressionando, mas lojistas **resistentes** ("nunca têm tempo", apesar do form levar ~30s). Elo comercial→mídia segue como a maior lacuna de medição.
+- **[Performance julho] Números parciais existem mas não consolidados aqui** — Gabriel traz os dados completos via **exports/Drive**. `[PREENCHER: CPL, conversas e gasto Meta de 14/07→31/07 a partir do export]`.
 
 ---
 
@@ -230,6 +351,7 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 - **Rotação é operacional, não estrutural.** Pausar/ativar ad sets de lojista, nunca recriar.
 - **Lookalike é prospecção, não o seed.** Reconhecimento usa geo broad sem lookalike de propósito: função é alcance frio, não retargeting.
 - **Criativo direciona entrega (Andromeda).** Profundidade criativa importa mais que segmentação fina.
+- **"Sair do aprendizado" é inatingível no formato lojista.** Com verba fina por lojista, nenhum ad set chega a 50 conversões/semana. Logo o critério formal da Meta não serve de gate — a régua prática é **não mexer grande antes de 10 dias** e otimizar por disparidade evidente de resultado (desativar estático/vídeo destoante), não por micro-ajuste de verba (que é fixa).
 
 ---
 
@@ -238,10 +360,11 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 | Prioridade | Item | Estado |
 |---|---|---|
 | Corrigir agora | Resolver falha de backend da conta Meta (escalação + Plano B como teste de isolamento) | Aberto |
-| Corrigir agora | Rebaixar junk conversion (194k) do Google para Secundária | Pré-lançamento, pendente |
+| ✅ Concluído (20/07) | Rebaixar junk conversion (194k) do Google para Secundária | FEITO. `lead_gen` da LP cadastrado. |
 | Investigar antes de mexer | Auditoria completa de conversão nas duas plataformas (via Revenda Mais) antes de habilitar qualquer lance automático | Pendente |
-| Medir 7-14 dias | Estrutura consolidada de lojistas Meta saindo do aprendizado | Em curso |
-| Fazer | Lançar Search Google (Fase 1) após auditoria de tracking | Aprovado, não lançado |
+| Medir 7-14 dias | Estrutura consolidada de lojistas Meta saindo do aprendizado | Em curso (nenhum chega a 50 conv/sem; régua = 10+ dias p/ mudança grande) |
+| Próximos ciclos | Testar troca de **público + criativos** nos ad sets de lojista de pouco resultado / custo elevado | Planejado, coletando dados por grupo |
+| Corrigir agora | Lançar Search Google (Fase 1) | Aprovado, não lançado. Atraso por agenda. Alinhado c/ gestão p/ lançar ainda em julho (meta ~31/07/2026). |
 | Fazer | Dedup de público dos ad sets de lojista (raio 15km, seed compartilhado) | Só após sair do aprendizado |
 | Fazer | Transição/sunset dos vídeos Copa (23 vídeos) da campanha IG | Ativos até 19/07 |
 | Onda 2 | Premium Google + grupo rotativo Isca de Modelo | Depois do Search estável |
@@ -268,3 +391,4 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 | Versão | Data | Mudança |
 |---|---|---|
 | 1.0 | 16/07/2026 | Criação. Consolidado estado de negócio, budget, tracking, estruturas Meta e Google, crise técnica Meta, registro datado de jun e jul/2026, aprendizados e backlog. |
+| 1.1 | 21/07/2026 | Backfill: atualização da crise Meta (Seção 4.1 — PIX/julho, Plano B não feito, Reclame Aqui não feito, risco agosto); entrada datada 20/07 na Seção 7 com NFs de mídia (Meta R$16.738,92 / Google R$8.988,81 jun), insight de subutilização do budget Google, e contradição 267×219 do relatório de junho. Criado `logs/changelog.md`. |

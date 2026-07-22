@@ -4,6 +4,12 @@
 
 Workspace central das empresas de Gabriel (Grupo Gadens). Cada empresa tem sua própria pasta com contexto calibrado. **Nunca assuma qual empresa é o assunto — pergunte ou deduza pelo contexto explícito da conversa.**
 
+## Papel do Gabriel (fixo — não confundir nunca)
+
+**Gabriel faz APENAS tráfego pago / performance.** Ele é o responsável pelos anúncios (Meta Ads principal, Google Ads ativo; **TikTok encerrado em 21/07/2026 — sem verba**) de todas as empresas do grupo. **Não é o dono das áreas de orgânico, comercial, financeiro ou conteúdo.** Ele às vezes ajuda essas áreas, mas **sempre em prol dos anúncios** — nunca como responsável por elas.
+
+Consequência prática: ao pedir dados, analisar, entrevistar ou gerar relatório, o eixo é **sempre a performance de mídia paga** (campanhas, budget, criativos, público, rastreamento, CPL/ROAS, decisões sobre anúncios). Comercial/financeiro/orgânico só entram **na medida em que afetam ou informam os anúncios** (ex.: qualidade de lead que o comercial reporta, gasto/NF de mídia, post orgânico que ele impulsiona). Não tratar Gabriel como gestor dessas áreas.
+
 ## Estrutura
 
 | Pasta | Conteúdo |

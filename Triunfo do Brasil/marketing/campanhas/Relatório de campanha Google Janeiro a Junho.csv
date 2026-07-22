@@ -1,0 +1,82 @@
+Relatório de campanha
+1 de janeiro de 2026 - 30 de junho de 2026
+Mês,Status da campanha,Campanha,Orçamento,Nome do orçamento,Tipo de orçamento,Código da moeda,Status,Motivos do status,ID da campanha,Tipo de campanha,Impr.,Interações,Custo médio,Custo,Cliques,CTR,Parcela impr rede de pesquisa,Parc impr perd rede de pesquisa (orç),Pontuação de otimização,Tipo de estratégia de lances,Taxa de conv.,Conversões,Custo / conv.,Resultados,% de sessões engajadas (GA4),Eventos / sessão (GA4)
+janeiro de 2026,Ativada,[SEARCH][GERMANY],"10,00", --,Diário,BRL,Qualificado,,23999962781,Pesquisa,0,0,0,"0,00",0, --, --, --,"82,39",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+fevereiro de 2026,Ativada,[SEARCH][GERMANY],"10,00", --,Diário,BRL,Qualificado,,23999962781,Pesquisa,0,0,0,"0,00",0, --, --, --,"82,39",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+março de 2026,Ativada,[SEARCH][GERMANY],"10,00", --,Diário,BRL,Qualificado,,23999962781,Pesquisa,0,0,0,"0,00",0, --, --, --,"82,39",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Ativada,[SEARCH][GERMANY],"10,00", --,Diário,BRL,Qualificado,,23999962781,Pesquisa,0,0,0,"0,00",0, --, --, --,"82,39",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Ativada,[SEARCH][GERMANY],"10,00", --,Diário,BRL,Qualificado,,23999962781,Pesquisa,0,0,0,"0,00",0, --, --, --,"82,39",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Ativada,[SEARCH][GERMANY],"10,00", --,Diário,BRL,Qualificado,,23999962781,Pesquisa,0,0,0,"0,00",0, --, --, --,"82,39",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Ativada,[SEARCH][USA],"70,00", --,Diário,BRL,Qualificado,,23999944550,Pesquisa,0,0,0,"0,00",0, --, --, --,"68,15",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+fevereiro de 2026,Ativada,[SEARCH][USA],"70,00", --,Diário,BRL,Qualificado,,23999944550,Pesquisa,0,0,0,"0,00",0, --, --, --,"68,15",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+março de 2026,Ativada,[SEARCH][USA],"70,00", --,Diário,BRL,Qualificado,,23999944550,Pesquisa,0,0,0,"0,00",0, --, --, --,"68,15",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Ativada,[SEARCH][USA],"70,00", --,Diário,BRL,Qualificado,,23999944550,Pesquisa,0,0,0,"0,00",0, --, --, --,"68,15",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Ativada,[SEARCH][USA],"70,00", --,Diário,BRL,Qualificado,,23999944550,Pesquisa,0,0,0,"0,00",0, --, --, --,"68,15",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Ativada,[SEARCH][USA],"70,00", --,Diário,BRL,Qualificado,,23999944550,Pesquisa,0,0,0,"0,00",0, --, --, --,"68,15",Maximizar cliques,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Pausada,[PESQUISA] [INTERNACIONAL],"20,00", --,Diário,BRL,Pausado,campanha pausada,23433682466,Pesquisa,12.779,427,"13,34","5694,76",427,"3,34%",< 10%,"33,72%", --,Maximizar as conversões,"0,70%","3,00","1898,25","Enviar formulário de lead: 3,00", --,0
+fevereiro de 2026,Pausada,[PESQUISA] [INTERNACIONAL],"20,00", --,Diário,BRL,Pausado,campanha pausada,23433682466,Pesquisa,49.184,904,"7,43","6718,41",904,"1,84%",< 10%,"12,84%", --,Maximizar as conversões,"0,22%","2,00","3359,21","Enviar formulário de lead: 2,00", --,0
+março de 2026,Pausada,[PESQUISA] [INTERNACIONAL],"20,00", --,Diário,BRL,Pausado,campanha pausada,23433682466,Pesquisa,3.863,112,"9,80","1097,30",112,"2,90%",< 10%,"16,13%", --,Maximizar as conversões,"0,89%","1,00","1097,30","Enviar formulário de lead: 1,00", --,0
+abril de 2026,Pausada,[PESQUISA] [INTERNACIONAL],"20,00", --,Diário,BRL,Pausado,campanha pausada,23433682466,Pesquisa,173.744,2.547,"1,75","4466,40",2.547,"1,47%",< 10%,"0,20%", --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Pausada,[PESQUISA] [INTERNACIONAL],"20,00", --,Diário,BRL,Pausado,campanha pausada,23433682466,Pesquisa,147.448,2.639,"0,92","2435,02",2.639,"1,79%",< 10%,"0,00%", --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Pausada,[PESQUISA] [INTERNACIONAL],"20,00", --,Diário,BRL,Pausado,campanha pausada,23433682466,Pesquisa,2,0,0,"0,00",0,"0,00%", --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Pausada,[PMax] [Exterior],"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos está limitada pela política,22804019732,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+fevereiro de 2026,Pausada,[PMax] [Exterior],"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos está limitada pela política,22804019732,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+março de 2026,Pausada,[PMax] [Exterior],"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos está limitada pela política,22804019732,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Pausada,[PMax] [Exterior],"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos está limitada pela política,22804019732,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Pausada,[PMax] [Exterior],"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos está limitada pela política,22804019732,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Pausada,[PMax] [Exterior],"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos está limitada pela política,22804019732,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Pausada,Pesquisa - Exterior,"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos anúncios foi limitada pela política,22377673848,Pesquisa,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+fevereiro de 2026,Pausada,Pesquisa - Exterior,"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos anúncios foi limitada pela política,22377673848,Pesquisa,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+março de 2026,Pausada,Pesquisa - Exterior,"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos anúncios foi limitada pela política,22377673848,Pesquisa,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Pausada,Pesquisa - Exterior,"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos anúncios foi limitada pela política,22377673848,Pesquisa,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Pausada,Pesquisa - Exterior,"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos anúncios foi limitada pela política,22377673848,Pesquisa,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Pausada,Pesquisa - Exterior,"200,00", --,Diário,BRL,Pausado,campanha pausada; a maioria dos anúncios foi limitada pela política,22377673848,Pesquisa,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Pausada,Website traffic-Performance Max- teste,"94,28", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos foi reprovada,22349352860,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+fevereiro de 2026,Pausada,Website traffic-Performance Max- teste,"94,28", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos foi reprovada,22349352860,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+março de 2026,Pausada,Website traffic-Performance Max- teste,"94,28", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos foi reprovada,22349352860,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Pausada,Website traffic-Performance Max- teste,"94,28", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos foi reprovada,22349352860,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Pausada,Website traffic-Performance Max- teste,"94,28", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos foi reprovada,22349352860,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Pausada,Website traffic-Performance Max- teste,"94,28", --,Diário,BRL,Pausado,campanha pausada; a maioria dos grupos de recursos foi reprovada,22349352860,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Pausada,Campaign #1,"56,00", --,Diário,BRL,Pausado,campanha pausada,22349125106,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+fevereiro de 2026,Pausada,Campaign #1,"56,00", --,Diário,BRL,Pausado,campanha pausada,22349125106,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+março de 2026,Pausada,Campaign #1,"56,00", --,Diário,BRL,Pausado,campanha pausada,22349125106,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Pausada,Campaign #1,"56,00", --,Diário,BRL,Pausado,campanha pausada,22349125106,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Pausada,Campaign #1,"56,00", --,Diário,BRL,Pausado,campanha pausada,22349125106,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Pausada,Campaign #1,"56,00", --,Diário,BRL,Pausado,campanha pausada,22349125106,Performance Max,0,0,0,"0,00",0, --, --, --, --,Maximizar as conversões,"0,00%","0,00","0,00",0, --,0
+ --,Total: Campanhas, --, --, --, --,BRL, --,, --, --,387.020,6.629,"3,08","20411,89",6.629,"1,71%",< 10%,"24,34%", --, --,"0,09%","6,00","3401,98","Enviar formulário de lead: 6,00", --,0
+ --,Total: Campanhas, --, --, --, --,BRL, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+ --,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+janeiro de 2026,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+fevereiro de 2026,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+março de 2026,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+abril de 2026,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+maio de 2026,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+junho de 2026,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+ --,Total: Campanhas, --, --, --, --, --, --,, --, --,0,0,0,0,0, --, --, --, --, --, --,0,0,0, --,0
+janeiro de 2026,Total: Campanhas, --, --, --, --,BRL, --,, --, --,12.779,427,"13,34","5694,76",427,"3,34%",< 10%,"33,72%", --, --,"0,70%","3,00","1898,25","Enviar formulário de lead: 3,00", --,0
+fevereiro de 2026,Total: Campanhas, --, --, --, --,BRL, --,, --, --,49.184,904,"7,43","6718,41",904,"1,84%",< 10%,"12,84%", --, --,"0,22%","2,00","3359,21","Enviar formulário de lead: 2,00", --,0
+março de 2026,Total: Campanhas, --, --, --, --,BRL, --,, --, --,3.863,112,"9,80","1097,30",112,"2,90%",< 10%,"16,13%", --, --,"0,89%","1,00","1097,30","Enviar formulário de lead: 1,00", --,0
+abril de 2026,Total: Campanhas, --, --, --, --,BRL, --,, --, --,173.744,2.547,"1,75","4466,40",2.547,"1,47%",< 10%,"0,20%", --, --,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Total: Campanhas, --, --, --, --,BRL, --,, --, --,147.448,2.639,"0,92","2435,02",2.639,"1,79%",< 10%,"0,00%", --, --,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Total: Campanhas, --, --, --, --,BRL, --,, --, --,2,0,0,"0,00",0,"0,00%", --, --, --, --,"0,00%","0,00","0,00",0, --,0
+,Total: Conta,,,,,BRL,,,,,387.020,6.629,"3,08","20411,89",6.629,"1,71%",< 10%,"24,34%",,,"0,09%","6,00","3401,98","Enviar formulário de lead: 6,00", --,0
+junho de 2026,Total: Conta,,,,,BRL,,,,,2,0,0,"0,00",0,"0,00%", --, --,,,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Total: Conta,,,,,BRL,,,,,147.448,2.639,"0,92","2435,02",2.639,"1,79%",< 10%,"0,00%",,,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Total: Conta,,,,,BRL,,,,,12.779,427,"13,34","5694,76",427,"3,34%",< 10%,"33,72%",,,"0,70%","3,00","1898,25","Enviar formulário de lead: 3,00", --,0
+fevereiro de 2026,Total: Conta,,,,,BRL,,,,,49.184,904,"7,43","6718,41",904,"1,84%",< 10%,"12,84%",,,"0,22%","2,00","3359,21","Enviar formulário de lead: 2,00", --,0
+abril de 2026,Total: Conta,,,,,BRL,,,,,173.744,2.547,"1,75","4466,40",2.547,"1,47%",< 10%,"0,20%",,,"0,00%","0,00","0,00",0, --,0
+março de 2026,Total: Conta,,,,,BRL,,,,,3.863,112,"9,80","1097,30",112,"2,90%",< 10%,"16,13%",,,"0,89%","1,00","1097,30","Enviar formulário de lead: 1,00", --,0
+,Total: Pesquisa,,,,,BRL,,,,Pesquisa,387.020,6.629,"3,08","20411,89",6.629,"1,71%",< 10%,"24,34%",,,"0,09%","6,00","3401,98","Enviar formulário de lead: 6,00", --,0
+,Total: Performance Max,,,,,BRL,,,,Performance Max,0,0,0,"0,00",0, --, --, --,,,"0,00%","0,00","0,00",0, --,0
+março de 2026,Total: Performance Max,,,,,BRL,,,,Performance Max,0,0,0,"0,00",0, --, --, --,,,"0,00%","0,00","0,00",0, --,0
+março de 2026,Total: Pesquisa,,,,,BRL,,,,Pesquisa,3.863,112,"9,80","1097,30",112,"2,90%",< 10%,"16,13%",,,"0,89%","1,00","1097,30","Enviar formulário de lead: 1,00", --,0
+maio de 2026,Total: Pesquisa,,,,,BRL,,,,Pesquisa,147.448,2.639,"0,92","2435,02",2.639,"1,79%",< 10%,"0,00%",,,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Total: Pesquisa,,,,,BRL,,,,Pesquisa,173.744,2.547,"1,75","4466,40",2.547,"1,47%",< 10%,"0,20%",,,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Total: Performance Max,,,,,BRL,,,,Performance Max,0,0,0,"0,00",0, --, --, --,,,"0,00%","0,00","0,00",0, --,0
+junho de 2026,Total: Pesquisa,,,,,BRL,,,,Pesquisa,2,0,0,"0,00",0,"0,00%", --, --,,,"0,00%","0,00","0,00",0, --,0
+maio de 2026,Total: Performance Max,,,,,BRL,,,,Performance Max,0,0,0,"0,00",0, --, --, --,,,"0,00%","0,00","0,00",0, --,0
+fevereiro de 2026,Total: Pesquisa,,,,,BRL,,,,Pesquisa,49.184,904,"7,43","6718,41",904,"1,84%",< 10%,"12,84%",,,"0,22%","2,00","3359,21","Enviar formulário de lead: 2,00", --,0
+junho de 2026,Total: Performance Max,,,,,BRL,,,,Performance Max,0,0,0,"0,00",0, --, --, --,,,"0,00%","0,00","0,00",0, --,0
+janeiro de 2026,Total: Pesquisa,,,,,BRL,,,,Pesquisa,12.779,427,"13,34","5694,76",427,"3,34%",< 10%,"33,72%",,,"0,70%","3,00","1898,25","Enviar formulário de lead: 3,00", --,0
+fevereiro de 2026,Total: Performance Max,,,,,BRL,,,,Performance Max,0,0,0,"0,00",0, --, --, --,,,"0,00%","0,00","0,00",0, --,0
+abril de 2026,Total: Performance Max,,,,,BRL,,,,Performance Max,0,0,0,"0,00",0, --, --, --,,,"0,00%","0,00","0,00",0, --,0

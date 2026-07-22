@@ -18,6 +18,28 @@
 
 ## Aprendizados
 
+**2026-07-21 — Mídia paga / Estratégia de qualificação**
+**Decisão/Aprendizado:** estratégia declarada **"primeiro gira, depois qualifica"** — aceitar
+volume com lead mais frio no início (especialmente no Meta) para dar giro ao funil, e só depois
+apertar a qualificação.
+**Contexto:** dos ~40 leads do período (21/06→21/07), os do Meta vieram **claramente mais frios e
+curiosos**. Isso **não foi falha**, foi escolha.
+**Por quê:** com funil novo e conversão recém-instalada, volume gera sinal e aprendizado; filtrar
+cedo demais mata o dado antes de existir.
+**Impacto:** não tratar lead frio do Meta como erro de segmentação neste período. A virada para
+qualificação passa a ser um passo consciente, com data, não um ajuste silencioso.
+
+**2026-07-21 — Mídia paga / Verba (ALERTA)**
+**Decisão/Aprendizado:** em **2026-07-15** a verba foi reduzida para não estourar o orçamento, e o
+patamar atual ficou **abaixo do limiar operacional — nem Google nem Meta conseguem rodar**.
+Resultado: de ~40 leads no período para **1 lead desde 15/07**.
+**Contexto:** no mesmo 15/07 também foram alterados **formatos e formulários**.
+**Por quê:** restrição orçamentária, não escolha de performance.
+**Impacto:** (a) este é o **problema nº1 da conta** — sem decisão de verba (ou concentrar tudo em
+uma frente em vez de duas), criativo e copy não mudam nada; (b) **limitação de diagnóstico**: com
+verba e formato alterados no mesmo dia, **não dá para atribuir** a queda a uma causa isolada.
+Aprendizado de método: mudar **uma variável por vez** quando o objetivo for entender causa.
+
 **2026-07-02 — Marketing / LP internacional**
 **Decisão/Aprendizado:** Iniciado projeto de LP de captura de leads B2B para o mercado dos EUA (inglês), com pesquisa de concorrentes, UX/UI, SEO e animação antes da execução. Levantadas certificações reais da Triunfo (ver `company/certificacoes.md`) via triunfodobrasil.com/certificacoes — FSSC 22000, Rainforest Alliance, Fair for Life, Kosher, Selo ESG, IG-Mathe, orgânico (selo específico ainda a confirmar).
 **Contexto:** Assets de marca reais (logos e fontes) foram localizados em `branding/Logos/` e `branding/FONTES/` — já versionados no repo, não são mais placeholder/pendência externa.

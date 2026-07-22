@@ -30,6 +30,76 @@ continua indo pra `memory/decisoes.md` — este arquivo é o índice cronológic
 
 ---
 
+## 2026-07-21 — Backfill de mídia paga (período 2026-06-21 → 2026-07-21)
+
+**O que foi feito (recuperado por entrevista, eixo mídia paga):**
+
+- **2026-07-03 — Campanhas Google publicadas.** `[SEARCH] [US] Ingredient Sourcing` e
+  `[SEARCH] [DE] Ingredient Sourcing` **subiram em 03/07/2026 e seguem rodando.** Isso resolve o
+  `[PREENCHER]` de data real de publicação em `memory/campanhas.md` e ancora todas as datas de
+  controle (ver abaixo).
+- **2026-07-15 — Redução de verba** nas campanhas para **não estourar o orçamento**.
+  `[PREENCHER]` valores exatos antes/depois (virão no export).
+- **2026-07-15 — Alteração de formatos e formulários** (Meta). Mudança feita **no mesmo dia** da
+  redução de verba.
+- ✅ **Conversão Google funcionando:** saiu de "Conversões pendentes", **~6 leads** já entraram
+  via clique de anúncio. Conversões antigas (`Formulário`, `Lead form - Submit`) **rebaixadas
+  para Secundário** (pendência de 16/07 resolvida).
+- ✅ **GTM novo dedicado criado; LP rastreada.** Pixel do Meta **ainda não 100% configurado**,
+  mas **sem impacto por ora**, porque o Meta roda **formulário instantâneo** (evento nativo).
+
+**Resultado de lead no período:**
+
+- **~40 leads no total.** Os leads do **Meta** eram **claramente mais frios e curiosos** — o que
+  era **esperado e intencional**: estratégia declarada de **"primeiro gira, depois qualifica"**.
+- **Desde 2026-07-15: apenas 1 lead.** Causa declarada: verba muito reduzida — **com os valores
+  atuais nem Google nem Meta conseguem rodar**.
+
+**🔴 ALERTA — verba abaixo do limiar operacional.** Este é hoje o problema nº1 da conta: as duas
+plataformas estão subfinanciadas a ponto de não entregarem. Sem correção de verba (ou corte de
+uma das frentes para concentrar na outra), o funil segue parado independentemente de criativo,
+copy ou rastreamento.
+
+**⚠️ Duas variáveis mudaram no mesmo dia (15/07):** verba **e** formato/formulário. Com as duas
+alteradas juntas, **não é possível atribuir** a queda de 40 → 1 lead a uma causa isolada. Registrar
+como limitação de diagnóstico, não como conclusão. Aprendizado para os próximos ajustes: mudar
+uma variável por vez quando o objetivo for entender causa.
+
+**🟡 Datas de controle VENCIDAS sem revisão** (ancoradas na publicação de 03/07):
+
+| O que fazer | Data calculada | Status |
+|---|---|---|
+| Revisar termos de pesquisa e CPC real por país (negativar lixo, promover bons termos a exata) | **2026-07-10** | Vencida `[PREENCHER]` se foi feita |
+| Revisar leads por país (fit de setor, cargo, volume declarado) | **2026-07-10 a 07-13** | Vencida `[PREENCHER]` |
+| Liberado avaliar/pausar a campanha da Alemanha por volume baixo | **2026-07-17** | Vencida — decisão em aberto |
+
+**Reporting:** `triunfo-resultados-julho.pptx` é a **apresentação de resultados**, enviada à
+**gestão** para que **eles apresentassem à diretoria**. **Ninguém viu ainda e não houve feedback.**
+Arquivo está na **raiz da pasta, fora do padrão** — mover para `marketing/relatorios/`.
+
+**✅ EXPORTS META PROCESSADOS (01-21/07):** gasto Meta **R$3.426,44**, **43 leads**.
+**EUA: 37 leads a CPL R$49,86** (R$55/dia, ativo). **Alemanha: 6 leads a CPL R$217,88**
+(R$15/dia, **pausada**) — **4,4× mais cara**, consumiu 38% da verba Meta para entregar 14% dos
+leads. A decisão sobre a DE que vencia em 17/07 **foi tomada na prática e o dado a justifica**.
+💡 O corte da Alemanha **libera ~R$15/dia para os EUA sem pedir verba nova** — é a alavanca
+disponível enquanto o orçamento não subir. ⚠️ Export do **Google não veio neste lote**; números
+das campanhas `[SEARCH][US]`/`[SEARCH][DE]` seguem `[PREENCHER]`.
+
+**Pendências que mudaram de status:**
+
+- ✅ Resolvido: data de publicação das campanhas (03/07); números Meta de julho; decisão da
+  Alemanha validada por dado. conversão Google saiu de pendente;
+  conversões antigas rebaixadas; GTM dedicado criado.
+- 🔴 Novo e crítico: **verba abaixo do limiar de operação** nas duas plataformas.
+- 🟡 Aberto: pixel do Meta não 100% (sem impacto enquanto for instant form); decisão sobre pausar
+  a campanha DE (janela venceu 17/07); revisões de termos/leads vencidas; feedback da diretoria
+  sobre o PPTX.
+
+**Próxima sessão deve:** tratar a verba como decisão nº1 (com a gestão), decidir sobre a campanha
+DE, e rodar as revisões de termos/leads que venceram.
+
+---
+
 ## 2026-07-16 — Conversão no Google Ads (Google OK) + Pixel/CAPI do Meta (adiado)
 
 Sessão longa. Duas frentes: fechar a conversão do **Google Ads** (concluída e

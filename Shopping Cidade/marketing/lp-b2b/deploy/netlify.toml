@@ -1,0 +1,11 @@
+# Configuração do Netlify para a LP de Locação B2B do Shopping Cidade
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Redireciona a raiz para o index (padrão, mas explícito)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

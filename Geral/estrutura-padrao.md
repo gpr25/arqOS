@@ -29,12 +29,12 @@ Padrão único de organização para todas as empresas do grupo. Criado em 16/07
 5. **O que serve a todas as empresas** (metodologias, templates, planilhas do grupo) vive em `/Geral` — nunca dentro de uma empresa.
 6. Camadas adicionais do ArqOS (`core/`, `company/`, `products/`, `roadmap/`, `playbooks/`, `logs/`) são criadas **no onboarding** de cada empresa — a Triunfo do Brasil já as possui.
 
-## Estado das empresas (16/07/2026)
+## Estado das empresas (21/07/2026)
 
 | Empresa | Estrutura | Onboarding |
 |---|---|---|
 | Triunfo do Brasil | ArqOS completo | ✅ Feito |
-| Autoshopping Linha Verde | Padrão aplicado, material rico | Pendente |
-| Shopping Cidade | Padrão aplicado, material rico | Pendente |
+| Shopping Cidade | ArqOS completo (Perfil 4) + `logs/changelog.md` vivo | ✅ Feito 17/07/2026 |
+| Autoshopping Linha Verde | Padrão aplicado, material rico, `logs/changelog.md` criado 21/07 | Pendente |
 | Útil | Padrão aplicado, branding + relatórios | Pendente |
 | ULTJ | Padrão aplicado, apenas logo | Pendente |
