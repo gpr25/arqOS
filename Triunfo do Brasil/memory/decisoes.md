@@ -142,4 +142,63 @@ Aprendizado de método: mudar **uma variável por vez** quando o objetivo for en
 **Por quê:** O GTM compartilhado já contaminou o GA4 (propriedade da LP recebendo tráfego do site principal) e agora conflitou o Pixel. Remendar caso a caso está insustentável.
 **Impacto:** **Decisão firme:** quando forem ativar o Meta pra LP, criar um **contêiner GTM totalmente novo, dedicado só à LP** (sem herdar tags/pixels do site principal), em vez de continuar corrigindo o compartilhado. O código de Pixel + CAPI já está pronto no repo e é reaproveitável. Ver memória [[project-lp-meta-pixel-capi]].
 
+**2026-07-22 — Mídia paga / Alemanha (DECISÃO VALIDADA, não pendência)**
+**Decisão/Aprendizado:** **Alemanha vai a R$0 nos dois canais a partir de 01/08/2026.** Decisão
+**antecipada de nov/26 para agora**, porque chegou o dado do Google e ele confirmou, por caminho
+independente, o que o Meta já dizia.
+**Contexto:** Meta (Regime 1, 03–14/07): **45,7% da verba → 16,2% dos leads**, CPL R$191,34 contra
+R$44,06 dos EUA; no Regime 2 (15–21/07) entregou **zero leads por R$159,19**. Google (01–22/07):
+**26,0% do gasto → 8,9% dos cliques**, CPC R$24,68 contra R$6,90 dos EUA, e perdendo **56,73% das
+impressões por orçamento** — o R$10/dia estava escondendo o tamanho do ralo, não contendo-o.
+**Por quê:** dois canais analisados **separadamente** (regra 2 respeitada — não se usou dado de um
+para explicar evento do outro) chegando ao mesmo veredito. A liberação para avaliar/pausar já
+estava vencida desde 17/07. Novembro só adicionaria custo à mesma conclusão.
+**Impacto:** libera ~R$300/mês de Google + os R$15/dia de Meta. Só volta como "2ª praça" pela porta
+de jan/27, com dado, **e** se houver razão comercial real (cliente/distribuidor/contato) —
+`[PREENCHER]`, nunca confirmado que existe. **Registrar como validada por dado, não como pendência.**
+
+**2026-07-22 — Mídia paga / Verba (CORREÇÃO de leitura anterior)**
+**Decisão/Aprendizado:** o **"problema nº1 = verba abaixo do limiar operacional"** está
+`[SUPERADO]`. Era problema **de julho** e expirou em 31/07.
+**Contexto:** o corte de 15/07 estava **correto** — o Meta projetava ~R$4.900 contra R$4.000 e
+precisava fechar o mês. Mas o run-rate resultante (R$4.050/mês) ficou muito abaixo dos **R$7.000
+aprovados**, deixando ~R$2.950/mês de verba já aprovada parada a partir de 01/08.
+**Por quê:** a restrição orçamentária não atravessa a virada do mês. Ler uma restrição mensal como
+condição estrutural travou a conta por semanas em espera de "decisão de gestão" que não era
+necessária.
+**Impacto:** **o problema nº1 real da conta é OUTRO — quantas praças ela sustenta.** Teto de
+R$7.000 confirmado como restrição dura e **fungível** entre canais (era R$4k Google + R$3k Meta até
+maio; invertido em julho). Aprendizado de método: **distinguir restrição de mês de restrição
+estrutural** antes de escalar como problema de gestão.
+
+**2026-07-22 — Mídia paga / Quebra de regime de 15/07 e congelamento do formulário**
+**Decisão/Aprendizado:** em 15/07 mudaram **duas variáveis no mesmo dia** — formulário do Meta
+passou a qualificar (e-mail comercial obrigatório + confirmação) **e** verba cortada pela metade em
+Meta e Google. **Consequência: o CPL de R$49,86 dos EUA não é baseline de nada.** Números reais
+recuperados dos exports: Regime 1 (03–14/07, form fácil) EUA R$120/dia → **31 leads, CPL R$44,06**;
+Regime 2 (15–21/07, form qualificado) EUA → **6 leads pelo Meta, CPL R$79,82**.
+**Contexto:** é a **segunda vez** que se muda mais de uma variável no mesmo dia nesta conta (a
+primeira está registrada em 21/07). O aprendizado de método não pegou.
+**Por quê:** restaurando a verba a R$120/dia em 01/08 e **congelando o formulário**, agosto casa o
+nível de investimento com o Regime 1 e a única variável diferente passa a ser a qualificação — é
+assim que se descobre quanto custa o lead bom.
+**Impacto:** 🔒 **o formulário não se toca durante todo o bimestre ago–set.** Agosto **não terá alvo
+de CPL**, por decisão e não por omissão. **Divergência aberta:** o Meta conta 6 leads pós-15/07 e
+Gabriel relatou 1 — amplitude de 5× no CPL (R$79,82 × R$478,93). `[hip]` a confirmação de e-mail
+filtra ~83%. Resolver até 05/08 contando as linhas da planilha de leads. **Nada se dimensiona
+antes disso.**
+
+**2026-07-22 — Planejamento / Cascata ago/26–fev/27 concluída**
+**Decisão/Aprendizado:** os 3 documentos da Triunfo criados na ordem correta (**macro → bimestral →
+mensal**), em `marketing/briefings/`. **Eixo do macro = número de praças, não sazonalidade.**
+**Contexto:** a tese de sazonalidade ("out–nov = janela de orçamento do comprador, dez = vale") foi
+**descartada** — Gabriel está na empresa há ~40 dias, não tem acesso à sazonalidade real do negócio
+e não pode confirmá-la. Sobrevive só o fato de plataforma de que **o CPM sobe em dezembro** em
+qualquer leilão.
+**Por quê:** construir 7 meses sobre tese não verificável é passivo, não plano `[REGRA 8]`.
+**Impacto:** **Triunfo declarada sem nenhuma data-chave até fev/27** — fora da trava de 01/09 e
+fora da fila de designers do varejo, o que libera fila para Autoshopping e Shopping B2C. Agosto é
+mês de **medição com mão parada**: nenhuma campanha, criativo ou teste novo; reserva de ~R$1.110
+deliberadamente não gasta e reportada como reserva de experimentação, não como sobra.
+
 _Continuar registrando conforme decisões forem tomadas._

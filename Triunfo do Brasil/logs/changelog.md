@@ -30,6 +30,41 @@ continua indo pra `memory/decisoes.md` — este arquivo é o índice cronológic
 
 ---
 
+## 2026-07-22 — Planejamento ago/26–fev/27 (cascata completa)
+
+**O que foi feito:**
+- Criados os **3 documentos da cascata**, na ordem correta (macro → bimestral → mensal).
+- **Eixo do macro definido como número de praças**, não sazonalidade. Tese de sazonalidade
+  descartada por falta de dado verificável (registro do descarte no próprio macro, §1).
+- **Triunfo declarada sem nenhuma data-chave até fev/27** — fora da trava de 01/09 do grupo.
+- **Números recuperados dos exports** (antes `[PREENCHER]`): Google jul (R$2.282,32 · 2 conv ·
+  R$1.141,16/conv) e a separação dos dois regimes do Meta em torno de 15/07.
+- **Verba pré-corte confirmada** via export 01–14/07: EUA R$120/dia · GER R$100/dia.
+- Alemanha: decisão de encerrar **antecipada de nov/26 para 01/08/26**.
+
+**Arquivos tocados:**
+- `marketing/briefings/plano-macro-ago26-fev27.md` (novo, v1.1)
+- `marketing/briefings/plano-bimestral-ago-set-2026.md` (novo)
+- `marketing/briefings/plano-agosto-2026.md` (novo)
+- `memory/campanhas.md` · `memory/decisoes.md` (4 entradas) · `memory/estado-da-conta-triunfo.md`
+- `../Geral/estado-geral-gadens.md`
+
+**Pendências que mudaram de status:**
+- ✅ `[RESOLVIDO]` custo/conversão do Google de julho (era `[PREENCHER]` desde 21/07)
+- ✅ `[RESOLVIDO]` verba diária pré-15/07 (não havia sido anotada)
+- ✅ `[RESOLVIDO]` decisão formal da campanha DE (vencida desde 17/07)
+- 🛑 `[SUPERADO]` "problema nº1 = verba abaixo do limiar" — era restrição **de julho**, expirou 31/07
+- 🔴 **NOVA e aberta:** divergência **6 × 1** leads pós-15/07 (amplitude de 5× no CPL).
+  **Resolver até 05/08** contando linhas da planilha de leads
+- 🟡 Continua aberta: revisão de termos de pesquisa do Google (vencida desde 10/07) → semana 3 de ago
+- 🟡 Continua aberta: retorno da diretoria sobre o pptx — **não bloqueia mais nada** (default C)
+
+**Próxima sessão deve:** atualizar o `triunfo-resultados-julho.pptx` em `marketing/relatorios/`
+com o §2 do macro (tabelas de praça de Meta e Google + os 4 cenários), para envio por e-mail à
+diretoria até **14/08**. ⚠️ confirmar qual dos dois arquivos é o bom (`.pptx` × ` (2).pptx`).
+
+---
+
 ## 2026-07-21 — Backfill de mídia paga (período 2026-06-21 → 2026-07-21)
 
 **O que foi feito (recuperado por entrevista, eixo mídia paga):**

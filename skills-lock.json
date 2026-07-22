@@ -121,6 +121,54 @@
       "skillPath": "skills/frontend-ui-engineering/SKILL.md",
       "computedHash": "195659873a8fe0bac6947e44731c3e23b97ec2caf2c124ce4c808658c555f98d"
     },
+    "gws-calendar": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-calendar/SKILL.md",
+      "computedHash": "8b5b3e44a68bf616b2698a7f733758616f922614d66c81e41216780a97b1ad31"
+    },
+    "gws-docs": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-docs/SKILL.md",
+      "computedHash": "3d307f7d0c8aac69ef0f852a665df4312d981e9e56dbbc559327df91f8012b38"
+    },
+    "gws-drive": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-drive/SKILL.md",
+      "computedHash": "90f36f7b0910e785062eabb811be0d95dc125c3bb97a089a3c9e60083171211e"
+    },
+    "gws-gmail": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-gmail/SKILL.md",
+      "computedHash": "31b12bd4bfa3fe1b5132067c597f85f5d3456060658a904a54ed6cb5b32ab6e4"
+    },
+    "gws-gmail-send": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-gmail-send/SKILL.md",
+      "computedHash": "a41a646aac4deb02f018e5a5e29ff58660aa8e4565a5e8b92b33dec89fdceaf6"
+    },
+    "gws-sheets": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-sheets/SKILL.md",
+      "computedHash": "cfa962871f24236925362044aa6cb5f68f44929b50a935bd2c1ea3c55ba6183d"
+    },
+    "gws-sheets-append": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-sheets-append/SKILL.md",
+      "computedHash": "f107b47cfc18dfc5faffad548af76ece65cf206371dd1313120be32d264ac55a"
+    },
+    "gws-sheets-read": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "skillPath": "skills/gws-sheets-read/SKILL.md",
+      "computedHash": "aca4344d53da37b2e88751f2901210b7a6fe83b5b15841f886e32c80c7672ec3"
+    },
     "image": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",

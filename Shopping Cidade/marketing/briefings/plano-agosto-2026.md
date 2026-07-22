@@ -242,7 +242,29 @@ dispara e que a negativação está limpando** — não para medir teto.
 
 ---
 
-## 7. 🔔 BRIEFING DO NATAL B2B — sexta 14/08
+## 7. 🔔 DOIS BRIEFINGS EM 14/08 — não um
+
+`[CORREÇÃO 2026-07-22, imposta por [[plano-macro-ago26-fev27]] §4]` este plano foi escrito **antes**
+do macro e previa **um** briefing em 14/08. São **dois**. O segundo é a campanha de janeiro,
+**antecipada de propósito**.
+
+| Campanha | Subida | D-60 natural | 🔔 **Briefing real** |
+|---|---|---|---|
+| **"Loja pronta pro Natal"** | 15/10/2026 | 14/08 | **14/08/2026** |
+| **"Comece o ano no ponto certo"** | 05/01/2027 | 05/11 | **14/08/2026** ⚠️ *antecipado (D-144)* |
+
+**Por que antecipar o de janeiro:** o D-60 dele cai em **05/11** — o pior momento da fila de criação
+do ano, com Black Friday e Natal do B2C, adesivo, folder e outdoor rodando ao mesmo tempo. E esta
+fila **já atrasou 21 dias num mês normal**. Agosto é o mês menos congestionado do semestre, o ângulo
+de janeiro (vacância) **não depende de nenhuma informação entre agosto e novembro**, e dois pedidos
+no mesmo dia viram **uma negociação em vez de duas**. Se atrasar 60 dias como o pedido anterior,
+ainda chega a tempo.
+
+**Régua: D-60 é piso, não teto. Quando o D-60 cai em mês congestionado, antecipa.**
+
+---
+
+### 7.1 "Loja pronta pro Natal" — sexta 14/08
 
 | Item | Definição |
 |---|---|
@@ -259,9 +281,41 @@ B2B é **outubro**, não novembro — em novembro já não dá tempo de montar l
 estoque para vender no Natal. Enquanto o B2C corre para a Black Friday, o B2B tem que estar dizendo
 *"sua loja pode estar aberta no Natal, mas a decisão é agora"*.
 
-🔴 **Este briefing entra numa fila que já está ~21 dias atrasada.** Disparar em **14/08 mesmo
-assim**, e **escalar à gerência no mesmo dia** — não em setembro, quando não tiver chegado. O
-mandato de cobrança já foi concedido pela gestão; esta é a primeira aplicação real dele.
+### 7.2 "Comece o ano no ponto certo" — mesma sexta, 14/08
+
+| Item | Definição |
+|---|---|
+| **Campanha** | **"Comece o ano no ponto certo"** — locação B2B, janela da vacância |
+| **Ângulo** | Janeiro é quando o lojista **decide o ano** e quando o shopping tem ponto vago (lojista fraco fecha depois do Natal). Nem urgência de data nem isca financeira: **oportunidade de ponto** |
+| **Duração** | **45 dias** — mesma razão do Natal: ciclo B2B de semanas a meses |
+| **Subida** | **05/01/2027** → fim **20/02/2027** |
+| 🔔 **Briefing (D0)** | **14/08/2026** — antecipado, ver §7 |
+| **Formatos a pedir** | 4 estáticos por segmento · 2 vídeos curtos · 1 carrossel de 5 cards para Demand Gen |
+| **Verba** | Dentro dos R$10k Meta + Google conforme teto medido em setembro |
+
+⚠️ **Pedir em agosto NÃO significa receber em agosto.** O prazo de entrega deste é **01/12/2026**.
+O que se ganha antecipando é **fila**, não velocidade: o pedido entra antes do congestionamento de
+novembro, e a cobrança começa de um pedido já registrado há meses.
+
+---
+
+### 7.3 A cobrança — é entrega do Gabriel, não da produção
+
+🔴 **Estes dois briefings entram numa fila que já está ~21 dias atrasada.** Disparar em **14/08
+mesmo assim**, e **escalar à gerência no mesmo dia** — não em setembro, quando não tiver chegado.
+O mandato de cobrança já foi concedido pela gestão; esta é a primeira aplicação real dele.
+
+| Data | Cobrança | Sobre |
+|---|---|---|
+| 14/08 | Pedido + escalada no mesmo dia | ambos |
+| 01/09 | 1ª cobrança formal | Natal |
+| 15/09 | 2ª cobrança, com escalada | Natal |
+| 01/10 | **Prazo real de entrega** | Natal |
+| 01/11 | 1ª cobrança formal | Comece o ano |
+| 01/12 | **Prazo real de entrega** | Comece o ano |
+
+**A régua D-60 só funciona se a cobrança fizer parte dela.** Pedir e não cobrar é o mesmo que não
+ter pedido.
 
 ---
 
@@ -301,7 +355,7 @@ e cumpre a diretriz de abrir pelo resultado e pelo pedido, não pelo diagnóstic
 - [ ] LP nova **totalmente configurada**
 - [ ] Conversão nova do Google **criada, validada e importada como primária**; Store Visits rebaixada
 - [ ] Search + Demand Gen **no ar desde 25/08**
-- [ ] **Briefing do Natal B2B disparado em 14/08** e escalado à gerência no mesmo dia
+- [ ] **DOIS briefings disparados em 14/08** (Natal + Comece o ano) e escalados no mesmo dia
 - [ ] Enquadramento de reserva de teste comunicado à gestão
 
 ---

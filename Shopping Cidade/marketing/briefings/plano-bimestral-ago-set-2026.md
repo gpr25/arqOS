@@ -40,7 +40,7 @@ o bimestre inteiro escorrega.
 | 4 | LP nova totalmente configurada | Google não tem para onde mandar tráfego |
 | 5 | Conversão nova do Google criada, validada e **primária**; Store Visits rebaixada | A medição do teto não vale nada — mede sinal errado de novo |
 | 6 | Search + Demand Gen no ar desde 25/08, negativação feita | Setembro começa do zero, perde metade do mês |
-| 7 | Briefing do Natal disparado em 14/08 **e escalado** | 15/10 sobe sem criativo |
+| 7 | **DOIS** briefings disparados em 14/08 (Natal + Comece o ano) **e escalados** | 15/10 sobe sem criativo, e o pedido de janeiro cai na fila congestionada de novembro |
 
 ---
 

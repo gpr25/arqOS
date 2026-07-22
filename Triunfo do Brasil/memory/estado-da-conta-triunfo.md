@@ -28,15 +28,62 @@ continentes. Setores-alvo: **food, beverage e nutracêuticos**.
 | Item | Estado |
 |---|---|
 | Objetivo | Geração de lead B2B internacional qualificado |
-| Google — verba planejada | EUA ~R$2.800/mês + Alemanha ~R$1.200/mês (cenário B) |
-| Meta — verba em execução | EUA R$55/dia · Alemanha R$15/dia (pausada) |
-| Status da verba | 🔴 **Reduzida em 15/07/2026** para não estourar orçamento |
+| **Teto total** | 🔒 **R$ 7.000/mês** (Meta + Google somados). **Não ultrapassar em nenhuma hipótese** |
+| Split — até mai/26 | R$4.000 Google + R$3.000 Meta |
+| Split — jul/26 | R$4.000 Meta + R$3.000 Google (invertido por Gabriel — o Meta pediu mais nos testes) |
+| **Split — ago/26 →** | **~R$3.720 Meta + ~R$2.170 Google + ~R$1.110 reserva** |
+| **Verba em execução (jul, fim do mês)** | **Meta EUA R$50/dia · Google USA R$70/dia · Alemanha R$0** — calibrado para fechar julho em ~R$3.926 Meta + ~R$2.912 Google = **exatamente o teto de R$7.000**. Contenção de julho, expira em 31/07 |
+| **Verba a partir de 01/08** | **Meta EUA R$120/dia · Google USA R$70/dia · Alemanha R$0** |
 
-🔴 **PROBLEMA Nº1 DA CONTA `[URGENTE]`:** após o corte de 15/07, o patamar ficou **abaixo do limiar
-operacional**. Enquanto isso não for decisão de gestão, criativo e copy não mudam o resultado.
-**Restrição travada até o fim de julho** — Gabriel não pode remanejar antes disso sem estourar.
+O split é **fungível**; a única restrição dura é o total de R$7.000.
 
-💡 **Alavanca disponível sem verba nova:** a Alemanha pausada libera ~R$15/dia para os EUA.
+### 🛑 O "PROBLEMA Nº1 = VERBA" ESTÁ `[SUPERADO]` (corrigido 2026-07-22)
+
+A leitura anterior — *"o patamar ficou abaixo do limiar operacional, travado até decisão da
+gestão"* — **estava errada**. Era um problema **de julho** e ele **expirou em 31/07**.
+
+- O corte de 15/07 estava **correto**: o Meta projetava ~R$4.900 contra R$4.000 e precisava fechar
+  o mês. Boa gestão de orçamento, não crise.
+- **A restrição não atravessa o mês.** Em 01/08 o orçamento zera.
+- Run-rate pós-corte era R$4.050/mês contra **R$7.000 aprovados** → **~R$2.950/mês de verba já
+  aprovada e parada**, sem precisar pedir nada à gestão.
+
+### 🎯 O PROBLEMA Nº1 REAL DA CONTA `[URGENTE]`
+
+**Quantas praças a conta sustenta.** A gestão quer **7 países**; Gabriel delimitou a 2; o dado
+mostra que **2 ainda é demais**. Ver `../marketing/briefings/plano-macro-ago26-fev27.md` §2.
+
+Evidência, em **dois canais medidos separadamente**:
+
+| Canal | Alemanha consumiu | Alemanha entregou |
+|---|---|---|
+| Meta (Regime 1, 03–14/07) | **45,7% da verba** | **16,2% dos leads** |
+| Google (01–22/07) | **26,0% do gasto** | **8,9% dos cliques** |
+
+Decisão da diretoria esperada até **2026-08-31**; **cenário C (1 praça) vale por omissão** se não
+houver resposta.
+
+### ✅ O V3 FUNCIONOU — melhor resultado já medido (confirmado 2026-07-22)
+
+A divergência "Meta 6 × planilha 1" era **atraso da integração do Meta**, não filtro. Reconciliado:
+**6 = 6**. `[REGRA]` **a planilha atrasa 2 a 5 dias** — não lê-la como definitiva nos últimos ~5 dias.
+
+Mesmo adset, mesmo mercado, só o formulário mudou:
+
+| | V2 (03–14/07) | **V3 (15–21/07)** |
+|---|---|---|
+| CPL EUA | R$ 50,58 | **R$ 79,82** (+58%) |
+| E-mail de domínio próprio | 15% | **83%** |
+| Intenção quente | 7% | **50%** |
+| **Custo por lead corporativo** | R$ 341,45 | **R$ 95,79** (3,6× melhor) |
+| **Custo por lead quente** | R$ 682,90 | **R$ 159,64** (4,3× melhor) |
+
+`[RESSALVA]` n=6, 7 dias — direção, não série.
+
+🔒 **O formulário NÃO SE TOCA** durante ago–set. Não é só método: é proteção de ativo.
+📌 **CPL bruto é o indicador errado nesta conta** — subiu 58% enquanto o custo do lead que interessa
+caía 3 a 4×. Os indicadores válidos são **custo por lead com domínio próprio** e **custo por lead
+quente**. Ver `campanhas.md`.
 
 ---
 

@@ -7,6 +7,184 @@
 
 ---
 
+## 2026-07-22 — B2C · MACRO OUT–DEZ/2026 (fecha o planejamento da frente)
+
+**Plano criado:** `../marketing/briefings/plano-macro-out-dez-2026-b2c.md`. Horizonte estendido a
+**jan/27** porque a campanha que sobe em 26/12 é briefada em outubro.
+
+**Tese do período: o relógio do B2C é o INVERSO do B2B.** Dezembro é o pior mês do B2B e o melhor
+do B2C — mesma causa vista dos dois lados. E para público **C/D/E o calendário de consumo é feito
+de PAGAMENTOS**, não de datas: 1ª parcela do 13º até **30/11**, 2ª até **20/12**, janeiro apertado
+por IPTU/IPVA/material escolar. **As durações cobrem a janela em que o público tem dinheiro.**
+
+**Calendário fechado:**
+
+| Campanha | Duração | Subida | Fim | 🔔 Briefing |
+|---|---|---|---|---|
+| Dia das Crianças (reduzido) | 12 dias | 01/10/26 | 12/10/26 | **nenhum** |
+| Black Friday | 30 dias | 01/11/26 | 30/11/26 | 14/08/26 (D-79) |
+| Natal | 24 dias | **01/12/26** | 24/12/26 | **01/10/26** (D-61) |
+| Liquidação + Volta às aulas | 37 dias | **26/12/26** | 31/01/27 | **01/10/26** (D-86) |
+
+🔄 **DUAS CORREÇÕES ao calendário do grupo** (`Geral/plano-operacional-e-calendario.md` §6.4):
+(a) **Natal sobe 01/12, não 15/12** — 10 dias não constroem presença, e o pico real é 15–24/12
+(2ª parcela do 13º vence em 20/12), quando a campanha precisa já ter frequência acumulada; emenda
+direto no fim da Black Friday sem gap. (b) **Liquidação sobe 26/12, não 02/01** — a semana 26–31/12
+é uma das de maior fluxo do ano (troca, presente atrasado, liquidação) e estava **descoberta**.
+Campanha com **duas ondas criativas**: liquidação/troca (26/12–10/01) e volta às aulas (11/01–31/01).
+
+**🔔 01/10 PASSA A TER DOIS BRIEFINGS** (Natal + Liquidação). A Liquidação foi **antecipada de
+~03/11 para 01/10 (D-86)** porque o D-60 dela cairia dentro de **novembro**, a pior fila do ano.
+01/10 foi escolhido por ser a **data de entrega das peças de Black Friday** — cobra-se e pede-se na
+mesma conversa. **4ª aplicação de "D-60 é piso, não teto"** (2 no B2B, 2 no B2C).
+
+**Dia das Crianças entra reduzido, sem briefing:** coberto pela máquina de Ofertas Semanais (as
+ofertas dos lojistas **são** o conteúdo). Custo: **uma linha no pedido semanal** às social medias
+para as semanas de 28/09 e 05/10.
+
+**⚠️ NOVEMBRO: o alcance VAI cair com a mesma verba** (leilão do varejo inflado). O mês de maior
+esforço do ano vai parecer o pior no indicador. **Aviso sai em OUTUBRO**, junto com a apresentação
+de setembro — e é a **melhor janela política do ano para introduzir a régua de fluxo**, porque ela
+chega como solução de um problema real. `[PREENCHER]` magnitude do CPM: **não estimável** nesta
+conta (série começa em jan/2026, sem nenhum novembro). Sai do export de 2025. **Não afirmar %.**
+
+**🔻 DEZEMBRO: proposta de receber a realocação do B2B**, a levar à gestão em **outubro** com o dado
+de setembro. Operacionalmente trivial (mesma conta de Meta e de Google). **Decisão de gestão, não
+do Gabriel.** ⚠️ Ao apresentar: CPM de dezembro está no pico, **+X% de verba ≠ +X% de alcance**.
+
+**As três perguntas do período:** (1) quanto o fluxo sobe em nov/dez por **sazonalidade pura**
+→ jan/27, **depende inteiramente do export de 2025**; (2) otimizar PARA alcance é mais barato que
+obtê-lo como subproduto, e onde satura → 30/09; (3) o grupo "Como Chegar" produz volume de
+indicador ou é sinal residual → 31/10.
+
+**Aposta estruturante:** fazer o fluxo do contador virar a métrica de resultado do B2C **com
+direito a defesa no mês ruim** — export 2025 (ago) → sazonalidade (set) → duas datas grandes
+medidas contra o ano anterior (nov–dez) → **geo holdout (fev–mar/27)**.
+
+**Decisões registradas em `../memory/decisoes.md`:** 5 novas (calendário do período · briefing da
+Liquidação antecipado · Dia das Crianças reduzido · aviso de novembro · realocação de dezembro).
+
+**✅ PLANEJAMENTO DA FRENTE B2C CONCLUÍDO** — agosto, setembro e macro out–dez fechados.
+
+---
+
+## 2026-07-22 — B2C · PLANEJAMENTO DE SETEMBRO (migração de objetivo + Black Friday)
+
+**Plano criado:** `../marketing/briefings/plano-setembro-2026-b2c.md`.
+**Tese do mês: agosto arruma a verba, setembro arruma o OBJETIVO.**
+
+**🎯 MIGRAÇÃO DO OBJETIVO (entregável dominante, até 07/09):** `[B2C][Engajamento][IG]` sai de
+**visita ao perfil** e vai para **Alcance, raio 20km**, frequência alvo 4–5/mês.
+`[B2C][Reconhecimento][Institucional]` mantém Alcance com **raio 40km** explicitado — a separação
+por raio evita competição interna entre duas campanhas de alcance no mesmo leilão.
+`[B2C][Tráfego][Ofertas Semanais]` **não migra** (carrossel exige Tráfego).
+**Gatilho:** objetivo "visita ao perfil" é **herança sem dono** (confirmado pelo Gabriel).
+**Enquadramento obrigatório:** não reabre decisão de ninguém — a gestão travou **alcance** em
+jun/2026 e a estrutura nunca perseguiu isso. **Corrige-se a execução, não a decisão.**
+⚠️ **Avisar a Natália ANTES** — as ~42 mil visitas ao perfil/mês vão despencar e aparecem em
+relatório.
+
+**Verba setembro — Meta R$20.000:** Engajamento (Alcance 20km) R$350/d · Ofertas R$120/d ·
+Reconhecimento (Alcance 40km) R$100/d · turbinar R$2.200 · reserva R$700.
+**Google B2C R$5.000:** 🔄 **PMax NÃO volta** (retifica o que o plano de agosto previa). Entra
+**`Shopping Cidade | B2C | Search | Marca-Cinema-Eventos-Local`**, R$100/dia (~R$3.000), 4 grupos
+(Marca · Cinema · Eventos · **Como Chegar**), Maximizar Cliques com teto de CPC. Reserva R$2.000.
+**Motivo:** PMax com conversão lixo repete o erro que quebrou o Google B2B. O grupo "Como Chegar"
+é o análogo do sinal `Cliques em Como chegar` do Meta — intenção de deslocamento declarada.
+
+**🔔 BLACK FRIDAY B2C definida (insumo do briefing de 14/08, NÃO entregável de setembro):**
+duração **30 dias · sobe 01/11 · fim 30/11/2026** (Black Friday cai em 27/11). Ângulo proposto:
+**"a Black Friday inteira num lugar só"** — sortimento e deslocamento único, **sem liderar com %
+de desconto** (o shopping não controla o desconto de ~212 lojas e "%" colide com o posicionamento).
+**Razão principal dos 30 dias: a 1ª parcela do 13º salário é obrigatória até 30/11**, e para
+público C/D/E compra grande é planejada e financiada.
+**Formatos a pedir:** 8 peças estáticas (4 conceitos × 1:1 e 9:16) · 2 vídeos de 6–15s ·
+4 carrosséis (1 por semana de novembro) · **Google não pede peça** (só RSA).
+
+**⭐ SORTEIO MENSAL — concordância parcial, divergência registrada.** ✅ Concordo em **não fazer
+campanha de sorteio** (traz caçador de prêmio; se exige NF, o alvo é quem já vai ao shopping).
+❌ Discordo de descartá-lo: se o cadastro exige **nota fiscal**, cada cadastro prova
+**foi + comprou + se identificou** — a conversão de negócio mais forte que este shopping tem.
+**Pergunta binária até 07/09: o cadastro passa por alguma página web?** Se sim → **plugar UTM** =
+primeira atribuição real da conta. Se totem físico → morre a atribuição direta, mas seguem valendo
+os 12 sorteios/ano como **marcadores no contador** e o sorteio como **argumento de visita**.
+⚠️ Ler o regulamento antes — sorteio tem autorização regulatória que pode restringir divulgação.
+
+**⚠️ FLUXO = MÉTRICA DA OPERAÇÃO, NÃO KPI SOLO DO TRÁFEGO PAGO** (até existir geo holdout).
+A tese do Gabriel ("passa pelo Meta, mede no contador") está correta e é como varejo físico sério
+mede mídia. Mas **o risco é assimétrico**: sem controle, quando o fluxo sobe todos reivindicam o
+mérito — **e no mês em que cair, a mesma lógica acusa o tráfego pago**. Geo holdout **não roda em
+novembro**; janela natural **fev–mar/2027**, a desenhar no trimestral de outubro.
+**Contador confirmado:** instalado, com histórico, **total/dia** — suficiente, não é bloqueio.
+
+**Decisões registradas em `../memory/decisoes.md`:** 6 novas (migração de objetivo · Google sem
+PMax · Black Friday 30 dias · sorteio como instrumento · fluxo como métrica da operação · e as de
+agosto).
+
+---
+
+## 2026-07-22 — B2C · PLANEJAMENTO DE AGOSTO + VIRADA DE RÉGUA PARA FLUXO
+
+**Plano criado:** `../marketing/briefings/plano-agosto-2026-b2c.md`. Frente B2C, planejada **depois**
+do B2B (que foi fechado no mesmo dia) e explicitamente encaixada no tempo que o B2B deixa —
+**~2h10 no mês inteiro**.
+
+**✅ RESOLVE O `[PREENCHER]` de 2026-07-21 — valores vigentes das campanhas B2C.** Extraídos do
+export de conjuntos de 01–21/07: Engajamento **R$243/dia** (R$133 quente + R$110 frio) · Ofertas
+**R$120/dia** (R$70 frio + R$50 quente) · Reconhecimento **R$20/dia**. Fixo = **R$383/dia**, contra
+R$496/dia do Alinhamento 06/07 (**−23%**). Esses valores **não são decisão — são resíduo do corte
+emergencial de julho** para absorver o turbinar.
+
+**Verba de agosto redesenhada (aplicar em 01/08):** Engajamento **R$350/dia** (+44%, ~10 criativos
+→ R$35/criativo/dia) · Ofertas **R$120/dia** (piso de entrega, não prioridade) · Reconhecimento
+**R$100/dia** · turbinar **R$2.200 fechado** · folga R$130. **Total R$19.870.**
+**Google B2C = caixa SEPARADA de R$5.000, e fica em R$0 em agosto** (PMax pausada; portão setembro).
+
+**🎯 FATO NOVO, INÉDITO NOS ARQUIVOS: o shopping tem contador de pessoas nas portas, instalado e
+COM HISTÓRICO.** Inicia a virada de régua do B2C — alcance hoje, **fluxo medido** nos próximos
+meses. Dois limites técnicos registrados: (a) **fluxo de porta não pode ser objetivo de otimização
+no Meta** (contador não identifica ninguém → sem Conversão Offline); (b) **contador não atribui**.
+A estrutura de campanha **não migra — a régua de leitura migra**.
+
+**🔴 DEPENDÊNCIA CRÍTICA: histórico de 2025 NÃO existe nos arquivos** (varredura completa em 22/07).
+Pedido com prazo **31/08**: Meta 2025 com quebra mensal · Google 2025 com coluna Mês · **contador
+em série DIÁRIA** 2025+2026. Sem isso, dezembro chega sem base de comparação.
+
+**🔔 Briefing da Black Friday B2C antecipado de 01/09 para 14/08** (D-79), junto com os dois
+briefings B2B — três pedidos numa negociação só, para a mesma fila que já atrasou 21 dias.
+Terceira aplicação de "D-60 é piso, não teto". Entrega a trava do semestre 18 dias antes.
+
+**❌ Store Visits: acoplamento com o B2B DESFEITO.** A v0 deste plano especificou uma configuração
+em três partes para proteger Store Visits no B2C. **Retirada integralmente** após posição do
+Gabriel: as conversões do Google são lixo, Store Visits não reflete nada e ninguém acompanha.
+**O B2B executa a semana 3 sem consultar o B2C.**
+
+**Achados do export jan–jul/2026:**
+- **Alcance caiu 57%**: 2,50M (jan) → 0,88M (mai) → 1,08M (jul 21d). Custo/mil de alcance
+  **R$7,66 → R$11,41 (+49%)**. Julho projeta ~1,59M com ~R$18,2k contra **2,50M com R$19,2k em
+  janeiro** — **−36% de alcance com verba equivalente**.
+- **Só 2,9% da verba B2C otimiza para alcance** (gasto em indicador `reach`: R$3.081 em jan →
+  R$361 em jul). Otimiza-se visita ao perfil e reporta-se alcance.
+- **Turbinar — o problema é contagem, não verba:** jan 9 posts/R$3.750 · fev 25/R$8.054 ·
+  mar 44/R$11.826 · jun 19/R$1.384 · jul(21d) **14 posts/R$1.654**. Régua = R$2.200 em **6–8
+  posts**. Julho ficou **abaixo** do teto de verba e a **~2x** o teto de posts. **Não levar
+  argumento de estouro à gestão** — o dado desmente.
+- **Google B2C zerado em julho.** PMax `[Local] [Performance Max]` pausada com orçamento de
+  R$400/dia = R$12k/mês, **2,4x a régua vigente de R$5k**. Série: 12.436 · 12.158 · 6.790 ·
+  14.835 · 19.253 · 15.306 · **0**.
+- Várias PMax legadas com status *"grupos de recursos limitados pela política"* — coerente com o
+  spam de apostas no site.
+
+`[ERRO REGISTRADO]` a v0 afirmou **"sobram ~R$6k/mês no Meta B2C"**, apoiada em **soma de
+orçamentos diários** e não em gasto medido. **Retirada** após contestação do Gabriel — mesma
+classe de erro das regras nº 11 e 12, cometida no B2B no mesmo dia. Reenquadramento correto:
+**não é verba sobrando, é verba não decidida.** Detalhe em `../memory/decisoes.md`.
+
+`[RESSALVA]` toda a série é de **7 meses de 2026 apenas**. Nenhuma afirmação de sazonalidade ou
+superlativo histórico se sustenta antes do export de 2025 chegar.
+
+---
+
 ## 2026-07-21 — B2C · Backfill de mídia paga (período 2026-06-21 → 2026-07-21)
 
 **✅ Estrutura antiga B2C COMPLETAMENTE DESATIVADA.** Resolve a pendência que estava como
@@ -356,6 +534,45 @@ o keyword set novo** — o de R$4,50 vinha do histórico contaminado e caiu junt
 rastreamento não for auditado): declarar se a métrica que sustenta uma afirmação de limite depende
 da conversão contaminada; e **métrica limpa produzida sob outro objetivo de otimização não é
 baseline**.
+
+---
+
+## 2026-07-22 · B2B · Macro ago/26–fev/27 (cascata completada)
+
+**Criado:** `marketing/briefings/plano-macro-ago26-fev27.md` e
+`marketing/briefings/plano-bimestral-ago-set-2026.md`. Com o `plano-agosto-2026.md`, a cascata
+**macro → bimestral → mensal** está completa para o B2B.
+
+`[NOTA DE PROCESSO]` a cascata foi executada **na ordem inversa** (mensal → bimestral → macro). O
+custo apareceu concreto: o plano de agosto, escrito primeiro, não enxergava o congestionamento de
+produção de novembro e previa **um** briefing em 14/08. O macro revelou que são **dois**. Correção
+aplicada nos três documentos. **Confirma macro → bimestral → mensal como ordem correta.**
+
+**Tese do macro — as duas janelas do B2B:** o ano tem **outubro** (quem quer vender no Natal assina
+em outubro) e **janeiro** (vacância pós-Natal + lojista decidindo o ano). Fora delas, B2B é
+manutenção. **Dezembro é o vale** — decisor operando a própria loja, CPM inflado pelo varejo.
+`[RESSALVA]` é raciocínio de negócio, **não série histórica**; dez/26 é o primeiro teste dela.
+
+**Calendário de campanhas B2B fechado:**
+
+| Campanha | Duração | Subida | 🔔 Briefing |
+|---|---|---|---|
+| "Loja pronta pro Natal" | 45 dias | 15/10/2026 | **14/08/2026** |
+| "Comece o ano no ponto certo" | 45 dias | 05/01/2027 | **14/08/2026** (antecipado, D-144) |
+| Campanha de mar/27 | `[DEFINIR]` | ~01/03/2027 | 15/12/2026 |
+
+**Régua nova:** **D-60 é piso, não teto.** Quando o D-60 cai em mês congestionado de produção,
+antecipa-se o briefing. Antecipar **compra fila, não velocidade** — o prazo de entrega não muda.
+
+**As três perguntas do período:** (1) quanto o Google B2B aguenta gastar de verdade — responde
+30/09; (2) quantos leads viram contrato — primeira resposta 30/09; (3) a tese das duas janelas está
+certa — responde jan/27. **A nº 2 é a mais importante do ano.**
+
+**Aposta estruturante:** fechar o circuito **lead → contrato**, para que em jan/27 a conta reporte
+**custo por contrato assinado** em vez de custo por lead.
+
+**Proposta pendente de gestão (levar em outubro, com o dado de setembro):** reduzir verba B2B de
+dezembro e realocar para janeiro.
 
 ---
 

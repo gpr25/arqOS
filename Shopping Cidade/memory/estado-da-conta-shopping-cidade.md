@@ -123,7 +123,49 @@ a gestão — o dado não sustenta argumento de estouro.
 turbinar é de **composição e controle**, não de estouro do total — a verba do turbinar está saindo
 de algum outro lugar do B2C.
 
-🔴 **Turbinar fora de controle** `[URGENTE]` (2026-07-21): houve **mais turbinar do que o acordado** no período, estourando o previsto. Para não ultrapassar a verba máxima, **os valores das campanhas foram alterados** — logo a tabela do Alinhamento 06/07 abaixo **não reflete mais os valores exatos em execução**. `[PREENCHER]` valores vigentes (virão no export de campanhas). Escalado em **2026-07-20** em reunião com a **gerente e o coordenador**; encaminhamento: atuação mais incisiva. Turbinar está **"em reconstrução"**.
+🔴 **Turbinar fora de controle** `[URGENTE]` (2026-07-21): houve **mais turbinar do que o acordado** no período. Para não ultrapassar a verba máxima, **os valores das campanhas foram alterados** — logo a tabela do Alinhamento 06/07 acima **não reflete mais os valores em execução**.
+
+### ✅ VALORES VIGENTES — resolve o `[PREENCHER]` (export de conjuntos, 01–21/07/2026)
+
+| Campanha | Conjuntos (ABO) | R$/dia vigente | Alinhamento 06/07 | Δ |
+|---|---|---|---|---|
+| `[B2C][Engajamento][IG]` | `[Quente][retargeting][20km]` R$133 + `[ADV][Frio][Amplo][20km]` R$110 | **R$ 243** | R$ 266 | −9% |
+| `[B2C][Tráfego][Ofertas Semanais]` | `[ADV][Frio][Amplo][20km]` R$70 + `[Quente][retargeting][20km]` R$50 | **R$ 120** | R$ 180 | **−33%** |
+| `[B2C][Reconhecimento][Institucional]` | `[ADV][Frio][Amplo][40km]` (orçamento de campanha) | **R$ 20** | R$ 50 | **−60%** |
+| **Fixo total** | | **R$ 383/dia = R$ 11.873/mês** | R$ 496/dia | **−23%** |
+
+🔑 **Estes valores NÃO são uma decisão — são o resíduo do corte emergencial de julho.** Por isso
+agosto redefine a verba em vez de herdá-la. **Novos valores a partir de 01/08/2026:** Engajamento
+**R$350/dia** · Ofertas **R$120/dia** · Reconhecimento **R$100/dia** · turbinar **R$2.200 fechado**
+= **R$19.870**. Plano completo: `../marketing/briefings/plano-agosto-2026-b2c.md`.
+
+### 📊 SÉRIE MENSAL B2C (export jan–jul/2026) — a métrica-norte caiu 57%
+
+| | jan | fev | mar | abr | mai | jun | jul (21d) |
+|---|---|---|---|---|---|---|---|
+| Gasto B2C | 19.184 | 16.792 | 17.748 | 8.826 | 8.796 | 14.830 | 12.324 |
+| **Alcance** | **2,50M** | 2,33M | 2,01M | 1,06M | 0,88M | 1,05M | **1,08M** |
+| **Custo/mil alcance** | **R$ 7,66** | 7,22 | 8,81 | 8,35 | 9,95 | **14,09** | **R$ 11,41** |
+| CPM | 3,06 | 4,44 | 5,52 | 4,71 | 5,54 | 8,13 | 5,54 |
+| Visitas perfil IG | 33.743 | 68.862 | 47.389 | 27.827 | 28.224 | 71.039 | 42.270 |
+| Seguidores IG | 2.397 | 1.428 | 1.544 | 785 | 1.324 | 946 | 1.150 |
+| **Turbinar (posts)** | 9 | **25** | **44** | 2 | 0 | 19 | **14** |
+| Turbinar (R$) | 3.750 | 8.054 | 11.826 | 698 | 0 | 1.384 | 1.654 |
+
+**Julho projeta ~1,59M de alcance com ~R$18,2k, contra 2,50M com R$19,2k em janeiro: −36% de
+alcance com verba equivalente.**
+
+🔴 **Causa estrutural:** gasto em campanhas com indicador `reach` caiu de **R$3.081 (jan) para
+R$361 (jul)** — hoje **2,9% do B2C**. **Otimiza-se visita ao perfil e reporta-se alcance;** o
+alcance de hoje é **subproduto, não objetivo**.
+
+🔴 **Turbinar: o problema é CONTAGEM, não verba.** Régua = R$2.200 em **6–8 posts**. Julho ficou
+**abaixo** do teto de verba (R$1.654) e a **~2x** o teto de posts (14). **Não levar argumento de
+estouro à gestão — o dado desmente.**
+
+`[RESSALVA]` série de **7 meses de 2026 apenas**. **Não existe nenhum arquivo de 2025** na pasta
+(varredura completa em 2026-07-22). Sem 2025 não há sazonalidade e **nenhum superlativo histórico
+se sustenta**. Export de 2025 é pendência com prazo **31/08/2026**. Escalado em **2026-07-20** em reunião com a **gerente e o coordenador**; encaminhamento: atuação mais incisiva. Turbinar está **"em reconstrução"**.
 
 **Restrição estrutural resolvida** `[TRAVADO]`: carrossel é incompatível com a otimização "visita ao perfil" do objetivo Engajamento (exige URL de destino por card). Por isso Ofertas usa **Tráfego**, não Engajamento. Não recomendar otimização que a estrutura atual não permite (carrosséis de oferta são imagem pura, sem link de saída).
 

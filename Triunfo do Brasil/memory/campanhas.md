@@ -71,9 +71,126 @@ no Google. Observação de um canal não explica evento de outro.
 `[REGRA]` **Analisar Google e Meta separadamente nesta conta.** Foi assim que se produziu uma
 conclusão errada; não repetir.
 
-⚠️ **Custo e conversões do Google seguem `[PREENCHER]`** — o export de série temporal não os traz. Os números das campanhas
-`[SEARCH][US]` e `[SEARCH][DE]` (~R$4.000/mês) seguem `[PREENCHER]`, incluindo os ~6 leads
-atribuídos via clique de anúncio.
+## ✅ NÚMEROS REAIS — GOOGLE, 01 a 22/07/2026 (print do gerenciador, obtido 2026-07-22)
+
+`[RESOLVIDO]` — substitui o `[PREENCHER]` que estava aberto desde 21/07.
+
+| Campanha | Verba/dia | Custo | Impr. | Cliques | CTR | **CPC méd.** | Parc. impr. perd. (orç) |
+|---|---|---|---|---|---|---|---|
+| `[SEARCH][USA]` | R$ 70,00 | R$ 1.689,96 | 7.518 | 245 | 3,26% | **R$ 6,90** | 17,81% |
+| `[SEARCH][GERMANY]` | R$ 10,00 | R$ 592,36 | 594 | 24 | 4,04% | **R$ 24,68** | **56,73%** |
+| **Total conta** | R$ 80,00 | **R$ 2.282,32** | 8.112 | 269 | 3,32% | R$ 8,48 | 17,85% |
+
+**Conversões: 2,00 → R$ 1.141,16 por conversão. Taxa de conversão da LP: 0,74%** (2 em 269 cliques).
+Ambas em **Maximizar cliques**; parcela de impressões da rede de pesquisa < 10%.
+
+⚠️ `[PREENCHER]` **qual campanha trouxe as 2 conversões** — a coluna não estava segmentada por
+campanha no print. Correção de 1 minuto; responde se a Alemanha entregou **zero** por R$592,36.
+
+🛑 `[REGRA 11 — não comparar com a campanha antiga]` É proibido ler "R$1.141,16 é 3× melhor que os
+R$3.401,98 de jan–jun". A conversão da `[PESQUISA][INTERNACIONAL]` era **contaminada** (junk do
+site principal, outro destino, outro objetivo). **O número novo nasce sem passado.**
+
+🔴 **A Alemanha leva o segundo veredito, por canal independente:** **26,0% do gasto do Google para
+8,9% dos cliques**, CPC **3,6×** o dos EUA. No Meta havia dado 41,5% da verba para 14% dos leads.
+Dois canais analisados **separadamente** (regra 2 respeitada — não se está usando dado de um para
+explicar evento do outro) chegando ao mesmo lugar. **Decisão de pausa antecipada de nov/26 para
+ago/26.** Ver `../marketing/briefings/plano-macro-ago26-fev27.md` §4, aposta 3.
+
+⚠️ **Ritmo de conversão insuficiente para veredito por volume:** 2 conversões em 22 dias ≈ 3/mês.
+Para ~10–15 conversões seria necessário esperar até novembro. Por isso o veredito de setembro
+julga por **CPC + qualidade dos termos + taxa de conversão da LP**, não por volume de conversão.
+
+---
+
+## 🔴 QUEBRA DE REGIME EM 2026-07-15 (confirmada pelo Gabriel em 2026-07-22)
+
+Mudaram **duas variáveis no mesmo dia**:
+1. **Formulário do Meta passou a qualificar** — e-mail comercial obrigatório + confirmação.
+2. **Verba cortada para ~metade** em todas as campanhas (Meta **e** Google).
+
+O "**1 lead desde 15/07**" é do **Meta** e é **consequência esperada das duas somadas** — não é
+defeito. É a execução da estratégia "primeiro gira, depois qualifica" (ver `decisoes.md`).
+
+🛑 **CONSEQUÊNCIA: o CPL de R$49,86 dos EUA NÃO é baseline.** Mistura dois regimes no mesmo adset.
+
+✅ **MEDIDO em 2026-07-22** (export `Conjuntos-de-anúncios-01-a-14-jul` × export 01–21/07).
+Fecha exato: R$2.513,86 + R$638,12 = R$3.151,98 · 31+6 + 6+0 = 43 leads.
+
+**Regime 1 — 03 a 14/07 (12 d) · formulário fácil**
+
+| Adset | Orçamento | Gasto | Leads | **CPL** | CPC | CPM |
+|---|---|---|---|---|---|---|
+| 🇺🇸 EUA | **R$ 120/dia** | R$ 1.365,80 | **31** | **R$ 44,06** | R$ 7,30 | R$ 226,80 |
+| 🇩🇪 GER | **R$ 100/dia** | R$ 1.148,06 | 6 | R$ 191,34 | R$ 11,04 | R$ 136,50 |
+
+**Regime 2 — 15 a 21/07 (7 d) · formulário qualificado** *(por subtração)*
+
+| Adset | Gasto | Leads (contagem do Meta) | **CPL** |
+|---|---|---|---|
+| 🇺🇸 EUA | R$ 478,93 | **6** | **R$ 79,82** |
+| 🇩🇪 GER | R$ 159,19 | **0** | — |
+
+📌 **Verba pré-corte confirmada: EUA R$120/dia · GER R$100/dia** (Gabriel não havia registrado;
+recuperado do export em 2026-07-22). O corte de 15/07 levou para R$55 e R$15.
+
+### ✅ DIVERGÊNCIA RESOLVIDA (2026-07-22) — era ATRASO DE INTEGRAÇÃO
+
+Houve alarme falso de que o Meta contava 6 leads pós-15/07 e a planilha teria só 1, sugerindo que
+a confirmação de e-mail barrava ~83%. **Errado.** A **integração do Meta ainda não havia empurrado**
+5 leads (IDs 50 a 54) para a planilha. Relidas em 22/07: **planilha = 6, Meta = 6. Bate exato.**
+
+`[APRENDIZADO DE MÉTODO — não repetir]` diante de divergência plataforma × planilha, **a primeira
+hipótese é atraso/falha de integração**, não filtro comportamental. O sinal estava à vista: os 5
+"faltantes" eram todos **os mais recentes**. Escolheu-se a explicação dramática em vez da chata.
+`[REGRA OPERACIONAL]` **a planilha atrasa de 2 a 5 dias.** Nunca lê-la como definitiva para os
+últimos ~5 dias.
+
+### 🎯 O V3 FUNCIONOU — melhor resultado já medido nesta conta
+
+Mesmo adset (`[ADV][EUA]`), mesmo mercado, mesma campanha. **A única variável foi o formulário.**
+
+| | **V2** (03–14/07, 12 d) | **V3** (15–21/07, 7 d) |
+|---|---|---|
+| Leads EUA (planilha) | 27 | 6 |
+| Gasto | R$ 1.365,80 | R$ 478,93 |
+| **CPL** | R$ 50,58 | **R$ 79,82** (+58%) |
+| E-mail de **domínio próprio** | 4 (**15%**) | 5 (**83%**) |
+| Intenção **quente** (`now_` / `next_few_weeks`) | 2 (**7%**) | 3 (**50%**) |
+| `just_exploring` | 18 (67%) | 3 (50%) |
+
+> 💰 **Custo por lead com e-mail corporativo: R$ 341,45 → R$ 95,79 — 3,6× mais barato.**
+> 💰 **Custo por lead quente: R$ 682,90 → R$ 159,64 — 4,3× mais barato.**
+
+**O V3 encareceu o lead em 58% e barateou de 3 a 4× o lead que interessa.**
+
+Os 6 leads do V3: American Shaman CBD (`now_`), Afristocks, Saffyre LLC (`next_few_weeks`),
+San Bernardino County, DMV Recovery Support e Tree Hero (único com gmail, o primeiro, de 15/07).
+
+`[RESSALVA]` **n=6, 7 dias. É direção, não série.** Não tratar R$79,82 como CPL travado. Agosto
+existe para transformar isso em série.
+
+🔒 **Consequência direta: o formulário NÃO SE TOCA.** Antes era para preservar a medição; agora é
+também porque **ele está funcionando**.
+
+### 📌 Indicadores que passam a valer (melhores que CPL bruto)
+
+1. **Custo por lead com e-mail de domínio próprio**
+2. **Custo por lead com intenção quente** (`now_` / `next_few_weeks`)
+3. CPL bruto vira contexto, não meta
+
+`[PENDENTE]` gap remanescente no Regime 1: Meta 31 × planilha 27 (4 leads). Provável janela de data
+do backfill inicial. Baixa prioridade — não afeta a leitura do V3.
+
+### O que a divergência NÃO afeta
+
+A comparação **entre praças** sobrevive — ambas sofreram a mesma mudança no mesmo dia. E na janela
+limpa (Regime 1) o padrão é **pior** para a Alemanha do que se pensava: **45,7% da verba do Meta →
+16,2% dos leads**. No Regime 2 ela entregou **zero leads por R$159,19**.
+
+🔒 **O formulário fica CONGELADO em agosto.** Com a verba restaurada e o formulário intocado, a
+única variável diferente do regime antigo passa a ser a qualificação — e aí se mede quanto custa o
+lead bom. Mexer nele queima a isolação e repete o erro de 15/07 pela terceira vez.
 
 **Resultado de lead no período (21/06 → 21/07):** ~**40 leads** no total. Google: ~6 leads já atribuídos via clique de anúncio (conversão funcionando). Meta: volume maior, **leads mais frios e curiosos** — esperado pela estratégia "primeiro gira, depois qualifica". **Desde 15/07: apenas 1 lead**, com verba reduzida e formatos/formulários alterados no mesmo dia (ver ressalva de atribuição no changelog).
 
