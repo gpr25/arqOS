@@ -20,12 +20,12 @@ feirões.**
 
 | Campanha | Agosto | O que muda |
 |---|---|---|
-| **Lojistas CTWA** (6 × R$39/dia) | ~R$ 7.400 | 🔄 **A/B 3×3** — ver §1.2 |
+| **Lojistas CTWA** (6 × R$39/dia) | ~R$ 7.400 | 🔄 **A/B 3×3 na 1ª quinzena com material** (alvo 18/08) — ver §1.2 |
 | Site MOF | R$ 3.200 | Recebe os vencedores da quinzena anterior. Carrossel por categoria |
 | Site BOF | R$ 1.740 | Sem mudança |
-| Reconhecimento | R$ 1.560 | Como está, aguardando decisão da gestão sobre regiões |
-| Turbinar | R$ 700 | Sem mudança |
-| Reserva | ~R$ 1.400 | Absorve oscilação de grupo + feirões |
+| Reconhecimento | **~R$ 465** | ✅ Aprovado 22/07 — só Curitiba; o resto virou reserva |
+| Turbinar | **R$ 2.000** | ✅ Aprovado 22/07 (era R$700) — compensação política |
+| Reserva | ~R$ 1.195 | Absorve oscilação de grupo + feirões. ⚠️ ~R$405 em setembro |
 
 **Rotação (a oferta entra sempre na terça):**
 - **Terça 04/08 — grupo 3** · leitura em **14/08** (régua de 10 dias)
@@ -124,6 +124,11 @@ não o tirar dos 6,7%, o problema é outro.
 `[RESSALVA]` entre julho e setembro há sazonalidade e leilão diferentes — a comparação é forte, não
 perfeita. Delta pequeno (<3 pontos) não conclui nada; o padrão esperado é deslocamento geral da
 distribuição, não milagre pontual.
+
+⚠️ `[AJUSTE 22/07]` **A comparação de setembro será PARCIAL.** A gestão autorizou a transformação
+lojistas → ofertas com prazo de **2–3 ciclos** (produção + resistência dos lojistas). Em setembro,
+só parte dos grupos 1 e 2 estará convertida — a leitura antes/depois vale **por lojista convertido**,
+não para a conta inteira. Leitura plena do rollout: **out/nov**, no fechamento do trimestral.
 
 ### 2.4 Google · R$22.000 cheios
 

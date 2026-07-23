@@ -17,6 +17,22 @@
 
 ## Decisões
 
+**2026-07-22 — Gestão / Reunião de alinhamento — 5 DECISÕES**
+**Decisão:** (1) Reconhecimento fora de Curitiba **aprovado virar reserva** (linha cai a ~R$465);
+(2) volume de criativos **diminui bastante**, com lógica de funil; (3) **Turbinar sobe a
+R$2.000/mês** como compensação; (4) **transformação lojistas → ofertas AUTORIZADA**, com prazo real
+de **2–3 ciclos** (produção de material + resistência dos lojistas); (5) **cartão de crédito** para
+o pagamento Meta volta à diretoria — validar com Gabriel na próxima oportunidade.
+**Contexto:** reunião de 22/07 com a gestão do Autoshopping, pauta preparada em 21/07.
+**Por quê:** o Turbinar a R$2.000 é **moeda de troca política** — a gestão cedeu na realocação e no
+corte de volume de criativo; o aumento do Turbinar é o preço disso. Registrar como troca consciente:
+Turbinar entrega alcance, não funil, mas comprou as duas decisões que entregam funil.
+**Impacto:** verba Meta rebalanceada (reserva ~R$1.195 em ago, **~R$405 em set** — meses de grupos
+1+2 ficam apertados). A/B desliza de 04/08 para a primeira quinzena com material (alvo 18/08,
+limite 01/09). **Ganho maior da reunião: a gestão passou a operar com a lógica topo/meio/fundo** —
+toda campanha, criativo e ação com objetivo de funil declarado. É o novo critério comum para
+aprovar ou recusar pedidos de criativo.
+
 **2026-07-21 — Estrutura / Criativo — 🔑 DECISÃO ESTRUTURANTE DO SEMESTRE**
 **Decisão:** **centralizar todas as ofertas nos ad sets de lojista** (CTWA, público amplo), trocando
 em definitivo os criativos de lojista de institucional para **oferta direta**. Rotação quinzenal

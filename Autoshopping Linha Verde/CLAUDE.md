@@ -22,6 +22,7 @@ Marketplace de 23 concessionárias independentes de veículos (ticket alto), em 
 | Pasta | Conteúdo |
 |---|---|
 | `branding/` | Logos e rebranding (.ai/.pdf) |
+| `marketing/criativos/` | Peças de anúncio por lote + editáveis + `analises/`. Convenção no `README.md` de lá. |
 | `marketing/campanhas/` | Exports de campanhas Meta/Google |
 | `marketing/scripts/` | Scripts de anúncio Google/Meta e textos wa.me |
 | `marketing/relatorios/` | Relatórios mensais de performance |

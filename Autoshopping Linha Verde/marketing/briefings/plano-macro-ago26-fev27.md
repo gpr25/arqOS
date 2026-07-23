@@ -105,10 +105,14 @@ ampliada da gestão (07/2026) cobre isso. Só não acontece se houver veto expl�
 | Lojistas CTWA + ofertas | **R$ 7.020 a R$ 8.190** — varia com o grupo da rotação (ver nota) |
 | Site MOF | R$ 3.200 |
 | Site BOF | R$ 1.740 |
-| Reconhecimento | R$ 1.560 |
-| Turbinar | R$ 700 |
-| Reserva | **R$ 610 a R$ 1.780** — o que a rotação do mês deixar |
+| Reconhecimento | **~R$ 465** — ✅ aprovado 22/07: só Curitiba, o resto virou reserva |
+| Turbinar | **R$ 2.000** — ✅ aprovado 22/07 (compensação política da reunião) |
+| Reserva | **~R$ 405 a R$ 1.195** — o que a rotação do mês deixar |
 | **Total** | **R$ 16.000** |
+
+⚠️ `[22/07]` Com Turbinar a R$2.000, **os meses de grupos 1+2 (set, nov, jan) fecham com reserva de
+só ~R$405** — pouco espaço para feirão e para absorver imprevisto. Se um feirão grande cair num mês
+desses, a conta não fecha sem realocar. Tratar no planejamento do trimestral (fim de agosto).
 
 `[FATO 21/07]` **A rotação de lojista é fixa e não escolhida: 4 grupos numerados (7/7/6/6 ad sets),
 um grupo por quinzena, R$39/dia por ad set.** Meses com grupos 1+2 (jul, set, nov, jan) gastam

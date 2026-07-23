@@ -14,7 +14,7 @@ as 4 decisões da Black November fechadas.
 
 | # | Indicador | Tipo | **Alvo agosto** |
 |---|---|---|---|
-| ⭐ 1 | **Delta A × B de clique→conversa** (dentro da quinzena) | 🎯 meta | **≥ 5 pontos a favor de um dos dois** |
+| ⭐ 1 | **A/B de formato na 1ª quinzena com material** (alvo 18/08, limite 01/09 — ver §4.4) | 🎯 meta | delta **≥ 5 pontos** de clique→conversa |
 | 2 | `lead_gen` coletando e atribuído por origem (Search separado) | 🎯 meta | validação final até 30/09 |
 | 3 | CPC médio · Genérico Local (Google) | 🎯 meta | **≤ R$ 1,50** |
 | 4 | Gasto Google no mês | 🎯 meta | **~R$17.000** |
@@ -50,12 +50,12 @@ fora). A semana 3, que normalmente dispara pedidos, fica livre — **usar para p
 
 | Campanha | Verba | Status em agosto |
 |---|---|---|
-| **Lojistas CTWA** (6 × R$39/dia) | **~R$ 7.400** | 🔄 **MUDA** — ver §4. Grupos 3 e 4 têm 6 ad sets; em set (grupos 1 e 2, 7 ativos) a linha sobe a ~R$8.190 |
+| **Lojistas CTWA** (6 × R$39/dia) | **~R$ 7.400** | 🔄 ver §4. Grupos 3 e 4 têm 6 ad sets; em set (grupos 1 e 2, 7 ativos) a linha sobe a ~R$8.190 |
 | Site MOF | R$ 3.200 | Recebe vencedores da quinzena anterior · carrossel por categoria |
 | Site BOF | R$ 1.740 | Sem mudança |
-| Reconhecimento | R$ 1.560 | Como está · Curitiba + SP ativos, regionais pausados |
-| Turbinar | R$ 700 | Só post com tração orgânica comprovada |
-| Reserva | **~R$ 1.400** | Absorve oscilação de grupo (7/7/6/6) + feirões. Não é verba livre |
+| Reconhecimento | **~R$ 465** | ✅ **Aprovado 22/07:** só Curitiba; verba fora de Curitiba virou reserva |
+| Turbinar | **R$ 2.000** | ✅ **Aprovado 22/07** (era R$700) — compensação política da reunião |
+| Reserva | **~R$ 1.195** | Absorve oscilação de grupo (7/7/6/6) + feirões. ⚠️ Em setembro cai a ~R$405 |
 
 **Campanha de tráfego IG dos vídeos da Copa: encerrada em 21/07.** É o que faz agosto caber nos
 R$16.000 sem cortar frente nenhuma — julho projetava ~R$18.500.
@@ -110,17 +110,25 @@ período, mesmo leilão, mesmos 15 dias, mesma ausência de aprendizado prévio.
 **Como escolher quem vai em qual braço: sorteio simples.** Eles não têm histórico, então qualquer
 critério "estratégico" seria arbitrariedade disfarçada de método.
 
-`[PREMISSA — resolve em 22/07]` O ciclo 1→2→3→4 está **confirmado** (Gabriel, 21/07). O que falta:
-**quais lojistas do grupo 3 terão oferta** — Gabriel alinha com a gestão na reunião de 22/07.
-Sem peça de oferta, o lojista não pode ir para o braço A.
+✅ `[RESOLVIDO 22/07]` **Transformação lojistas → ofertas AUTORIZADA pela gestão** — mas com prazo
+real de **2 a 3 ciclos** (produção de material + resistência dos lojistas). **Não há peça de oferta
+pronta para 04/08.**
 
-**Regra de montagem conforme a resposta de 22/07:**
-- **4+ lojistas com oferta** → sorteia 3 deles para o braço A. Desenho pleno.
-- **Exatamente 3 com oferta** → esses 3 são o braço A, sem sorteio. `[RESSALVA]` a alocação deixa de
-  ser aleatória — se a gestão escolheu os lojistas de melhor oferta, parte do delta pode ser a
-  qualidade da oferta, não o formato. Registrar na leitura de 14/08.
-- **Menos de 3 com oferta** → A/B encolhe para 2×2 (leitura mais fraca, ainda direcional) ou adia
-  para o grupo 4 em 18/08. Decidir na hora com o que houver.
+**Cronograma ajustado:**
+
+| Quinzena | O que roda |
+|---|---|
+| **04/08 — grupo 3** | Formato atual nos 6 (sem A/B). Vira o **baseline frio** do grupo 3 |
+| **18/08 — grupo 4** | 🎯 **A/B 3×3 se houver ≥3 peças de oferta prontas** — cobrar produção a partir de 28/07 |
+| **01/09 — grupo 1** | Limite do A/B se 18/08 não der. Grupo 1 tem baseline de julho — leitura até melhor |
+
+**Regra de montagem quando houver material:** 4+ lojistas com oferta → sorteia 3 para o braço A ·
+exatamente 3 → braço A forçado (`[RESSALVA]` alocação não aleatória; se a gestão escolheu as
+melhores ofertas, parte do delta é a oferta, não o formato) · menos de 3 → 2×2 ou espera o ciclo
+seguinte.
+
+**O rollout completo é gradual** (2–3 ciclos): a conversão total dos 26 ad sets termina entre
+meados de setembro e outubro, lojista a lojista, conforme material e adesão.
 
 **Verba:** R$39/dia por ad set, travado pela estrutura. 6 ativos → ~R$7.400 no mês (inclui a cauda
 do grupo 2 até 03/08). O A/B não muda verba de ninguém — só público e criativo.
@@ -177,9 +185,22 @@ sobra para Q4.
 
 ## 6. CRIATIVO EM AGOSTO
 
-**Nenhum pedido de campanha.** Nada com D-60 existe para agosto — o briefing teria saído em junho.
-Agosto roda com o que há. Ofertas seguem o fluxo próprio delas. RSA, extensões e negativação do
-Google são do Gabriel, não da fila do designer.
+**Nenhum pedido de CAMPANHA.** Nada com D-60 existe para agosto — o briefing teria saído em junho.
+Ofertas seguem o fluxo próprio delas. RSA, extensões e negativação do Google são do Gabriel, não da
+fila do designer.
+
+✅ `[NOVO 22/07]` **Exceção autorizada: 2 a 3 peças de FUNIL.** Não são peças de campanha (sem data)
+nem de oferta (o fluxo quinzenal já cobre). São peças permanentes que tapam buracos de funil abertos:
+
+| # | Etapa | O que resolve | Prioridade |
+|---|---|---|---|
+| 1 | **Fundo — Site BOF** | R$1.740/mês rodando **sem criativo próprio** — hoje o BOF usa a peça do MOF. Ângulo: **rotação de estoque** (300–500 carros/mês saem; o carro que ele viu pode não estar mais lá). Urgência real, sem oferta e sem claim novo. | 🔴 alta |
+| 2 | **Meio — Site MOF** | O diferencial estrutural (**~1.000 carros · 23 lojas · um endereço**) não existe em nenhuma peça da conta. Motivo para vir, não desconto. | 🔴 alta |
+| 3 | **Meio/Fundo — troca** | Ângulo **avaliação/troca**, ausente do lote inteiro. Traz quem já tem carro (= quem compra). **Alimenta a decisão nº1 da trava de 27–28/08** — ver §7. | 🟡 se couber |
+
+**Regra:** 4:5 + 9:16 cada, safe zone conferida na origem (ver `marketing/criativos/README.md`).
+Nenhuma pede claim que a loja não sustente — confirmar com a gestão antes de escrever qualquer
+promessa de laudo, garantia ou procedência.
 
 ---
 
@@ -189,12 +210,22 @@ O briefing de 01/09 não é o começo do trabalho, é o fim. Sem estas quatro, e
 
 | # | Decisão | Insumo |
 |---|---|---|
-| 1 | **Qual dos 3 ângulos lidera** a Black November | desconto no preço · taxa zero · bônus na troca. Decidir pelo que performou em agosto |
+| 1 | **Qual dos 3 ângulos lidera** a Black November | desconto no preço · taxa zero · bônus na troca. Decidir pelo que performou em agosto ⚠️ **ver ressalva abaixo** |
 | 2 | **Verba da BF** — os R$16k+R$22k normais, ou entra reserva do Google? | CPM sobe ~40% em novembro. Com verba fixa, o volume cai |
 | 3 | **Formatos por campanha** — confirmar as 12 peças | Lojistas 6 · MOF 2 · BOF 2 · Natal 2 · Recon 0 |
 | 4 | **Duração** — 30 dias, 01/11 → 30/11 | ✅ já definida (Black November, referência de mercado) |
 
 **Bloco de 27–28/08 é reservado só para isso.** Quinta é dia de execução protegida; sexta fecha.
+
+⚠️ `[FURO DE LÓGICA — detectado 22/07]` **A decisão nº1 não tem fonte de dado.** Ela manda escolher o
+ângulo da BF "pelo que performou em agosto", mas **nada em agosto testa os 3 ângulos**: as peças de
+lojista são ofertas da própria loja (veículo + preço, definidas pelo lojista), não os ângulos
+desconto/taxa zero/troca. Sem correção, 27–28/08 decide no achismo.
+
+**Duas saídas:** (a) a peça nº3 de §6 (**troca**) dá leitura de um dos três ângulos — é o argumento
+mais forte para produzi-la; (b) os outros dois viram decisão de referência de mercado + histórico de
+feirão (BV, Safra, Itaú, Santander, C6, Bradesco, Carbank), assumida como tal e **registrada como
+decisão sem dado**, não como conclusão de teste.
 
 ---
 
@@ -215,8 +246,9 @@ O briefing de 01/09 não é o começo do trabalho, é o fim. Sem estas quatro, e
 
 - [ ] Search no ar, **7 dias sem termo lixo relevante**
 - [ ] Google fechou o mês em ~R$17.000 com CPC estável
-- [ ] Grupo 3 rodou o A/B 3×3 completo (04–17/08)
-- [ ] Grupo 4 subiu em 18/08 com o formato vencedor
+- [ ] Grupo 3 rodou a quinzena 04–17/08 no formato atual (**baseline frio**, sem A/B — corrigido 22/07)
+- [ ] Grupo 4 subiu em 18/08 **com o A/B 3×3**, se houve ≥3 peças de oferta prontas
+- [ ] 2–3 peças de funil (§6) pedidas ao designer — pedido feito até **07/08** para caber no mês
 - [ ] **Delta A × B lido e registrado** — com o número, não com impressão
 - [ ] **As 4 decisões da BF fechadas**
 - [ ] Relatório de julho apresentado, com o número corrigido
@@ -230,6 +262,7 @@ O briefing de 01/09 não é o começo do trabalho, é o fim. Sem estas quatro, e
 - ❌ Subir verba do Google sem passar no gate da semana
 - ❌ Ligar Smart Bidding — só com volume real e rastreamento validado
 - ❌ Abrir PMax de novo
-- ❌ Pedir criativo de campanha — não há data em outubro
+- ❌ Pedir criativo **de campanha** — não há data em outubro. (As 2–3 peças de **funil** de §6 são exceção autorizada e não têm data.)
+- ❌ Pedir peça de **oferta** fora do fluxo quinzenal — duplica o que já existe
 - ❌ Gastar energia em Dia dos Pais (09/08) ou Semana do Brasil
 - ❌ Usar a reserva de R$1.000 sem motivo escrito
