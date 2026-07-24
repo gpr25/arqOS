@@ -1,0 +1,134 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-07-23 00:00:00",
+  "containerVersion": {
+    "path": "accounts/6000000000/containers/180000000/versions/0",
+    "accountId": "6000000000",
+    "containerId": "180000000",
+    "containerVersionId": "0",
+    "name": "Conversoes Google Ads - Autoshopping",
+    "container": {
+      "path": "accounts/6000000000/containers/180000000",
+      "accountId": "6000000000",
+      "containerId": "180000000",
+      "name": "Autoshopping Linha Verde",
+      "publicId": "GTM-KVLGK4D",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6000000000/containers/180000000/workspaces/1"
+    },
+    "tag": [
+      {
+        "accountId": "6000000000",
+        "containerId": "180000000",
+        "tagId": "20",
+        "name": "Vinculador de conversoes",
+        "type": "gclidw",
+        "parameter": [
+          {"type": "BOOLEAN", "key": "enableCrossDomain", "value": "false"},
+          {"type": "BOOLEAN", "key": "acceptIncoming", "value": "true"}
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["10"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "180000000",
+        "tagId": "21",
+        "name": "HTML - alert lead ok",
+        "type": "html",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "html", "value": "<script>(function(){var _a=window.alert;window.alert=function(m){try{if(m&&String(m).toLowerCase().indexOf('enviado com sucesso')>-1){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'lead_form_ok'});}}catch(e){}return _a.apply(window,arguments);};})();<\/script>"},
+          {"type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false"}
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["10"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "180000000",
+        "tagId": "22",
+        "name": "GAds Conv - Formulario",
+        "type": "awct",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "988689617"},
+          {"type": "TEMPLATE", "key": "conversionLabel", "value": "w2iFCMbErdUcENHpuNcD"}
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["12"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "180000000",
+        "tagId": "23",
+        "name": "GAds Conv - WhatsApp",
+        "type": "awct",
+        "parameter": [
+          {"type": "TEMPLATE", "key": "conversionId", "value": "988689617"},
+          {"type": "TEMPLATE", "key": "conversionLabel", "value": "kELSCMnErdUcENHpuNcD"}
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["13"],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6000000000",
+        "containerId": "180000000",
+        "triggerId": "10",
+        "name": "All Pages - PV",
+        "type": "PAGEVIEW",
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "180000000",
+        "triggerId": "12",
+        "name": "CE - lead_form_ok",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{_event}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "lead_form_ok"}
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "180000000",
+        "triggerId": "13",
+        "name": "Click - WhatsApp",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {"type": "TEMPLATE", "key": "arg0", "value": "{{Click URL}}"},
+              {"type": "TEMPLATE", "key": "arg1", "value": "wa\\.me|api\\.whatsapp\\.com"}
+            ]
+          }
+        ],
+        "parameter": [
+          {"type": "BOOLEAN", "key": "waitForTags", "value": "false"},
+          {"type": "BOOLEAN", "key": "checkValidation", "value": "false"},
+          {"type": "TEMPLATE", "key": "waitForTagsTimeout", "value": "2000"},
+          {"type": "TEMPLATE", "key": "uniqueTriggerId", "value": "1000"}
+        ],
+        "fingerprint": "0"
+      }
+    ],
+    "builtInVariable": [
+      {"type": "CLICK_URL", "name": "Click URL"},
+      {"type": "CLICK_ELEMENT", "name": "Click Element"}
+    ],
+    "fingerprint": "0"
+  }
+}

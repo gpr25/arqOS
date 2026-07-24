@@ -9,7 +9,7 @@
 ## Antes de tudo — o que estas peças NÃO são
 
 | Não é | Por quê |
-|---|---|
+| --- | --- |
 | **Peça de oferta** | Veículo + preço + condição já sai no fluxo quinzenal de ofertas por lojista. Duplicar confunde e canibaliza. |
 | **Peça de campanha/data** | Nada de Dia dos Pais, Semana do Brasil, Black Friday. Estas rodam o ano inteiro. |
 | **Peça institucional** | O lote de julho já cobre isso: luxo, família, filhos, primeiro carro, motorista de app, hatch, compactos. |
@@ -106,6 +106,7 @@ superlativo mensurável (maior, número 1, o que mais vende) fica fora.
 ## PEÇA 3 — Permanente · MOF + BOF · 🟡 se couber no prazo
 
 **Por que existe:** dois motivos.
+
 1. **Ângulo ausente.** Nenhuma peça da conta fala de **troca/avaliação** — e quem já tem carro é quem efetivamente compra, não quem está sonhando com o primeiro.
 2. **Alimenta a decisão de 27–28/08.** A escolha do ângulo da Black November (desconto · taxa zero · **bônus na troca**) deveria sair do que performou em agosto, mas nada em agosto testa esses ângulos. Esta peça cobre um dos três.
 

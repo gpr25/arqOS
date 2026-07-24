@@ -55,7 +55,16 @@ resultado). **Curitiba e SP seguem ativos.**
 
 **Turbinar** — posts com tração orgânica comprovada.
 
-**Google: `PMax_Institucional`** — única com gasto. Search aprovado **não lançado**.
+**Google: `PMax_Institucional`** — única com gasto. **A pausar** (decisão 23/07 — órfã, sem resultado;
+a regra dos 7 dias em paralelo não se aplica).
+
+**Google: `[Search] Institucional` + `[Search] Aquisição`** `[MONTADAS · PAUSADAS 23/07]` — 2 + 6
+grupos, Maximizar Cliques sem teto, Curitiba +25% / RMC. Conversão nova já no ar (form primária,
+WhatsApp secundária — GTM v169). Destinos usam o prefixo **`/m`** (nunca `/multipla`, bloqueado pro
+AdsBot-Google no robots.txt). 🔴 **ATIVAÇÃO BLOQUEADA:** anúncios **reprovados** — o WAF/CloudFront
+devolve **403 por volume** ao rastreador do Google, em qualquer URL (inclusive `/robots.txt`).
+Depende da Revenda Mais isentar o AdsBot do rate limit.
+Build: [[../marketing/campanhas/BUILD-search-google-onda1-2026-07]].
 
 ---
 

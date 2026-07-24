@@ -101,7 +101,19 @@ Detalhamento por campanha em Seção 4 (Meta) e Seção 5 (Google).
 - Contato direto de lojista: código de texto pré-preenchido no WhatsApp. Formato `[MET][NOMELOJA]` para Meta lojistas; `[GAD]` reservado para Google Ads.
 - **[21/07/2026] Google:** junk conversion rebaixada para Secundária; `lead_gen` da conversa gerada no **site do Autoshopping** (página de estoque/carro exato) cadastrado como evento de conversão. Ver Seção 5.
 
-**Dependência crítica:** Fase 2 do Meta (otimização por conversão, catálogo AIA, retargeting granular) e a auditoria de conversão dependem de cooperação da Revenda Mais em CAPI, GTM e feed. Historicamente pouco cooperativa nesses pontos.
+**✅ [23/07/2026] GOOGLE — MEDIÇÃO NOVA NO AR (marco):** duas ações de conversão **construídas do zero**, sem nada da gestão antiga, e publicadas no GTM (`GTM-KVLGK4D`, **Versão 169**, 16:54). Validadas disparando no GTM Preview.
+
+| Ação | Papel | ID de conversão | Rótulo |
+|---|---|---|---|
+| `Lead - Formulário Site` | **PRIMÁRIA** (lead quente) | `988689617` | `w2iFCMbErdUcENHpuNcD` |
+| `Contato - WhatsApp` | Secundária (observação) | `988689617` | `kELSCMnErdUcENHpuNcD` |
+
+- **Hierarquia (correção de Gabriel, 23/07):** no Google a primária é o **formulário do site**, não o WhatsApp. Quem preenche form tem intenção declarada; clique de WhatsApp é intenção mais rasa. As duas contam, **medidas separadas** — só a primária otimiza.
+- **Método do formulário:** o site **não tem página de obrigado** — o sucesso é um `alert()` nativo. A tag `HTML - alert lead ok` sobrescreve `window.alert` e empurra `lead_form_ok` pro dataLayer. Dispara **só no sucesso real** (não em erro de validação) → sem over-count.
+- 🔑 **Feito 100% no GTM, SEM a Revenda Mais** — o container já estava no site. Isso **quebra a dependência histórica** que travava a medição. Não usar mais "depende da Revenda Mais" como justificativa para conversão de Google.
+- Publicação foi **puramente aditiva** (8 itens, nada existente alterado/excluído). Limpeza do legado ficou como passada separada — ver Seção 9.
+
+**Dependência crítica:** Fase 2 do Meta (otimização por conversão, catálogo AIA, retargeting granular) e a auditoria de conversão **do Meta** dependem de cooperação da Revenda Mais em CAPI e feed. Historicamente pouco cooperativa. ⚠️ **O lado Google saiu dessa dependência em 23/07** (ver acima).
 
 ---
 
@@ -171,7 +183,20 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 - **Novo evento de conversão cadastrado:** `lead_gen` da conversa gerada a partir do **site do Autoshopping** (não é LP — correção 20/07). Destino primário do tráfego = página de **estoque** ou do **carro exato**; o `lead_gen` marca a conversa originada aí.
 - **Search continua NÃO lançado** — motivo: agenda. Houve alinhamento com a gestão pra **lançar tudo ainda em julho** (meta ~31/07/2026). Enquanto não lança, budget Google roda subutilizado (~R$9k de R$22k, ver junho).
 
-**Estrutura aprovada (não lançada ainda em jul/2026):**
+**✅ ATUALIZAÇÃO 23/07/2026 — SEARCH MONTADO + CONVERSÃO NO AR:**
+
+- **Campanhas montadas** (ainda PAUSADAS): Institucional (2 grupos) e Aquisição (6 grupos), com keywords, negativas e RSAs. Build completo em [[../marketing/campanhas/BUILD-search-google-onda1-2026-07]] (v3).
+- **Conversão nova publicada** — `Lead - Formulário Site` (**primária**) e `Contato - WhatsApp` (secundária). GTM Versão 169. Detalhe na Seção 3.
+- 🔴 **DESTINO BLOQUEADO — ANÚNCIOS REPROVADOS. Trava o lançamento.** São **dois problemas independentes**:
+  - **A) `robots.txt` bloqueia `/multipla`** — bloco próprio de `AdsBot-Google` com `Disallow: /busca` e `Disallow: /multipla` (intencional). Revenda Mais **não libera** (crawlers disparavam URLs facetadas falsas, +80% da infra) e ofereceu a rota alias **`/m`**. Validado: alias real, 200 sem redirect, conteúdo idêntico, GTM/dataLayer ativos, não bloqueado (robots casa por prefixo). **URLs do BUILD trocadas para `/m` — necessário, mas NÃO suficiente.**
+  - **B) 🔴 WAF/CloudFront devolve 403 por VOLUME de requisições** — esta é a causa da reprovação. Site atrás de **AWS CloudFront** (`X-Amz-Cf-Pop: GRU3-P1`). Teste 23/07: após algumas dezenas de requisições, **o IP inteiro passou a receber 403** — em `/m`, `/multipla`, na **home** e **no próprio `/robots.txt`**. É bloqueio **por taxa/IP, não por caminho** → **trocar URL não resolve**. É a mitigação anti-crawler da Revenda Mais pegando o rastreador de anúncios do Google junto.
+- 🔴 **403 no `/robots.txt` é o sintoma mais grave:** sem conseguir ler o robots, o Google trata o **site inteiro** como bloqueado — por isso "Destino não rastreável" aparece **junto** com "Destino que não funciona".
+- **Pedido correto à Revenda Mais:** (1) isentar do rate limit os rastreadores verificados do Google (`AdsBot-Google` e `AdsBot-Google-Mobile`); (2) faixas oficiais em `https://developers.google.com/static/crawling/ipranges/special-crawlers.json` (270 prefixos) → IP set + regra Allow **acima** do rate limit no AWS WAF, ou Bot Control com categoria de bot verificado; (3) **`/robots.txt` nunca pode retornar 403**.
+- 🔑 **Páginas de carro** (`/carros/Marca/Modelo/....html`) não precisam de troca de URL — mas **também caem no 403**, porque o bloqueio é por IP.
+- ⚠️ **Lição de método (erro cometido e corrigido no mesmo dia):** a primeira validação deu "resolvido" porque testou com user-agent de desktop e pegou **cache do CloudFront**. Cache hit **não prova** que o rastreador passa. Ao validar destino de anúncio: testar **volume**, checar `X-Cache`, e conferir se `/robots.txt` responde 200 sob carga.
+- **PMax: pausar sem período de paralelo** — decisão de Gabriel em 23/07 (ver ressalva na regra de transição abaixo).
+
+**Estrutura aprovada (montada, pendente de ativação — 23/07/2026):**
 
 | Campanha | Verba/mês | Grupos |
 |---|---|---|
@@ -181,14 +206,15 @@ Limpeza de cache confirmada NÃO ser a causa. Problema no backend da Meta.
 
 - Eletrificados/BYD: um grupo combinado apontando para o filtro combustível. Keywords de híbrido usam URL a nível de keyword para o filtro híbrido.
 - **Lance:** Maximizar Cliques sem teto no lançamento (verba diária é o teto natural). Smart Bidding adiado até rastreamento auditado e volume real estabelecido. Sem tetos de CPC/CPA nesta fase (Gabriel rejeitou como chute prematuro).
-- **Landing pages:** páginas filtradas de estoque (`/multipla/carroceria/sedan`, `/multipla/combustivel/eletrico`, etc). Resolvem a volatilidade de inventário por ficarem sempre populadas, sem depender de veículo específico em estoque.
+- **Landing pages:** páginas filtradas de estoque. ⚠️ **Usar sempre o prefixo `/m`** (`/m/carroceria/sedan`, `/m/combustivel/El%C3%A9trico`) — **nunca `/multipla`**, que é bloqueado pro AdsBot-Google. Resolvem a volatilidade de inventário por ficarem sempre populadas, sem depender de veículo específico em estoque. Páginas de carro individual (`/carros/...`) são liberadas normalmente.
 - **Geografia:** campanha única Curitiba + RMC, com ajuste de lance **+25% em Curitiba** para forçar peso ~60/40.
-- **Conversão primária:** WhatsApp (depende da auditoria Revenda Mais). Ligações como secundária/observação.
+- **Conversão primária:** ~~WhatsApp~~ → **CORRIGIDO 23/07: a primária é o FORMULÁRIO do site**; WhatsApp é secundária/observação. Ver Seção 3. *(O registro anterior estava errado — no Google, form = lead quente.)*
 - **Negativação rigorosa desde o início:** peças, conserto, aluguel, locação, concurso, OLX, consulta tabela FIPE e similares.
 
 **Fases:** Fase 1 Search (prioridade imediata). Fase 2 PMax só depois do Search estabilizado e rastreamento auditado, com feed de inventário se houver. Não antecipar.
 
 **Regra de transição:** estrutura nova roda 7 dias em paralelo à antiga antes de qualquer desativação. Desativação definitiva exige aprovação da gestão.
+⚠️ **Ressalva 23/07/2026:** essa regra vale pro legado **que está performando**. **Não se aplica à PMax herdada** — campanha órfã, sem resultado e sem dono na gestão; Gabriel decidiu pausar direto. Aplicar cerimônia de transição a algo que não entrega é ritual, não gestão de risco.
 
 ---
 
@@ -340,6 +366,21 @@ Enquanto o Search não sobe, a verba não é perdida — mas também não trabal
 - **[Comercial/forms] Sem novidade — segue travado.** Nenhuma venda nova atribuível à mídia, nenhum feedback novo de qualidade de lead. Forms de qualidade continua com adesão baixíssima; Gabriel + gestora pressionando, mas lojistas **resistentes** ("nunca têm tempo", apesar do form levar ~30s). Elo comercial→mídia segue como a maior lacuna de medição.
 - **[Performance julho] Números parciais existem mas não consolidados aqui** — Gabriel traz os dados completos via **exports/Drive**. `[PREENCHER: CPL, conversas e gasto Meta de 14/07→31/07 a partir do export]`.
 
+**23/07/2026 — GOOGLE: Search montado + medição nova no ar (dia de execução):**
+
+- **[Google][build]** Campanhas **Institucional** (2 grupos) e **Aquisição** (6 grupos) montadas com keywords, lista de negativas compartilhada e RSAs. **Ainda pausadas.** Lance: Maximizar Cliques sem teto.
+- **[Google][conversão] 🔑 Duas ações novas criadas do zero** — `Lead - Formulário Site` (**PRIMÁRIA**, ID `988689617` / rótulo `w2iFCMbErdUcENHpuNcD`) e `Contato - WhatsApp` (**secundária**, rótulo `kELSCMnErdUcENHpuNcD`). Nada reaproveitado da gestão antiga.
+- **[Google][correção de registro]** Estava anotado que a primária do Google seria **WhatsApp** — **errado, corrigido por Gabriel**. No Google a primária é o **formulário do site** (intenção declarada); WhatsApp conta como observação.
+- **[Google][GTM] Versão 169 publicada às 16:54** no container `GTM-KVLGK4D`. 8 itens adicionados (Conversion Linker, tag HTML de override do alert, 2 tags de conversão, 3 acionadores, 2 variáveis). **Nada existente foi alterado ou excluído.**
+- **[Google][GTM][descoberta técnica]** O site **não tem página de obrigado** — o sucesso do formulário é um **`alert()` nativo**. Solução: sobrescrever `window.alert` e disparar `lead_form_ok` no dataLayer. Dispara só no sucesso real → sem over-count. Fonte versionada: `marketing/campanhas/gtm-import-conversoes-KVLGK4D.json`.
+- **[Google][GTM][marco]** Feito **100% no GTM, sem a Revenda Mais** — o container já estava instalado no site. **A medição do Google deixou de depender da agência.**
+- **[Google][validação]** GTM Preview: as duas tags dispararam corretamente (form via `lead_form_ok`, WhatsApp via clique em link `api.whatsapp.com`). No Ads, ambas em "Conversões pendentes" — normal, aguardando 1º tráfego real.
+- **[Google][bloqueio → resolvido] robots.txt:** páginas de listagem marcadas como **"Destino não rastreável"** — `AdsBot-Google` bloqueado em `/multipla` e `/busca` por bloco próprio no `robots.txt` (bloqueio intencional). Revenda Mais **recusou liberar** (crawlers gerando requisições em massa de URLs facetadas falsas, +80% da infra) e ofereceu rota alias **`/m`**. **Testado e aprovado no mesmo dia:** alias real, 200 sem redirect, conteúdo idêntico, GTM/dataLayer presentes, não bloqueado (robots casa por prefixo). **URLs do BUILD trocadas para `/m`.**
+- **[Google][descoberta importante]** As **páginas de carro específico nunca estiveram bloqueadas** — ficam em `/carros/Marca/Modelo/Versao/....html`, fora de `/multipla` e sem regra no robots. Só as **listagens** precisavam de troca. A preocupação inicial ("vou ter que trocar todos os links específicos") não se confirmou.
+- **[Google][risco]** `/m` é rota não documentada e **não protegida no robots.txt**. Se for descoberta pelos crawlers e bloqueada pelo mesmo motivo, os anúncios quebram sem aviso. Vigiar "Destino não rastreável" no Ads.
+- **[Google][decisão] PMax: pausar sem paralelo de 7 dias.** Ver ressalva na Seção 5.
+- **[Google][adiado] Limpeza do legado** (tags UA mortas, Conversion Linker duplicado, ~50 ações de conversão velhas) — passada separada. ⚠️ Não apagar às cegas as tags `WhatsApp Loja - X`: é rastreio por lojista.
+
 ---
 
 ## 8. APRENDIZADOS E PRINCÍPIOS VALIDADOS
@@ -361,10 +402,19 @@ Enquanto o Search não sobe, a verba não é perdida — mas também não trabal
 |---|---|---|
 | Corrigir agora | Resolver falha de backend da conta Meta (escalação + Plano B como teste de isolamento) | Aberto |
 | ✅ Concluído (20/07) | Rebaixar junk conversion (194k) do Google para Secundária | FEITO. `lead_gen` da LP cadastrado. |
-| Investigar antes de mexer | Auditoria completa de conversão nas duas plataformas (via Revenda Mais) antes de habilitar qualquer lance automático | Pendente |
+| ✅ Concluído (23/07) | **Conversão nova do Google** — form primária + WhatsApp secundária, GTM v169 | FEITO e validado no Preview. Ver Seção 3. |
+| 🔴 **BLOQUEIA O LANÇAMENTO** | **WAF/CloudFront devolve 403 ao rastreador do Google** → anúncios REPROVADOS | Pedir à Revenda Mais isenção de rate limit p/ AdsBot-Google + `/robots.txt` sempre 200. Ver Seção 5. |
+| ✅ Parcial (23/07) | Trocar `/multipla` por `/m` nas URLs de destino (resolve o bloqueio de `robots.txt`) | Feito. Necessário, mas **não suficiente** sozinho. |
+| Contínuo | **Vigiar "Destino não rastreável" / "Destino que não funciona"** no Ads | Alerta permanente — a mitigação anti-crawler da Revenda Mais pode voltar a pegar o Google |
+| Corrigir agora | **Ativar** Institucional → pausar PMax → ativar Aquisição | Campanhas montadas e pausadas desde 23/07 |
+| Fazer | Confirmar "gravando conversões" no Ads após 1º tráfego real | Aguardando volume |
+| Fazer | Espelhar os 2 eventos no **GA4** (`G-GFJJMBLKH4`) como eventos-chave | Trilha paralela, não bloqueia |
+| Fazer (passada calma) | **Limpeza do legado**: tags UA mortas, Conversion Linker duplicado, ~50 ações de conversão velhas no Ads | ⚠️ NÃO apagar às cegas as tags `WhatsApp Loja - X` (rastreio por lojista) |
+| Depois (com volume) | Migrar pra **Smart Bidding** + reavaliar modelo de **duas primárias com valores diferentes** | Só com conversão validada + volume |
+| Investigar antes de mexer | Auditoria de conversão **do Meta** (CAPI/feed, via Revenda Mais) antes de habilitar lance automático lá | Pendente. *(Lado Google resolvido em 23/07.)* |
 | Medir 7-14 dias | Estrutura consolidada de lojistas Meta saindo do aprendizado | Em curso (nenhum chega a 50 conv/sem; régua = 10+ dias p/ mudança grande) |
 | Próximos ciclos | Testar troca de **público + criativos** nos ad sets de lojista de pouco resultado / custo elevado | Planejado, coletando dados por grupo |
-| Corrigir agora | Lançar Search Google (Fase 1) | Aprovado, não lançado. Atraso por agenda. Alinhado c/ gestão p/ lançar ainda em julho (meta ~31/07/2026). |
+| Corrigir agora | Lançar Search Google (Fase 1) | **Montado e pausado em 23/07.** Falta robots.txt + revisão final + ativar. Meta ~31/07/2026. |
 | Fazer | Dedup de público dos ad sets de lojista (raio 15km, seed compartilhado) | Só após sair do aprendizado |
 | Fazer | Transição/sunset dos vídeos Copa (23 vídeos) da campanha IG | Ativos até 19/07 |
 | Onda 2 | Premium Google + grupo rotativo Isca de Modelo | Depois do Search estável |
@@ -377,7 +427,12 @@ Enquanto o Search não sobe, a verba não é perdida — mas também não trabal
 
 - **Meta:** Conta `529042313814912` · BM `439491940159846`. Casos de suporte `1002215365623050`, `1556667192628603`. Reclame Aqui aberto.
 - **Google:** Google Ads + GA4 (10 anos de histórico, acesso obtido).
-- **Site / tracking:** Revenda Mais (parceiro técnico, administra pixel e infra do site; auditoria de conversão pendente).
+  - **ID de conversão do Google Ads:** `988689617`
+  - Rótulos: `Lead - Formulário Site` = `w2iFCMbErdUcENHpuNcD` (primária) · `Contato - WhatsApp` = `kELSCMnErdUcENHpuNcD` (secundária)
+  - **GTM:** container `GTM-KVLGK4D` (já instalado no site, acesso próprio — **não depende da Revenda Mais**). Versão atual: **169** (23/07/2026).
+  - **GA4:** `G-GFJJMBLKH4` · **Pixel Meta no GTM:** `2558888570858508`
+  - Setup de conversão versionado em `marketing/campanhas/gtm-import-conversoes-KVLGK4D.json` (importável em Admin → Importar contêiner).
+- **Site / tracking:** Revenda Mais (parceiro técnico, administra a infra do site). ⚠️ Ainda necessária para **CAPI/Meta, feed e robots.txt** — mas **não mais para conversão do Google** (resolvido via GTM próprio em 23/07).
 - **Relatório:** exports diretos do Meta Ads Manager (fonte de verdade). Mlabs excluído da análise.
 - **Pipeline criativo:** Fábrica de Copy (conversa separada). Inteligência de Mercado (conversa separada) alimenta a Fábrica.
 - **Landing:** páginas filtradas do site `/multipla/[filtro]`.
@@ -392,3 +447,4 @@ Enquanto o Search não sobe, a verba não é perdida — mas também não trabal
 |---|---|---|
 | 1.0 | 16/07/2026 | Criação. Consolidado estado de negócio, budget, tracking, estruturas Meta e Google, crise técnica Meta, registro datado de jun e jul/2026, aprendizados e backlog. |
 | 1.1 | 21/07/2026 | Backfill: atualização da crise Meta (Seção 4.1 — PIX/julho, Plano B não feito, Reclame Aqui não feito, risco agosto); entrada datada 20/07 na Seção 7 com NFs de mídia (Meta R$16.738,92 / Google R$8.988,81 jun), insight de subutilização do budget Google, e contradição 267×219 do relatório de junho. Criado `logs/changelog.md`. |
+| 1.2 | 23/07/2026 | **Marco de medição do Google.** Seção 3: conversão nova (form primária / WhatsApp secundária), IDs e rótulos, método do `alert()`, fim da dependência da Revenda Mais no lado Google. Seção 5: Search montado e pausado, bloqueio do robots.txt, correção da conversão primária (era WhatsApp — errado), ressalva na regra dos 7 dias (não vale pra PMax órfã). Seção 7: entrada datada 23/07. Seção 9: backlog reordenado. Seção 10: IDs de conversão, GTM, GA4 e Pixel registrados. **+ robots.txt resolvido via rota alias `/m`** (testado); páginas de carro (`/carros/...`) nunca estiveram bloqueadas; risco de `/m` ser bloqueado no futuro registrado como alerta contínuo. |

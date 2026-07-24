@@ -7,6 +7,173 @@
 
 ---
 
+## 2026-07-24 — Reporting · Apresentação de alinhamento Julho/26 (B2B + B2C unificados)
+
+**Criado:** `../operations/reunioes/Alinhamento_Shopping_Cidade_Julho26.pptx` — **9 slides**,
+arquivo NOVO (o `reuniao_junho_shopping_cidade.pptx` foi usado só como referência de identidade:
+Poppins, #093652 / #E01C4C / #157DBF / #1DAFE0, cards roundRect #F7F8FA, barra magenta na capa).
+
+**Estrutura:** capa · as duas frentes lado a lado · Junho × Julho B2C · Junho × Julho B2B ·
+como o tráfego pago performa melhor (espelho do slide 9 do deck de julho do Autoshopping) ·
+plano de agosto B2C · plano de agosto B2B · calendário até dezembro · resumo + 4 pedidos.
+
+**Números conferidos contra os CSVs de export** (não copiados de memória):
+- Meta jun total R$22.542,20 · jul 1–21 R$16.366,11 · Google jun R$19.877,47 · jul 1–21 R$1.746,16
+- B2C Meta: R$14.830 → R$12.324 · alcance 1,05M → 1,08M · custo/mil R$14,09 → R$11,41 (−19%)
+- B2B Meta: R$7.713/161 leads/CPL R$47,90 → R$4.042/121 leads/CPL R$33,41 (−30%)
+- Google B2C PMax R$15.306 → R$0 · Google B2B Search R$4.571 → R$1.746 (pausada 22/07)
+
+**Regras de rigor aplicadas no deck:** Meta e Google **sempre separados**, nunca somados;
+zero superlativo histórico (série é só 2026); janela declarada em todo comparativo
+(junho 30 dias fechado × julho 21 dias parcial); ressalva de que CPL mede custo e não qualidade;
+conversões do Google marcadas como contaminadas por Visitas à loja; verba parada enquadrada como
+**reserva de teste**; "+X% de verba ≠ +X% de alcance" respeitado (nenhuma promessa de proporção).
+
+**Slide didático de tráfego pago:** funil completo · um plano e seguir o plano · medição e
+colaboração — mais a **virada de régua** declarada: alcance hoje, fluxo do contador (B2C) e
+custo por contrato assinado (B2B) como objetivo palpável seguinte.
+
+### v2 (mesmo dia) — reescrita de tom + 4 decisões de conteúdo
+
+`Alinhamento_Shopping_Cidade_Julho26_v2.pptx`. A v1 foi adaptada manualmente pelo Gabriel e
+depois devolvida com a crítica: **"os textos estão muito agressivos e acusativos, precisamos ser
+mais políticos, nunca acusar, nunca apontar o dedo"**. Reescrita do deck inteiro.
+
+**Régua de tom (vale daqui pra frente em todo material de gestão):** nunca "o plano precisa ser
+cumprido"; sempre **o que ganhamos quando** / **o que se perde de aprendizado quando**. Exemplo
+canônico dado pelo Gabriel e aplicado no slide 5: *"Com a verba definida antes do mês, temos
+planejamento real e conseguimos comparar a projeção com o que aconteceu. Quando a direção muda
+várias vezes, os dados se perdem e demora mais para entender o que funciona. Existe reserva para
+imprevistos e posts adicionais, e ela rende mais como exceção."*
+
+**Decisões novas de conteúdo:**
+1. 🔴 **Agosto NÃO cria nem sugere campanha nova.** Gabriel declarou agosto atolado. O slide de
+   agosto B2C passa a ser *"otimiza o que já roda e mede o que vem depois"*, com a transição para
+   funil posicionada nos **próximos meses**, sem assumir entrega.
+2. **Ofertas Semanais: consolidar os 2 conjuntos em 1 e cair de R$120 para R$70/dia.** Os dois
+   rodam **os mesmos criativos** e disputam o mesmo leilão. Os ~R$50/dia liberados vão para o
+   **Reconhecimento (R$100 → R$150/dia)**. Total Meta B2C segue em ~R$19.870.
+   ⚠️ Isto **revisa** o "R$120/dia é piso de entrega" do `plano-agosto-2026-b2c.md` §3.2: o piso
+   foi calculado para 6–8 anúncios divididos em 2 conjuntos; com 1 conjunto e 3–4 carrosséis,
+   R$70/dia mantém a mesma verba por anúncio.
+3. 🎯 **Toda campanha de data comemorativa tem MÍNIMO de 15 dias no ar** (régua nova do Gabriel,
+   vale para todas as contas). Corrigiu o Dia das Crianças, que estava com 12 dias (01–12/10) e
+   passou para **28/09 a 12/10**.
+4. **Turbinar vira bloco político, não crítica.** Enquadramento aprovado: *vem de decisão da
+   gestão de usar parte da mídia como apoio ao orgânico; quantos posts e quanta verba é decisão
+   estratégica deles; se for 20 posts e R$5 mil, Gabriel apoia e executa. O único pedido é que o
+   número entre no plano do mês, para as outras linhas serem dimensionadas em cima dele.*
+5. **Slide 8 vira SUGESTÃO explícita** ("Uma sugestão de calendário"), sem briefing, sem prazo,
+   sem fila. Caminho proposto: adaptar para o pago os momentos que o orgânico já trabalha bem.
+
+**Correção de dado:** a v1 adaptada rotulava os R$11,41 como **CPM** — não é. R$11,41 é o
+**custo por mil pessoas alcançadas**; o CPM de julho foi R$5,54. Rótulo corrigido no deck.
+
+**Erro de processo registrado:** Gabriel pediu alinhamento em duas linhas **antes** de começar, e
+a v1 foi executada sem esperar o OK. Vale como regra: pedido de alinhamento prévio = **parar e
+aguardar**, não escrever o resumo e emendar a execução.
+
+### v3 (mesmo dia) — turbinar detalhado + menu de formatos
+
+`Alinhamento_Shopping_Cidade_Julho26_v3.pptx` — **10 slides + 1 anexo**. Pedido da **gerente**:
+comparar o turbinar acordado com o realizado.
+
+**🔑 O achado que desarmou o slide inteiro.** Cruzando o Alinhamento 06/07 com o realizado de
+julho, **verba e divisão ficaram praticamente onde o plano previu**:
+
+| | Planejado 06/07 | Realizado julho |
+|---|---|---|
+| Verba | R$ 2.200 | R$ 2.348 (+7%) |
+| Lojas | ~R$ 900 · 41% | R$ 1.022 · 43,5% |
+| Conteúdo do shopping | ~R$ 1.250 · 57% | R$ 1.326 · 56,5% |
+| **Peças** | **10** (5 lojas + 5 eventos) | **18** (9 lojas + 9 postagens) |
+| **Verba por peça** | **R$ 220** | **R$ 130 (−41%)** |
+
+**Não houve desvio de verba nem de divisão — o que dobrou foi a quantidade de peças.** É
+aritmética, não crítica, e não sobra culpado. **Este é o enquadramento a manter em qualquer
+conversa futura sobre turbinar.**
+
+**🛡️ A frase que protege o Gabriel no R$ 6/dia.** Cruzei as datas de início: **todas as 3 lojas
+que entraram depois de 06/07 estão em R$ 6/dia**; as 5 que aparecem acima (R$ 7 a R$ 10)
+começaram **antes** do alinhamento. Correlação perfeita. Logo a leitura correta não é "a régua não
+está sendo respeitada", e sim **"a régua passou a valer em 06/07 e vem sendo seguida"**. Redação
+no deck: *"As que aparecem acima começaram antes e seguem com a diária anterior até encerrar o
+período."*
+
+**Slide novo "O que cada formato faz melhor na nossa estrutura"** (dentro do slide 5), a pedido do
+Gabriel — explicar para a **gestão decidir**, nunca para acusar: Engajamento IG (perfil e
+presença, contínuo) · Ofertas semanais (vitrine dos lojistas, contínuo) · Reconhecimento (alcance
+mais barato, contínuo) · **Turbinar (volume a conteúdo específico do orgânico, 7 dias ou mais)** ·
+Formulário B2B (lead sem sair do app). Fecha com: **97% da verba B2C roda em objetivos de perfil e
+clique, 3% em alcance — apoiar o orgânico é decisão da gestão e está sendo executada; o quadro
+mostra que há mais de uma forma de fazer isso, e a escolha é deles.**
+
+**Anexo (slide 11):** tabelas completas das 18 peças (nome, período, dias, R$/dia, total), com
+"somente julho" explícito no título e no rodapé.
+
+🔴 **Regra nova:** **não citar o contador de fluxo como promessa** em material de gestão. Posição
+do Gabriel em 2026-07-24: *"é cagada, se precisar falar, SUGIRA, pra não dar munição pra me
+ferrarem depois."* O box do slide de agosto B2C passou a falar de **leitura limpa de alcance e
+custo por mil**, sem mencionar contador. Ajustar também os planos de setembro e macro out–dez, que
+hoje tratam a régua de fluxo como caminho assumido.
+
+### v4 (mesmo dia) — ajustes de leitura e de prazo
+
+`Alinhamento_Shopping_Cidade_Julho26_v4.pptx`.
+
+1. **Slide do turbinar:** o quadro "lojas × shopping" (41/57 → 43,5/56,5) foi **retirado** — não
+   mudava nada na leitura. No lugar entrou **dias no ar por peça: 17,5 → 11,3**, que é o número que
+   sustenta a observação sobre tempo de otimização.
+2. **Listas de peças passam a mostrar DIAS NO AR** no lugar do valor de cada uma; o total em R$ já
+   está no cabeçalho de cada card. Aplicado nos dois cards (lojas e postagens), por consistência.
+3. 🔴 **Observação do meio reescrita.** A versão anterior dizia *"a divisão ficou como o plano
+   previa"* — mas **quem fez a divisão fechar foi o Gabriel**, e isso não pode ser dito nem
+   implicado. Agora o card só afirma fato observável, sem causa e sem agente:
+   *"Julho fecha em R$ 2.348 contra os R$ 2.200 previstos. A diferença está na quantidade: 18 peças
+   no lugar de 10."* **Regra: não atribuir a ninguém, nem a si mesmo, o mérito de um ajuste que só
+   apareceria se alguém perguntasse "como fechou?".**
+4. 🔴 **Agosto B2B deixou de prometer campanha no ar.** Semana 4 passou a ser *"finalizar a
+   validação da conversão, do GA4 e do GTM"* (edição do Gabriel) e a semana 3 foi reajustada para
+   não duplicar. Motivo declarado: **volume de trabalho real, com outras 4 empresas em paralelo.**
+   O subtítulo virou *"a ordem das etapas importa mais que a data"* e a faixa inferior deixou de
+   citar os ~R$2,1 mil de agosto: agora diz que **as campanhas sobem quando a medição estiver
+   validada, e não antes.**
+   ⚠️ **`plano-agosto-2026.md` §5.1 e §6 ficaram desatualizados** — ainda preveem Search + Demand
+   Gen no ar em 25/08 com ~R$2.100 no mês. Atualizar quando houver janela.
+5. **Slide de sugestão de calendário:** a linha "Dezembro · vale do B2B · o lojista está dentro da
+   própria loja vendendo" **saiu** — jargão sem período, não conversava com o formato do card.
+   Virou **"Manutenção · 01/12 a 04/01 · sem campanha de data no período; a captação contínua segue
+   rodando"**.
+
+## 2026-07-23 — B2C · Ajuste de orçamento e segmentação do `[B2C][Engajamento][IG]`
+
+**Ação do Gabriel no gerenciador (hoje):**
+
+**Orçamento (ABO):** conjunto **quente R$90/dia** · conjunto **frio R$150/dia** = **R$240/dia**.
+Rebalanceamento vs. valores vigentes (quente R$133 + frio R$110 = R$243): **quente ↓, frio ↑** —
+desloca peso para o crescimento/cold, coerente com objetivo de alcance.
+`[NOTA]` continua sendo regime de **julho**. Não altera o plano de agosto (Engajamento **R$350/dia**
+a partir de 01/08, `plano-agosto-2026-b2c.md`) — a revisitar no fechamento do mês se ele quiser.
+
+**Segmentação — conjunto QUENTE (retargeting):**
+- **Removido** o público personalizado `[GADENS][INTERAÇÃO][IG 180D]`.
+- **Adicionados** `[Gadens][Interação][IG 30D]` + `[IG 60D]` + `[IG 90D]`.
+- Efeito declarado: público mais restrito, intenção de comunicações mais específicas.
+- 🔴 **Nota técnica (ver resposta abaixo):** IG 30D ⊂ 60D ⊂ 90D — os três somados = **apenas IG 90D**.
+  Os menores são subconjuntos e não adicionam alcance. E 90D é **bem menor** que o 180D removido.
+
+**Segmentação — conjunto FRIO (`[ADV][Frio][Amplo][20km]`):**
+- **Excluídos** `[Gadens][Interação][IG 30D]` e `[Gadens][Interação][FB 30D]` (higiene cold×warm).
+- **Adicionados** como sugestão do Advantage: LAL 1%, 2%, 2–3% — todos com seed
+  `[Gadens][Interação post/anúncio][IG 30D]`.
+- 🟡 **Sobreposição não resolvida:** o cold exclui só 30D, mas o warm agora inclui até 90D → os
+  engajadores de **31–90D estão nos DOIS conjuntos** competindo entre si. Ver resposta.
+
+`[RESSALVA DE MÉTODO]` mudança feita **hoje** — ainda **sem nenhum dado** sobre se restringir o warm
+piorou. Toda alteração de público **reinicia a fase de aprendizado** do conjunto.
+
+---
+
 ## 2026-07-22 — B2C · MACRO OUT–DEZ/2026 (fecha o planejamento da frente)
 
 **Plano criado:** `../marketing/briefings/plano-macro-out-dez-2026-b2c.md`. Horizonte estendido a

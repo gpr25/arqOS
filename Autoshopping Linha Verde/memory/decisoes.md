@@ -17,6 +17,91 @@
 
 ## Decisões
 
+**2026-07-23 — Google / Landing — ACEITAR a rota alias `/m` da Revenda Mais**
+**Decisão:** trocar `/multipla` por **`/m`** em todas as URLs de destino dos anúncios, em vez de
+insistir na liberação do `robots.txt`.
+**Contexto:** o `robots.txt` bloqueia `AdsBot-Google` em `/multipla` e `/busca` por **bloco próprio**
+— era intencional, não descuido. A Revenda Mais **recusou liberar**: crawlers estavam disparando
+requisições em massa de URLs facetadas inexistentes (`/multipla/98sd98sjds98dsAAAAA8888`) e comendo
++80% da infra deles. Ofereceram `/m` e `/b` como rotas alternativas.
+**Por quê:** a justificativa deles é **tecnicamente plausível** (explosão de navegação facetada é
+problema clássico), e o alias foi **testado antes de aceitar**: `/m` retorna 200 sem redirect,
+conteúdo idêntico, `GTM-KVLGK4D` e `dataLayer` presentes, e **não é bloqueado** porque robots casa
+por **prefixo** — `/m` não começa com `/multipla`. Brigar pela liberação custaria dias e perderia:
+o problema de infra é real e o custo é deles.
+**Impacto:** 🔑 **A preocupação de "ter que trocar todos os links específicos" não se confirmou** —
+páginas de carro ficam em `/carros/Marca/Modelo/...html`, **fora** de `/multipla` e sem regra no
+robots. A troca vale **só para listagens**.
+🔴 **RESSALVA CRÍTICA (mesma data, após o Google reprovar os anúncios):** a troca para `/m`
+**resolve só metade do problema**. Existe um **segundo bloqueio, independente**: o WAF/CloudFront
+devolve **403 por volume de requisições**, por IP — pega `/m`, `/multipla`, a home e o próprio
+`/robots.txt`. **Trocar URL não resolve isso.** Ver a decisão seguinte.
+
+**2026-07-23 — Google / Infra — 🔴 ERRO MEU: dei "resolvido" cedo demais**
+**Decisão:** reabrir o item de destino bloqueado como **bloqueio de lançamento**, e mudar o pedido à
+Revenda Mais de "liberar `/multipla` no robots" para **"isentar o AdsBot-Google do rate limit"**.
+**Contexto:** eu declarei o robots.txt resolvido depois de testar `/m` e ver 200. **Gabriel
+contestou** com a tela do Google Ads: **HTTP 403, plataforma Android, anúncios REPROVADOS**.
+Ele estava certo.
+**Por quê eu errei:** meu teste (a) usou **user-agent de desktop** e (b) pegou **cache do
+CloudFront** (`X-Cache: Hit from cloudfront`). **Cache hit não prova que o rastreador passa** — eu
+validei a camada de `robots.txt` e tratei como se fosse a única. Ao testar por **volume**, o IP
+inteiro passou a receber **403 em tudo**, inclusive no `/robots.txt`.
+**Impacto:** causa raiz é a **mitigação anti-crawler da Revenda Mais** (rate limit cego no AWS
+CloudFront/WAF) pegando o rastreador de anúncios do Google junto. 🔴 403 no `/robots.txt` é o pior
+sintoma: sem ler o robots, o Google trata o **site inteiro** como bloqueado — daí os dois erros
+aparecerem juntos. Pedido correto: isentar `AdsBot-Google` e `AdsBot-Google-Mobile` do rate limit
+(faixas oficiais em `developers.google.com/static/crawling/ipranges/special-crawlers.json`, 270
+prefixos → IP set + Allow **acima** do rate limit) e garantir `/robots.txt` sempre 200.
+**Aprendizado de método (registrar e aplicar sempre):** validar destino de anúncio exige testar
+**volume**, checar o header **`X-Cache`** e confirmar que **`/robots.txt` responde 200 sob carga** —
+não basta uma requisição de navegador dando 200. E: **verificar resposta de fornecedor é certo, mas
+verificar a camada errada dá falso positivo.** Quando o Gabriel contesta com print da plataforma, a
+plataforma tem mais autoridade que o meu teste.
+
+**2026-07-23 — Google / Medição — 🔑 CONVERSÃO NOVA NO AR (marco)**
+**Decisão:** **formulário do site = conversão PRIMÁRIA** (`Lead - Formulário Site`); **WhatsApp =
+SECUNDÁRIA** (`Contato - WhatsApp`). As duas contam, medidas **separadas**; só a primária otimiza.
+**Contexto:** ficou registrado por engano que a primária do Google seria WhatsApp — **Gabriel
+corrigiu em 23/07**. Construção do zero, sem reusar nada da gestão antiga. GTM `GTM-KVLGK4D`
+(já instalado no site) — **Versão 169 publicada 23/07 16:54**, 8 itens adicionados, nada existente
+alterado. Ambas as tags validadas disparando no GTM Preview. Detalhe técnico em
+[[../marketing/campanhas/BUILD-search-google-onda1-2026-07]] §6.
+**Por quê:** no Google o comportamento é diferente do Meta — quem entra no **site** e preenche
+**formulário** é lead quente com intenção declarada; clique de WhatsApp é intenção mais rasa e
+mensurada como observação. **Feito 100% no GTM, sem depender da Revenda Mais** — quebra a
+dependência histórica que travava a medição. Como o site **não tem página de obrigado** (sucesso é
+um `alert()` nativo), a solução foi sobrescrever `window.alert` e empurrar `lead_form_ok` pro
+dataLayer: dispara só no sucesso real, sem over-count.
+**Impacto:** primeira medição **confiável** da conta no Google. Não muda nada agora — campanhas
+rodam em **Maximizar Cliques**, que ignora conversão pra dar lance — mas é o pré-requisito do Smart
+Bidding. ⚠️ Na migração, reavaliar o modelo de **duas primárias com valores diferentes** (form vale
+mais) + Maximizar Valor de Conversão: é a forma tecnicamente correta de pesar as duas, e o
+primária/secundária de hoje é só o arranjo interino.
+
+**2026-07-23 — Google / PMax — regra dos 7 dias NÃO se aplica**
+**Decisão:** **pausar a PMax herdada sem período de paralelo.**
+**Contexto:** Gabriel foi enfático — a PMax não entrega nada, ninguém na gestão sabe dela nem a
+reivindica. Eu havia levantado a regra de transição de 7 dias; ele derrubou e está certo.
+**Por quê:** a regra de 7 dias em paralelo existe pra proteger a troca de uma campanha **que
+funciona**. Aplicá-la a uma campanha órfã e sem resultado é cerimônia, não gestão de risco.
+A defesa de marca fica coberta pela campanha **Institucional**.
+**Impacto:** corrige a regra registrada em [[estado-da-conta-autoshopping]] §5 — ela vale pro que
+está performando, não pra todo legado por padrão. Libera verba e reduz ruído de conversão.
+
+**2026-07-23 — Google / Limpeza — legado fica pra passada separada**
+**Decisão:** **publicar o setup limpo primeiro; limpar o legado depois**, com lista na mão.
+**Contexto:** o GTM tem ~71 tags e a conta ~50 ações de conversão, quase tudo da gestão antiga.
+Gabriel quis limpar antes de publicar.
+**Por quê:** publicar é **aditivo** — o legado já estava no ar, não entra nada de novo por causa do
+publish. Então limpar antes ou depois dá no mesmo pro que fica live, e **deletar é a operação
+arriscada**, não adicionar. ⚠️ Trava específica: as tags `WhatsApp Loja - X` são **rastreio por
+lojista** — o nó central da conta. Não apagar às cegas; decidir *manter vs. reconstruir limpo*.
+**Impacto:** backlog de limpeza: tags de Universal Analytics (morta, Google desligou — seguro
+deletar), Conversion Linker duplicado, ações de conversão velhas no Ads. Alertas do Ads ("meta
+Contato: configuração incorreta" — 0 primárias, porque WhatsApp é secundário **de propósito**) são
+ruído do legado e **não bloqueiam** o lançamento.
+
 **2026-07-22 — Gestão / Reunião de alinhamento — 5 DECISÕES**
 **Decisão:** (1) Reconhecimento fora de Curitiba **aprovado virar reserva** (linha cai a ~R$465);
 (2) volume de criativos **diminui bastante**, com lógica de funil; (3) **Turbinar sobe a
